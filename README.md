@@ -34,7 +34,7 @@ python3 scripts/build_site.py
 
 1. 将仓库保持为私有仓库，并在 GitHub Secrets 配置 `ARXIV_USER_AGENT`。
 2. 启用 `.github/workflows/daily.yml`；工作流每日抓取、构建并提交数据快照。
-3. 将 `site/` 连接到 Cloudflare Pages，并用 Cloudflare Access 限制访问者。
+3. 在 Cloudflare Pages 创建 `paper-collector` 项目并用 Cloudflare Access 限制访问者；将项目名作为 GitHub Actions Variable `CLOUDFLARE_PAGES_PROJECT` 保存。
 4. 在 `worker/` 配置仅可写入本仓库的 GitHub Fine-grained PAT 和 Cloudflare Access Audience；Worker 把反馈写进私有仓库，不让浏览器持有 GitHub 密钥。
 5. 将部署后的 Worker URL 填入 `site/config.js` 的 `PAPER_COLLECTOR_FEEDBACK_ENDPOINT`；该 URL 可公开，真正的访问控制由 Cloudflare Access JWT 完成。
 

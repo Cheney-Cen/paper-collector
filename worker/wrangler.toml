@@ -1,3 +1,5 @@
 name = "paper-collector-feedback"
 main = "src/index.ts"
 compatibility_date = "2026-06-22"
+
+# Runtime values are injected by the GitHub Action. Keep secrets out of this file.
