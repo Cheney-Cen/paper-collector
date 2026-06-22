@@ -117,10 +117,9 @@ class RankingTests(unittest.TestCase):
         twin = paper(paper_id="hist")
         with_history = prepare_candidates([paper(paper_id="n1")], [topic], history_papers=[twin])
         without_history = prepare_candidates([paper(paper_id="n2")], [topic])
-        self.assertLess(
-            with_history[0].score_breakdown["novelty"],
-            without_history[0].score_breakdown["novelty"],
-        )
+        # Identical twin in history → Jaccard 1.0 → clamp floor; no peers/history → max novelty.
+        self.assertEqual(with_history[0].score_breakdown["novelty"], 25.0)
+        self.assertEqual(without_history[0].score_breakdown["novelty"], 100.0)
 
     def test_prepare_candidates_drops_irrelevant(self):
         topic = Topic("serving", "推理系统", ["speculative decoding"])

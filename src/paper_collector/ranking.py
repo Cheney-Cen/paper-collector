@@ -72,6 +72,7 @@ def _credibility_score(paper: Paper) -> float:
 
 
 def _novelty_scores(papers: list[Paper], history_papers: list[Paper] | None = None) -> dict[str, float]:
+    """Jaccard-based novelty: penalises similarity to batch peers and recent history alike."""
     token_sets = {paper.paper_id: _tokens(f"{paper.title} {paper.abstract}") for paper in papers}
     history_tokens = [_tokens(f"{item.title} {item.abstract}") for item in (history_papers or [])]
     result: dict[str, float] = {}
