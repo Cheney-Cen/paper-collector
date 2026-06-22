@@ -14,7 +14,7 @@ from paper_collector.arxiv import fetch_recent
 from paper_collector.config import load_settings
 from paper_collector.llm import add_semantic_scores, assess_papers, summarize_in_chinese
 from paper_collector.ranking import rank, rescore, select_diverse
-from paper_collector.storage import save_daily, update_index
+from paper_collector.storage import canonical_paper_id, load_daily_papers, save_daily, seen_before, update_index
 
 
 def main() -> None:
@@ -27,8 +27,15 @@ def main() -> None:
     if args.offline:
         print("Offline mode does not fetch new papers.")
         return
-    user_agent = os.environ.get("ARXIV_USER_AGENT", "paper-collector/0.1 (personal research use)")
-    papers = fetch_recent(settings.arxiv_categories, settings.candidate_limit, user_agent)
+    user_agent = os.environ.get("ARXIV_USER_AGENT") or "paper-collector/0.1 (personal research use)"
+    data_root = ROOT / "data"
+    previous_ids = seen_before(data_root, args.date)
+    existing = [paper for paper in load_daily_papers(data_root, args.date) if canonical_paper_id(paper.paper_id) not in previous_ids]
+    fetched = fetch_recent(settings.arxiv_categories, settings.candidate_limit, user_agent)
+    candidates = existing + [paper for paper in fetched if canonical_paper_id(paper.paper_id) not in previous_ids]
+    # Keep the newest arXiv version while making same-day reruns idempotent.
+    papers_by_id = {canonical_paper_id(paper.paper_id): paper for paper in candidates}
+    papers = list(papers_by_id.values())
     add_semantic_scores(papers, settings.topics)
     shortlist = rank(
         papers, settings.topics, settings.shortlist_limit, settings.anchor_terms,
@@ -38,9 +45,9 @@ def main() -> None:
     rescore(shortlist)
     ranked = select_diverse(shortlist, settings.daily_limit, settings.exploration_slots)
     summarize_in_chinese(ranked)
-    save_daily(ROOT / "data", args.date, ranked)
-    update_index(ROOT / "data", ranked)
-    print(f"Saved {len(ranked)} selected papers for {args.date.isoformat()}.")
+    save_daily(data_root, args.date, ranked, candidate_count=len(papers))
+    update_index(data_root, ranked)
+    print(f"Saved {len(ranked)} selected papers from {len(papers)} unseen candidates for {args.date.isoformat()}.")
 
 
 if __name__ == "__main__":

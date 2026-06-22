@@ -46,7 +46,7 @@
       "score": 80.8,
       "score_reasons": [
         "命中主题：压缩与高效推理",
-        "优势：relevance 100、novelty 92"
+        "优势：匹配 100、新颖 92"
       ],
       "summary_zh": null
     },
@@ -98,7 +98,7 @@
       "score": 71.3,
       "score_reasons": [
         "命中主题：预训练与优化、压缩与高效推理",
-        "优势：novelty 89、relevance 81"
+        "优势：新颖 89、匹配 81"
       ],
       "summary_zh": null
     },
@@ -141,7 +141,7 @@
       "score": 64.4,
       "score_reasons": [
         "命中主题：压缩与高效推理",
-        "优势：novelty 94、relevance 81"
+        "优势：新颖 94、匹配 81"
       ],
       "summary_zh": null
     },
@@ -185,7 +185,7 @@
       "score": 64.2,
       "score_reasons": [
         "命中主题：预训练与优化",
-        "优势：novelty 89、quality 81"
+        "优势：新颖 89、质量 81"
       ],
       "summary_zh": null
     },
@@ -231,7 +231,7 @@
       "score": 63.1,
       "score_reasons": [
         "命中主题：推理时扩展",
-        "优势：novelty 85、relevance 81"
+        "优势：新颖 85、匹配 81"
       ],
       "summary_zh": null
     },
@@ -271,7 +271,7 @@
       "score": 60.5,
       "score_reasons": [
         "命中主题：微调与对齐",
-        "优势：novelty 94、relevance 81"
+        "优势：新颖 94、匹配 81"
       ],
       "summary_zh": null
     },
@@ -315,7 +315,7 @@
       "score": 60.4,
       "score_reasons": [
         "命中主题：微调与对齐、推理时扩展",
-        "优势：novelty 85、quality 69"
+        "优势：新颖 85、质量 69"
       ],
       "summary_zh": null
     },
@@ -364,7 +364,7 @@
       "score": 57.5,
       "score_reasons": [
         "命中主题：推理系统、压缩与高效推理",
-        "优势：novelty 90、practical 59"
+        "优势：新颖 90、实用 59"
       ],
       "summary_zh": null
     },
@@ -410,7 +410,7 @@
       "score": 50.9,
       "score_reasons": [
         "命中主题：预训练与优化、微调与对齐、推理系统",
-        "优势：novelty 94、practical 77"
+        "优势：新颖 94、实用 77"
       ],
       "summary_zh": null
     },
@@ -451,7 +451,7 @@
       "score": 54.9,
       "score_reasons": [
         "命中主题：推理系统",
-        "优势：novelty 92、practical 77"
+        "优势：新颖 92、实用 77"
       ],
       "summary_zh": null
     },
@@ -500,7 +500,7 @@
       "score": 44.5,
       "score_reasons": [
         "命中主题：微调与对齐",
-        "优势：novelty 90、quality 40"
+        "优势：新颖 90、质量 40"
       ],
       "summary_zh": null
     },
@@ -543,7 +543,7 @@
       "score": 54.3,
       "score_reasons": [
         "命中主题：推理时扩展",
-        "优势：novelty 88、relevance 63"
+        "优势：新颖 88、匹配 63"
       ],
       "summary_zh": null
     }

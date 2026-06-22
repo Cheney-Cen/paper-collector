@@ -134,11 +134,12 @@ def classify_and_score(paper: Paper, topics: list[Topic], anchor_terms: list[str
 
 def rescore(papers: list[Paper]) -> list[Paper]:
     """Recompute final scores after embeddings, LLM assessment, or feedback are added."""
+    labels = {"relevance": "匹配", "quality": "质量", "novelty": "新颖", "practical": "实用", "credibility": "可信", "personal": "偏好"}
     for paper in papers:
         _recompute(paper)
         strongest = sorted(paper.score_breakdown.items(), key=lambda item: item[1], reverse=True)[:2]
         base_reasons = [reason for reason in paper.score_reasons if not reason.startswith("优势：")]
-        paper.score_reasons = base_reasons[:3] + [f"优势：{'、'.join(f'{name} {value:.0f}' for name, value in strongest)}"]
+        paper.score_reasons = base_reasons[:3] + [f"优势：{'、'.join(f'{labels[name]} {value:.0f}' for name, value in strongest)}"]
     return papers
 
 

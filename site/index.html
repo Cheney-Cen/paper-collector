@@ -21,6 +21,7 @@
           <label>日期 <select id="date-filter" aria-label="日期"></select></label>
           <label>主题 <select id="topic-filter"><option value="all">全部主题</option></select></label>
           <label>排序 <select id="sort-filter"><option value="score">综合评分</option><option value="updated">最新更新</option></select></label>
+          <label class="search-label">搜索 <input id="search-input" type="search" placeholder="标题、作者或方法" autocomplete="off" /></label>
           <span id="paper-count" class="paper-count"></span>
         </div>
       </section>
@@ -39,7 +40,6 @@
         <div class="card-footer"><a class="paper-link" target="_blank" rel="noreferrer">打开论文 ↗</a><div class="feedback" aria-label="反馈"><button data-feedback="useful">有用</button><button data-feedback="later">稍后读</button><button data-feedback="skip">忽略</button></div></div>
       </article>
     </template>
-    <script src="config.js"></script>
     <script src="app.js"></script>
   </body>
 </html>

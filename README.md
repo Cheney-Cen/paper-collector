@@ -2,11 +2,19 @@
 
 一个面向 LLM 训练与推理的个人论文雷达：每日增量采集 arXiv、以可解释的多信号评分筛选候选、生成中文阅读卡片，并发布为静态仪表盘。
 
+## 产品行为
+
+- 每篇 arXiv 论文只会在首次入选时进入日报；版本号变化不会被当作新论文重复推荐。
+- 每日按匹配度、研究质量、新颖性、实用价值和可信度评分，并保留主题多样性与探索名额。
+- 网页可切换每日版次，也可选择“全部历史”跨期搜索标题、作者和方法。
+- “有用 / 稍后读 / 忽略”会保存在当前浏览器并在刷新后回显。
+- arXiv 限流或临时服务错误会指数退避重试；真正失败时工作流停止，不会覆盖已有日报。
+
 ## 第一次运行
 
 ```bash
 PYTHONPATH=src python3 -m unittest discover -s tests -v
-python3 scripts/build_site.py --date 2026-06-22
+python3 scripts/build_site.py
 python3 -m http.server 4173 --directory site
 ```
 
@@ -27,8 +35,8 @@ python3 scripts/build_site.py
 
 - `data/daily/YYYY-MM-DD.json`：每日入选论文和评分原因
 - `data/papers/index.json`：跨日报去重后的论文索引
-- `data/feedback/*.json`：网页写回的“有用 / 忽略 / 稍后读”反馈事件
 - `site/data/`：GitHub Pages 仪表盘读取的公开静态副本
+- `site/data/catalog.json`：按 arXiv 主版本去重后的全历史检索目录
 
 ## 使用 GitHub Pages 部署
 

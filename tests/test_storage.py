@@ -5,7 +5,7 @@ from datetime import date
 from pathlib import Path
 
 from paper_collector.models import Paper
-from paper_collector.storage import save_daily, update_index
+from paper_collector.storage import canonical_paper_id, load_daily_papers, save_daily, seen_before, update_index
 
 
 def sample() -> Paper:
@@ -20,3 +20,16 @@ class StorageTests(unittest.TestCase):
             index = update_index(root, [sample()])
             self.assertEqual(json.loads(daily.read_text())["papers"][0]["paper_id"], "2601.00001")
             self.assertIn("2601.00001", json.loads(index.read_text()))
+
+    def test_arxiv_versions_share_one_canonical_id(self):
+        self.assertEqual(canonical_paper_id("2601.00001v3"), "2601.00001")
+
+    def test_seen_before_excludes_current_day(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            save_daily(root, date(2026, 1, 1), [sample()])
+            newer = sample()
+            newer.paper_id = "2601.00002v2"
+            save_daily(root, date(2026, 1, 2), [newer])
+            self.assertEqual(seen_before(root, date(2026, 1, 2)), {"2601.00001"})
+            self.assertEqual(load_daily_papers(root, date(2026, 1, 2))[0].paper_id, "2601.00002v2")
