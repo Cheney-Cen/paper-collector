@@ -37,9 +37,15 @@ def add_semantic_scores(papers: list[Paper], topics: list[Topic]) -> list[Paper]
         vectors = [item["embedding"] for item in sorted(result["data"], key=lambda item: item["index"])]
         topic_vectors, paper_vectors = vectors[: len(topics)], vectors[len(topics) :]
         for paper, vector in zip(papers, paper_vectors, strict=True):
-            # Map cosine from a conservative semantic range into 0..100.
-            similarity = max((_cosine(vector, topic_vector) for topic_vector in topic_vectors), default=0.0)
-            paper.semantic_score = round(max(0.0, min(100.0, (similarity - 0.15) / 0.7 * 100)), 1)
+            # Per-topic similarity lets us both score relevance and seed a fallback topic
+            # for papers that survive only on semantic similarity (no keyword match).
+            sims = [_cosine(vector, topic_vector) for topic_vector in topic_vectors]
+            best_index = max(range(len(sims)), key=sims.__getitem__) if sims else 0
+            best_similarity = sims[best_index] if sims else 0.0
+            mapped = round(max(0.0, min(100.0, (best_similarity - 0.15) / 0.7 * 100)), 1)
+            paper.semantic_score = mapped
+            if topics:
+                paper.topic_scores = {topics[best_index].slug: round(mapped / 100, 4)}
     except (KeyError, OSError, ValueError, TypeError):
         return papers
     return papers
