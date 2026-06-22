@@ -12,8 +12,8 @@ sys.path.insert(0, str(ROOT / "src"))
 
 from paper_collector.arxiv import fetch_recent
 from paper_collector.config import load_settings
-from paper_collector.llm import summarize_in_chinese
-from paper_collector.ranking import rank
+from paper_collector.llm import add_semantic_scores, assess_papers, summarize_in_chinese
+from paper_collector.ranking import rank, rescore, select_diverse
 from paper_collector.storage import save_daily, update_index
 
 
@@ -29,7 +29,14 @@ def main() -> None:
         return
     user_agent = os.environ.get("ARXIV_USER_AGENT", "paper-collector/0.1 (personal research use)")
     papers = fetch_recent(settings.arxiv_categories, settings.candidate_limit, user_agent)
-    ranked = [paper for paper in rank(papers, settings.topics, settings.daily_limit) if paper.score > 0]
+    add_semantic_scores(papers, settings.topics)
+    shortlist = rank(
+        papers, settings.topics, settings.shortlist_limit, settings.anchor_terms,
+        settings.shortlist_limit, exploration_slots=0,
+    )
+    assess_papers(shortlist, settings.llm_assessment_limit)
+    rescore(shortlist)
+    ranked = select_diverse(shortlist, settings.daily_limit, settings.exploration_slots)
     summarize_in_chinese(ranked)
     save_daily(ROOT / "data", args.date, ranked)
     update_index(ROOT / "data", ranked)

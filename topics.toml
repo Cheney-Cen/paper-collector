@@ -2,30 +2,34 @@
 timezone = "Asia/Shanghai"
 daily_limit = 12
 candidate_limit = 180
+shortlist_limit = 40
+llm_assessment_limit = 20
+exploration_slots = 2
 arxiv_categories = ["cs.CL", "cs.AI", "cs.LG", "cs.DC", "cs.SE"]
+anchor_terms = ["llm", "large language model", "language model", "foundation model", "transformer", "attention model"]
 
 [[topic]]
 slug = "pretraining"
 title = "预训练与优化"
-keywords = ["pretraining", "pre-training", "scaling law", "optimizer", "distributed training", "mixture of experts", "moe"]
+keywords = ["pretraining", "pre-training", "scaling law", "optimizer", "distributed training", "mixture of experts", "moe", "data mixture", "training dynamics"]
 exclude = ["speech recognition"]
 
 [[topic]]
 slug = "post-training"
 title = "微调与对齐"
-keywords = ["instruction tuning", "fine-tuning", "post-training", "alignment", "reinforcement learning from human", "preference optimization"]
+keywords = ["instruction tuning", "fine-tuning", "finetuning", "post-training", "alignment", "reinforcement learning from human", "preference optimization", "rlhf", "rlvr", "grpo"]
 exclude = []
 
 [[topic]]
 slug = "reasoning"
 title = "推理时扩展"
-keywords = ["test-time scaling", "test time compute", "reasoning", "chain of thought", "verifier", "search"]
+keywords = ["test-time scaling", "test time compute", "reasoning", "chain of thought", "verifier", "reasoning model", "self-consistency"]
 exclude = []
 
 [[topic]]
 slug = "serving"
 title = "推理系统"
-keywords = ["llm inference", "serving", "kv cache", "speculative decoding", "continuous batching", "prefix caching", "vllm"]
+keywords = ["llm inference", "model serving", "inference serving", "kv cache", "speculative decoding", "continuous batching", "prefix caching", "vllm", "decode latency", "time-to-first-token", "throughput"]
 exclude = []
 
 [[topic]]

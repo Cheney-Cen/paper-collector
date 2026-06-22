@@ -29,9 +29,22 @@
     "topic_scores": {
       "efficiency": 1.0
     },
-    "score": 64.0,
+    "semantic_score": null,
+    "personal_score": null,
+    "score_breakdown": {
+      "relevance": 100.0,
+      "quality": 73,
+      "novelty": 91.5,
+      "practical": 63,
+      "credibility": 35
+    },
+    "confidence": 59,
+    "risk_zh": null,
+    "llm_scores": {},
+    "score": 80.8,
     "score_reasons": [
-      "命中主题：压缩与高效推理"
+      "命中主题：压缩与高效推理",
+      "优势：relevance 100、novelty 92"
     ],
     "summary_zh": null
   },
@@ -55,11 +68,24 @@
     "code_url": null,
     "cited_by_count": null,
     "topic_scores": {
-      "serving": 0.6666666666666666
+      "serving": 0.36
     },
-    "score": 44.0,
+    "semantic_score": null,
+    "personal_score": null,
+    "score_breakdown": {
+      "relevance": 36.0,
+      "quality": 61,
+      "novelty": 92.3,
+      "practical": 77,
+      "credibility": 28
+    },
+    "confidence": 59,
+    "risk_zh": null,
+    "llm_scores": {},
+    "score": 54.9,
     "score_reasons": [
-      "命中主题：推理系统"
+      "命中主题：推理系统",
+      "优势：novelty 92、practical 77"
     ],
     "summary_zh": null
   },
@@ -90,12 +116,25 @@
     "code_url": null,
     "cited_by_count": null,
     "topic_scores": {
-      "serving": 0.6666666666666666,
-      "efficiency": 0.6666666666666666
+      "serving": 0.54,
+      "efficiency": 0.36
     },
-    "score": 44.0,
+    "semantic_score": null,
+    "personal_score": null,
+    "score_breakdown": {
+      "relevance": 54.0,
+      "quality": 51,
+      "novelty": 90.5,
+      "practical": 59,
+      "credibility": 35
+    },
+    "confidence": 43,
+    "risk_zh": null,
+    "llm_scores": {},
+    "score": 57.5,
     "score_reasons": [
-      "命中主题：推理系统、压缩与高效推理"
+      "命中主题：推理系统、压缩与高效推理",
+      "优势：novelty 90、practical 59"
     ],
     "summary_zh": null
   },
@@ -129,12 +168,25 @@
     "code_url": null,
     "cited_by_count": null,
     "topic_scores": {
-      "pretraining": 0.6666666666666666,
-      "efficiency": 0.3333333333333333
+      "pretraining": 0.81,
+      "efficiency": 0.18
     },
-    "score": 44.0,
+    "semantic_score": null,
+    "personal_score": null,
+    "score_breakdown": {
+      "relevance": 81.0,
+      "quality": 72,
+      "novelty": 89.0,
+      "practical": 45,
+      "credibility": 35
+    },
+    "confidence": 51,
+    "risk_zh": null,
+    "llm_scores": {},
+    "score": 71.3,
     "score_reasons": [
-      "命中主题：预训练与优化、压缩与高效推理"
+      "命中主题：预训练与优化、压缩与高效推理",
+      "优势：novelty 89、relevance 81"
     ],
     "summary_zh": null
   },
@@ -205,11 +257,24 @@
     "code_url": null,
     "cited_by_count": null,
     "topic_scores": {
-      "post-training": 0.6666666666666666
+      "post-training": 0.81
     },
-    "score": 44.0,
+    "semantic_score": null,
+    "personal_score": null,
+    "score_breakdown": {
+      "relevance": 81.0,
+      "quality": 42,
+      "novelty": 93.7,
+      "practical": 18,
+      "credibility": 28
+    },
+    "confidence": 35,
+    "risk_zh": null,
+    "llm_scores": {},
+    "score": 60.5,
     "score_reasons": [
-      "命中主题：微调与对齐"
+      "命中主题：微调与对齐",
+      "优势：novelty 94、relevance 81"
     ],
     "summary_zh": null
   },
@@ -299,12 +364,24 @@
     "code_url": null,
     "cited_by_count": null,
     "topic_scores": {
-      "post-training": 0.6666666666666666,
-      "serving": 0.3333333333333333
+      "post-training": 0.36
     },
-    "score": 44.0,
+    "semantic_score": null,
+    "personal_score": null,
+    "score_breakdown": {
+      "relevance": 36.0,
+      "quality": 40,
+      "novelty": 89.9,
+      "practical": 27,
+      "credibility": 35
+    },
+    "confidence": 51,
+    "risk_zh": null,
+    "llm_scores": {},
+    "score": 44.5,
     "score_reasons": [
-      "命中主题：微调与对齐、推理系统"
+      "命中主题：微调与对齐",
+      "优势：novelty 90、quality 40"
     ],
     "summary_zh": null
   },
@@ -330,12 +407,24 @@
     "code_url": null,
     "cited_by_count": null,
     "topic_scores": {
-      "serving": 0.3333333333333333,
-      "efficiency": 0.6666666666666666
+      "efficiency": 0.81
     },
-    "score": 44.0,
+    "semantic_score": null,
+    "personal_score": null,
+    "score_breakdown": {
+      "relevance": 81.0,
+      "quality": 43,
+      "novelty": 94.0,
+      "practical": 45,
+      "credibility": 35
+    },
+    "confidence": 43,
+    "risk_zh": null,
+    "llm_scores": {},
+    "score": 64.4,
     "score_reasons": [
-      "命中主题：推理系统、压缩与高效推理"
+      "命中主题：压缩与高效推理",
+      "优势：novelty 94、relevance 81"
     ],
     "summary_zh": null
   },
@@ -362,13 +451,26 @@
     "code_url": null,
     "cited_by_count": null,
     "topic_scores": {
-      "pretraining": 0.3333333333333333,
-      "post-training": 0.6666666666666666,
-      "serving": 0.3333333333333333
+      "pretraining": 0.18,
+      "post-training": 0.36,
+      "serving": 0.18
     },
-    "score": 44.0,
+    "semantic_score": null,
+    "personal_score": null,
+    "score_breakdown": {
+      "relevance": 36.0,
+      "quality": 42,
+      "novelty": 93.9,
+      "practical": 77,
+      "credibility": 35
+    },
+    "confidence": 35,
+    "risk_zh": null,
+    "llm_scores": {},
+    "score": 50.9,
     "score_reasons": [
-      "命中主题：预训练与优化、微调与对齐、推理系统"
+      "命中主题：预训练与优化、微调与对齐、推理系统",
+      "优势：novelty 94、practical 77"
     ],
     "summary_zh": null
   },
@@ -411,6 +513,275 @@
     "score": 24.0,
     "score_reasons": [
       "命中主题：微调与对齐、推理时扩展"
+    ],
+    "summary_zh": null
+  },
+  "2606.20089v1": {
+    "paper_id": "2606.20089v1",
+    "title": "IHUBERT: Vector-Based Semantic Deduplication and Domain-Balanced Pretraining for Persian Resources",
+    "abstract": "Persian pretrained language models (PLMs) are still limited by the scarcity of large-scale, high-quality pretraining corpora and by insufficient evaluation beyond standard classification and NER tasks. We present IHUBERT, a monolingual Persian PLM trained from scratch with the RoBERTa-base encoder (125M parameters) on a 45 GB curated subset of the Sepahr-Danesh collection (about 7-8B tokens). To improve corpus quality and reduce redundancy, we employ a multi-stage preprocessing pipeline that includes normalization, exact and near-duplicate removal, anonymization, and vector-database-based semantic deduplication for distribution balancing control across domains and registers. We additionally train a 139k-vocabulary BPE tokenizer on the full pretraining corpus to better capture Persian morphology and orthographic variation. IHUBERT is evaluated on seven Persian NLU benchmarks covering NER, sentiment analysis, topic classification, NLI, extractive question answering, and relation extraction, using task-standard metrics (entity-level F1, Macro-F1, EM/F1). IHUBERT achieves its strongest gains on extractive QA, ranking first on both PQuAD (F1 88.3542) and ParsiNLU-RC (F1 49.0987), and attains the best result on FarsTail (Macro-F1 0.8350). On NER and topic classification, it remains competitive (e.g., 0.8308 F1 on ParsTwiNER; 0.7953 Macro-F1 on DigiMag), while relation extraction remains the main remaining gap (0.6684 Macro-F1 on PERLEX). A controlled tokenizer ablation on the IHUBERT pretraining corpus shows that BPE yields slightly lower subword fragmentation than WordPiece at matched vocabulary size, supporting our tokenization design. Overall, IHUBERT advances Persian language modeling through semantically curated large-scale pretraining and broad evaluation across both classification and comprehension-oriented tasks.",
+    "authors": [
+      "Arash Ghafouri",
+      "Mahdi Firouzmandi",
+      "Hossein Saberi",
+      "Mohammad Reza Hasani Ahangar"
+    ],
+    "published": "2026-06-18T11:10:22Z",
+    "updated": "2026-06-18T11:10:22Z",
+    "categories": [
+      "cs.CL",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.20089v1",
+    "abs_url": "http://arxiv.org/abs/2606.20089v1",
+    "source": "arXiv",
+    "venue": null,
+    "code_url": null,
+    "cited_by_count": null,
+    "topic_scores": {
+      "pretraining": 0.63
+    },
+    "semantic_score": null,
+    "personal_score": null,
+    "score_breakdown": {
+      "relevance": 63.0,
+      "quality": 81,
+      "novelty": 89.2,
+      "practical": 18,
+      "credibility": 35
+    },
+    "confidence": 59,
+    "risk_zh": null,
+    "llm_scores": {},
+    "score": 64.2,
+    "score_reasons": [
+      "命中主题：预训练与优化",
+      "优势：novelty 89、quality 81"
+    ],
+    "summary_zh": null
+  },
+  "2606.20227v1": {
+    "paper_id": "2606.20227v1",
+    "title": "QMFOL: Benchmarking Large Language Model Reasoning via Quantifiable Monadic First-Order Logic Test Case Generation",
+    "abstract": "Large Language Models (LLMs) have made significant progress in reasoning, particularly in deductive reasoning, which is crucial for high-stakes decision-making. As models improve, evaluation benchmarks should evolve to keep pace. However, existing benchmarks lack fine-grained control over logical complexity and struggle to balance semantic diversity with logical consistency. To address these issues, we propose QMFOL, an automated framework for generating monadic first-order logic reasoning tasks with quantifiable and controllable complexity. It constructs formal logical structures using conjunction and disjunction patterns, enabling precise control over reasoning depth, width, label types, and distractors. These structures are then translated into natural language via LLMs, with logical consistency ensured through round-trip verification using an external prover. Based on our framework, we build QMFOLBench, a benchmark comprising 2880 instances with 960 configurations across diverse logical and semantic dimensions. Evaluations on six large reasoning models (LRMs) and two LLMs show that performance degrades and computational overhead increases with rising logical complexity. Models perform better on True-labeled tasks than on False or Unknown ones, and exhibit sensitivity to semantic variation. Overall, QMFOL offers a scalable and reliable approach for constructing deductive reasoning benchmarks with controllable complexity, enabling more precise evaluation of reasoning capabilities in modern language models.",
+    "authors": [
+      "Xinyi Zheng",
+      "Ling Shi",
+      "Tianlong Yu",
+      "Yongxin Zhao",
+      "Lorenz Goette",
+      "Kailong Wang"
+    ],
+    "published": "2026-06-18T13:40:27Z",
+    "updated": "2026-06-18T13:40:27Z",
+    "categories": [
+      "cs.AI",
+      "cs.SE"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.20227v1",
+    "abs_url": "http://arxiv.org/abs/2606.20227v1",
+    "source": "arXiv",
+    "venue": null,
+    "code_url": null,
+    "cited_by_count": null,
+    "topic_scores": {
+      "reasoning": 0.81
+    },
+    "semantic_score": null,
+    "personal_score": null,
+    "score_breakdown": {
+      "relevance": 81.0,
+      "quality": 51,
+      "novelty": 84.6,
+      "practical": 27,
+      "credibility": 35
+    },
+    "confidence": 43,
+    "risk_zh": null,
+    "llm_scores": {},
+    "score": 63.1,
+    "score_reasons": [
+      "命中主题：推理时扩展",
+      "优势：novelty 85、relevance 81"
+    ],
+    "summary_zh": null
+  },
+  "2606.20502v1": {
+    "paper_id": "2606.20502v1",
+    "title": "Calibration Without Comprehension: Diagnosing the Limits of Fine-Tuning LLMs for Vulnerability Detection in Systems Software",
+    "abstract": "Whether LLMs scoring well on vulnerability benchmarks genuinely reason about security or merely pattern-match on contaminated data remains unresolved. We present CWE-Trace, a framework for LLM vulnerability detection built from 834 manually curated Linux kernel samples spanning 74 CWEs. The framework enforces a strict temporal split (pre-2025 historical set / post-cutoff leakage-free set), preserves context-aware vulnerable--patched pairs, and introduces two diagnostic metrics: the Directional Failure Index (DFI) and Hierarchical Distance and Direction (HDD). We evaluate eight vanilla LLMs and 15 LoRA fine-tuned variants across non-targeted detection, targeted detection, and CWE classification. Our analysis yields two key results. First, data contamination provides no measurable advantage. Function-level analysis shows that 84% of nominally contaminated samples carry no usable memorization signal: vulnerable functions are absent or cross-mapped across datasets, and ~31% of contaminated samples carry CWE misclassification. Second, backbone directional priors dominate fine-tuning. Models exhibit stable, systematic failure modes (DFI ranging from -85.5 to +94.8 pp) that persist from historical to post-cutoff data and resist correction. Fine-tuning shifts the output threshold without changing the decision policy. This is calibration without comprehension: output distributions adapt to training data while the underlying security reasoning remains absent. The weakest backbone at binary detection (DeepSeek-R1) gains the most in coarse CWE classification, revealing that detection and understanding are decoupled capabilities. The best detection score reaches only 52.1% (+2.1 pp above chance); exact CWE ranking remains below 1.3% Top-1 accuracy, confirming that current LLMs lack reliable security reasoning for systems software, regardless of fine-tuning strategy.",
+    "authors": [
+      "Arastoo Zibaeirad",
+      "Marco Vieira"
+    ],
+    "published": "2026-06-18T17:19:26Z",
+    "updated": "2026-06-18T17:19:26Z",
+    "categories": [
+      "cs.CR",
+      "cs.AI",
+      "cs.SE"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.20502v1",
+    "abs_url": "http://arxiv.org/abs/2606.20502v1",
+    "source": "arXiv",
+    "venue": null,
+    "code_url": null,
+    "cited_by_count": null,
+    "topic_scores": {
+      "post-training": 0.63,
+      "reasoning": 0.18
+    },
+    "semantic_score": null,
+    "personal_score": null,
+    "score_breakdown": {
+      "relevance": 63.0,
+      "quality": 69,
+      "novelty": 85.2,
+      "practical": 18,
+      "credibility": 35
+    },
+    "confidence": 59,
+    "risk_zh": null,
+    "llm_scores": {},
+    "score": 60.4,
+    "score_reasons": [
+      "命中主题：微调与对齐、推理时扩展",
+      "优势：novelty 85、quality 69"
+    ],
+    "summary_zh": null
+  },
+  "2606.20031v1": {
+    "paper_id": "2606.20031v1",
+    "title": "A Neuromorphic Reinforcement Learning Framework for Efficient Pathfinding in Robotic Mobile Fulfillment Systems",
+    "abstract": "Dynamic environmental changes, confined workspaces, and stringent real-time constraints make pathfinding in Robotic Mobile Fulfillment Systems (RMFS) a challenging problem for conventional search- and rule-based methods, which typically suffer from high computational complexity and long decision latency. While reinforcement learning (RL) has emerged as a powerful alternative, deploying learned policies with extreme energy efficiency on resource-constrained hardware remains an open challenge. We present SDQN-RMFS, an end-to-end framework that achieves high-fidelity deployment of an RL-trained policy from a full-precision artificial neural network (ANN) through to a neuromorphic chip. By computing only when triggered by sparse events, this framework unlocks ultra-low-power RMFS pathfinding. Our full-stack pipeline operates as follows: an ANN policy is first efficiently trained via a collision-allowing strategy to densify informative trajectories, and then converted into a spiking neural network (SNN) via a hard-label knowledge distillation approach. This effectively addresses the output distribution mismatch, preserving policy capability across the ANN-to-SNN pipeline while substantially reducing inference latency. Hardware experiments demonstrate up to 11,281$\\times$ energy savings and a nearly two-fold reduction in latency compared to a high-performance GPU baseline, while maintaining decision quality on par with the original trained policy. These results establish physical neuromorphic inference as a practical and energy-sustainable pathway for large-scale RMFS operations.",
+    "authors": [
+      "Junzhe Xu",
+      "Zecui Zeng",
+      "Lusong Li",
+      "Yuetong Fang",
+      "Renjing Xu"
+    ],
+    "published": "2026-06-18T10:04:28Z",
+    "updated": "2026-06-18T10:04:28Z",
+    "categories": [
+      "cs.RO",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.20031v1",
+    "abs_url": "http://arxiv.org/abs/2606.20031v1",
+    "source": "arXiv",
+    "venue": null,
+    "code_url": null,
+    "cited_by_count": null,
+    "topic_scores": {
+      "efficiency": 0.18
+    },
+    "semantic_score": null,
+    "personal_score": null,
+    "score_breakdown": {
+      "relevance": 18.0,
+      "quality": 60,
+      "novelty": 88.1,
+      "practical": 54,
+      "credibility": 35
+    },
+    "confidence": 51,
+    "risk_zh": null,
+    "llm_scores": {},
+    "score": 45.7,
+    "score_reasons": [
+      "命中主题：压缩与高效推理",
+      "优势：novelty 88、quality 60",
+      "优势：novelty 88、quality 60"
+    ],
+    "summary_zh": null
+  },
+  "2606.20373v1": {
+    "paper_id": "2606.20373v1",
+    "title": "AutoPass: Evidence-Guided LLM Agents for Compiler Performance Tuning",
+    "abstract": "Large Language Models (LLMs) show promise for code compilation tasks, but applying them to runtime performance tuning is difficult due to complex microarchitectural effects and noisy runtime measurements. We present AutoPass, a multi-agent framework for compiler performance tuning that uses compiler and runtime evidence to guide LLM-generated optimization decisions. Rather than treating the compiler as a black box like prior auto-tuning schemes, AutoPass opens up the compiler to the LLM, enabling it to query compiler-internal optimization states and analyze the intermediate representation to orchestrate compiler options. The search process iteratively refines optimization configurations using measured runtime feedback to diagnose regressions and guide latency-improving edits. AutoPass operates in an inference-only, training-free setting and requires no offline training or task-specific fine-tuning, making it readily applicable to new benchmarks and platforms. We implement AutoPass on the LLVM compiler and evaluate it on server-grade x86-64 and embedded ARM64 systems. AutoPass outperforms expert-tuned heuristics and classical autotuning methods, achieving geometric-mean speedups of 1.043x and 1.117x over LLVM -O3 on x86-64 and ARM64, respectively.",
+    "authors": [
+      "Zepeng Li",
+      "Jie Ren",
+      "Zhanyong Tang",
+      "Jie Zheng",
+      "Zheng Wang"
+    ],
+    "published": "2026-06-18T15:35:40Z",
+    "updated": "2026-06-18T15:35:40Z",
+    "categories": [
+      "cs.SE",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.20373v1",
+    "abs_url": "http://arxiv.org/abs/2606.20373v1",
+    "source": "arXiv",
+    "venue": null,
+    "code_url": null,
+    "cited_by_count": null,
+    "topic_scores": {
+      "post-training": 0.18
+    },
+    "semantic_score": null,
+    "personal_score": null,
+    "score_breakdown": {
+      "relevance": 18.0,
+      "quality": 86,
+      "novelty": 88.6,
+      "practical": 50,
+      "credibility": 35
+    },
+    "confidence": 67,
+    "risk_zh": null,
+    "llm_scores": {},
+    "score": 52.2,
+    "score_reasons": [
+      "命中主题：微调与对齐",
+      "优势：novelty 89、quality 86",
+      "优势：novelty 89、quality 86"
+    ],
+    "summary_zh": null
+  },
+  "2606.20164v1": {
+    "paper_id": "2606.20164v1",
+    "title": "MedRLM: Recursive Multimodal Health Intelligence for Long-Context Clinical Reasoning, Sensor-Guided Screening, Evidence-Grounded Decision Support, and Community-to-Tertiary Referral Optimization",
+    "abstract": "Real-world clinical decision support requires reasoning over heterogeneous and longitudinal patient information rather than answering isolated medical questions. However, current medical large language models and retrieval-augmented generation systems often rely on single-step prompting or retrieval, which can be fragile when clinical evidence is distributed across long electronic health records, medical images, sensor streams, guidelines, and referral constraints. This paper proposes MedRLM, a Recursive Multimodal Health Intelligence framework for long-context clinical reasoning, sensor-guided screening, and community-to-tertiary referral support. Instead of compressing all patient information into one prompt, MedRLM treats the patient case as an external clinical environment that can be recursively inspected, decomposed, retrieved, verified, and synthesized. The framework coordinates specialized agents for clinical text, longitudinal EHR, medical imaging, physiological sensor signals, guideline retrieval, uncertainty auditing, and referral planning. It further introduces a Clinical Evidence Graph Memory to connect patient-specific observations with retrieved evidence, standardized definitions, sensor-derived biomarkers, and referral criteria. A sensor-guided recursive triggering mechanism activates deeper reasoning when abnormal physiological or behavioral patterns are detected, while uncertainty-gated refinement supports clinician review for high-risk or low-confidence cases. We also outline a real-data evaluation design using public and credentialed clinical datasets spanning EHR, radiology, ECG, ICU time series, and referral-proxy outcomes. MedRLM aims to move medical AI from static question answering toward auditable, multimodal, and workflow-aware clinical decision support.",
+    "authors": [
+      "Aueaphum Aueawatthanaphisut"
+    ],
+    "published": "2026-06-18T12:30:39Z",
+    "updated": "2026-06-18T12:30:39Z",
+    "categories": [
+      "cs.CL",
+      "cs.AI",
+      "cs.LG",
+      "q-bio.QM"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.20164v1",
+    "abs_url": "http://arxiv.org/abs/2606.20164v1",
+    "source": "arXiv",
+    "venue": null,
+    "code_url": null,
+    "cited_by_count": null,
+    "topic_scores": {
+      "reasoning": 0.63
+    },
+    "semantic_score": null,
+    "personal_score": null,
+    "score_breakdown": {
+      "relevance": 63.0,
+      "quality": 43,
+      "novelty": 88.5,
+      "practical": 27,
+      "credibility": 28
+    },
+    "confidence": 43,
+    "risk_zh": null,
+    "llm_scores": {},
+    "score": 54.3,
+    "score_reasons": [
+      "命中主题：推理时扩展",
+      "优势：novelty 88、relevance 63"
     ],
     "summary_zh": null
   }

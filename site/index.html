@@ -18,6 +18,7 @@
         <p class="eyebrow">LLM TRAINING + INFERENCE / DAILY FIELD NOTES</p>
         <div class="headline-row"><h1>今天，<em>值得打开</em>什么？</h1><p id="summary" class="summary">从论文信号中筛出可读的少数。</p></div>
         <div class="filter-row" aria-label="论文筛选">
+          <label>日期 <select id="date-filter" aria-label="日期"></select></label>
           <label>主题 <select id="topic-filter"><option value="all">全部主题</option></select></label>
           <label>排序 <select id="sort-filter"><option value="score">综合评分</option><option value="updated">最新更新</option></select></label>
           <span id="paper-count" class="paper-count"></span>
@@ -33,7 +34,7 @@
     <template id="paper-template">
       <article class="paper-card">
         <div class="card-top"><p class="topic"></p><p class="score"><span></span><small>/100</small></p></div>
-        <h2></h2><p class="authors"></p><p class="abstract"></p>
+        <h2></h2><p class="authors"></p><div class="breakdown"></div><p class="confidence"></p><p class="abstract"></p><p class="risk" hidden></p>
         <div class="reasons"></div>
         <div class="card-footer"><a class="paper-link" target="_blank" rel="noreferrer">打开论文 ↗</a><div class="feedback" aria-label="反馈"><button data-feedback="useful">有用</button><button data-feedback="later">稍后读</button><button data-feedback="skip">忽略</button></div></div>
       </article>

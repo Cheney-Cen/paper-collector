@@ -21,7 +21,7 @@ python3 scripts/build_site.py
 
 `collect.py` 会读取 `ARXIV_USER_AGENT`；在 GitHub Actions 中这个值已默认配置。第一版在没有模型密钥时仍会以可解释的主题、录用状态、代码与引用信号稳定排序。
 
-如需自动生成中文阅读摘要，在 GitHub Secrets 或本地环境中设置 `OPENAI_API_KEY`、`OPENAI_MODEL`，并按需设置 `OPENAI_BASE_URL`（默认 OpenAI `/v1` 地址）。仅最终入选的 12 篇论文摘要会发送给该服务；服务异常不会阻断日报保存。
+如需 embedding 语义召回和 LLM 结构化评审，在 GitHub Secrets 或本地环境中设置 `OPENAI_API_KEY`、`OPENAI_MODEL`、`OPENAI_EMBEDDING_MODEL`，并按需设置 `OPENAI_BASE_URL`（默认 OpenAI `/v1` 地址）。只有初筛 shortlist 会进入结构化评审；服务异常时自动退回本地规则，不会阻断日报保存。
 
 ## 每日数据在哪里
 

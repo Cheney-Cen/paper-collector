@@ -28,6 +28,12 @@ class Paper:
     code_url: str | None = None
     cited_by_count: int | None = None
     topic_scores: dict[str, float] = field(default_factory=dict)
+    semantic_score: float | None = None
+    personal_score: float | None = None
+    score_breakdown: dict[str, float] = field(default_factory=dict)
+    confidence: float = 0.0
+    risk_zh: str | None = None
+    llm_scores: dict[str, float] = field(default_factory=dict)
     score: float = 0.0
     score_reasons: list[str] = field(default_factory=list)
     summary_zh: str | None = None
