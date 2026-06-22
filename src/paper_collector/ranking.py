@@ -8,9 +8,17 @@ from .models import Paper, Topic
 
 DEFAULT_ANCHORS = ["llm", "large language model", "language model", "foundation model", "transformer"]
 MIN_KEYWORD_RELEVANCE = 0.30
+DEFAULT_SEMANTIC_GATE = 60.0
+KEYWORD_WEIGHT = 0.35
+SEMANTIC_WEIGHT = 0.65
+LLM_RELEVANCE_WEIGHT = 0.4
 EVIDENCE_TERMS = ["experiment", "benchmark", "baseline", "ablation", "evaluate", "dataset", "outperform", "speedup"]
 PRACTICAL_TERMS = ["latency", "throughput", "memory", "cost", "speedup", "efficient", "gpu", "serving", "training time", "scalab"]
 COMMON_TOKENS = {"the", "and", "for", "with", "from", "that", "this", "language", "model", "models", "llm", "large", "using"}
+
+
+def _excluded(text: str, topics: list[Topic]) -> bool:
+    return any(term.casefold() in text for topic in topics for term in topic.exclude)
 
 
 def _clamp(value: float, low: float = 0.0, high: float = 100.0) -> float:
@@ -88,9 +96,9 @@ def _recompute(paper: Paper) -> None:
     keyword_relevance = 100 * max(paper.topic_scores.values(), default=0)
     relevance = keyword_relevance
     if paper.semantic_score is not None:
-        relevance = 0.6 * keyword_relevance + 0.4 * paper.semantic_score
+        relevance = KEYWORD_WEIGHT * keyword_relevance + SEMANTIC_WEIGHT * paper.semantic_score
     if "relevance" in paper.llm_scores:
-        relevance = 0.7 * relevance + 0.3 * paper.llm_scores["relevance"]
+        relevance = (1 - LLM_RELEVANCE_WEIGHT) * relevance + LLM_RELEVANCE_WEIGHT * paper.llm_scores["relevance"]
 
     text = f"{paper.title} {paper.abstract}".casefold()
     quality = paper.llm_scores.get("quality", _evidence_score(text))
@@ -109,21 +117,39 @@ def _recompute(paper: Paper) -> None:
         paper.confidence = round(_clamp(35 + 8 * sum(term in text for term in EVIDENCE_TERMS) + 12 * bool(paper.venue)), 1)
 
 
-def classify_and_score(paper: Paper, topics: list[Topic], anchor_terms: list[str] | None = None) -> Paper:
-    """Apply hard relevance gates and explainable multi-dimensional scoring."""
+def classify_and_score(
+    paper: Paper, topics: list[Topic], anchor_terms: list[str] | None = None,
+    keyword_gate: float = MIN_KEYWORD_RELEVANCE, semantic_gate: float = DEFAULT_SEMANTIC_GATE,
+) -> Paper:
+    """Hybrid relevance gate: a paper passes via the keyword path OR the semantic path.
+
+    The keyword path reproduces the original behavior (anchor term + strong keyword match).
+    The semantic path rescues novel-wording papers when an embedding score is available.
+    Without embeddings, semantic_score is None and only the keyword path is live.
+    """
     text = f"{paper.title} {paper.abstract}".casefold()
     anchors = anchor_terms or DEFAULT_ANCHORS
-    if not any(anchor.casefold() in text for anchor in anchors):
+    seeded = dict(paper.topic_scores)  # semantic fallback topic seeded by add_semantic_scores
+    if _excluded(text, topics):
         paper.score = 0.0
-        paper.score_reasons = ["未命中 LLM 核心锚点"]
+        paper.score_reasons = ["命中排除项"]
         return paper
-    paper.topic_scores = _keyword_topics(paper, topics)
-    if not paper.topic_scores or max(paper.topic_scores.values(), default=0) < MIN_KEYWORD_RELEVANCE:
+    keyword_topics = _keyword_topics(paper, topics)
+    anchor_ok = any(anchor.casefold() in text for anchor in anchors)
+    keyword_path = anchor_ok and max(keyword_topics.values(), default=0) >= keyword_gate
+    semantic_path = paper.semantic_score is not None and paper.semantic_score >= semantic_gate
+    if not (keyword_path or semantic_path):
         paper.score = 0.0
-        paper.score_reasons = ["训练或推理子主题仅有弱命中"]
+        paper.score_reasons = ["未达关键词或语义相关阈值"]
         return paper
-    matched = [topic.title for topic in topics if topic.slug in paper.topic_scores]
-    paper.score_reasons = [f"命中主题：{'、'.join(matched)}"]
+    if keyword_topics:
+        paper.topic_scores = keyword_topics
+        matched = [topic.title for topic in topics if topic.slug in keyword_topics]
+        paper.score_reasons = [f"命中主题：{'、'.join(matched)}"]
+    else:
+        paper.topic_scores = seeded
+        matched = [topic.title for topic in topics if topic.slug in seeded]
+        paper.score_reasons = [f"语义相关主题：{'、'.join(matched)}"] if matched else ["语义相关"]
     if paper.venue:
         paper.score_reasons.append(f"已录用至 {paper.venue}")
     if paper.code_url:

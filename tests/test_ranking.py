@@ -1,7 +1,7 @@
 import unittest
 
 from paper_collector.models import Paper, Topic
-from paper_collector.ranking import rank, rescore
+from paper_collector.ranking import classify_and_score, rank, rescore
 
 
 def paper(**overrides):
@@ -59,3 +59,42 @@ class RankingTests(unittest.TestCase):
         selected = rank([paper()], [topic], 1)
         rescore(selected)
         self.assertEqual(sum(reason.startswith("优势：") for reason in selected[0].score_reasons), 1)
+
+    def test_semantic_path_rescues_paper_without_keywords(self):
+        topic = Topic("serving", "推理系统", ["speculative decoding"])
+        candidate = paper(
+            title="Latent retrieval over large corpora",
+            abstract="A new index structure for retrieval.",
+            semantic_score=75.0,
+            topic_scores={"serving": 0.75},
+        )
+        scored = classify_and_score(candidate, [topic])
+        self.assertGreater(scored.score, 0)
+        self.assertEqual(max(scored.topic_scores, key=scored.topic_scores.get), "serving")
+
+    def test_paper_with_no_keyword_or_semantic_signal_is_dropped(self):
+        topic = Topic("serving", "推理系统", ["speculative decoding"])
+        candidate = paper(
+            title="Latent retrieval over corpora",
+            abstract="A new index structure.",
+            semantic_score=20.0,
+        )
+        self.assertEqual(classify_and_score(candidate, [topic]).score, 0.0)
+
+    def test_exclude_blocks_even_with_semantic_signal(self):
+        topic = Topic("serving", "推理系统", ["serving"], ["speech recognition"])
+        candidate = paper(
+            title="Speech recognition serving",
+            abstract="Serving for speech recognition.",
+            semantic_score=95.0,
+            topic_scores={"serving": 0.9},
+        )
+        self.assertEqual(classify_and_score(candidate, [topic]).score, 0.0)
+
+    def test_semantic_score_dominates_relevance(self):
+        topic = Topic("serving", "推理系统", ["speculative decoding", "kv cache"])
+        candidate = paper(semantic_score=90.0)
+        classify_and_score(candidate, [topic])
+        # keyword_relevance = 63 (one title + one abstract hit); semantic = 90.
+        # new blend = 0.35*63 + 0.65*90 = 80.55  (old 0.6/0.4 blend would be 73.8)
+        self.assertAlmostEqual(candidate.score_breakdown["relevance"], 80.5, delta=1.0)
