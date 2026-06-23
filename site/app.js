@@ -51,7 +51,21 @@ function renderCard(paper, index, template) {
   const metaEl = card.querySelector(".meta");
   if (meta.length) { metaEl.hidden = false; metaEl.innerHTML = meta.join(""); }
 
-  card.querySelector(".abstract").textContent = paper.summary_zh || paper.abstract;
+  const abstractEl = card.querySelector(".abstract");
+  const fullAbstract = (paper.abstract || "").trim();
+  if (paper.summary_zh) {
+    const blocks = [`<p class="abstract-zh">${escapeHtml(paper.summary_zh)}</p>`];
+    if (fullAbstract) blocks.push(`<p class="abstract-en"><span class="abstract-label">原文摘要</span>${escapeHtml(fullAbstract)}</p>`);
+    abstractEl.innerHTML = blocks.join("");
+  } else {
+    abstractEl.textContent = fullAbstract;
+  }
+  const abstractToggle = card.querySelector(".abstract-toggle");
+  abstractToggle.addEventListener("click", () => {
+    const collapsed = abstractEl.classList.toggle("is-collapsed");
+    abstractToggle.setAttribute("aria-expanded", String(!collapsed));
+    abstractToggle.textContent = collapsed ? "展开全文 ▾" : "收起 ▴";
+  });
 
   const breakdown = paper.score_breakdown || {};
   const rows = breakdownOrder.filter((key) => key in breakdown).map((key) => {
@@ -67,7 +81,7 @@ function renderCard(paper, index, template) {
   const risk = card.querySelector(".risk");
   if (paper.risk_zh) { risk.hidden = false; risk.textContent = `注意：${paper.risk_zh}`; }
 
-  card.querySelector(".paper-link").href = paper.pdf_url || paper.abs_url;
+  card.querySelector(".paper-link").href = paper.abs_url || paper.pdf_url;
   card.querySelector(".reasons").innerHTML = (paper.score_reasons || []).map((reason) => `<span class="reason">${escapeHtml(reason)}</span>`).join("");
 
   const savedFeedback = localStorage.getItem(`paper-feedback:${paper.paper_id}`);
@@ -89,8 +103,23 @@ function render() {
   grid.setAttribute("aria-busy", "false");
   papers.forEach((paper, index) => grid.append(renderCard(paper, index, template)));
 
-  // Fill score meters and breakdown bars on the next frame so the width transition plays.
-  requestAnimationFrame(() => grid.querySelectorAll("i[data-w]").forEach((bar) => { bar.style.width = `${bar.dataset.w}%`; }));
+  // On the next frame, fill score meters/breakdown bars (so the width transition plays) and
+  // reveal the "展开全文" toggle only on cards whose abstract is actually clipped. Re-run after
+  // web fonts load, since line heights — and thus overflow — can shift once the font swaps in.
+  const settle = () => {
+    grid.querySelectorAll("i[data-w]").forEach((bar) => { bar.style.width = `${bar.dataset.w}%`; });
+    grid.querySelectorAll(".abstract.is-collapsed").forEach((el) => {
+      const toggle = el.nextElementSibling;
+      if (el.scrollHeight > el.clientHeight + 4) {
+        if (toggle) toggle.hidden = false;
+      } else {
+        el.classList.remove("is-collapsed");
+        if (toggle) toggle.hidden = true;
+      }
+    });
+  };
+  requestAnimationFrame(settle);
+  if (document.fonts?.ready) document.fonts.ready.then(settle);
 
   $("#paper-count").textContent = papers.length === state.papers.length ? `${papers.length} 篇入选` : `${papers.length} / ${state.papers.length} 篇`;
   const empty = $("#empty");
