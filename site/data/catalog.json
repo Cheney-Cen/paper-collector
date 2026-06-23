@@ -1,7 +1,546 @@
 {
   "date": "全部历史",
-  "selected_count": 23,
+  "selected_count": 35,
   "papers": [
+    {
+      "paper_id": "2606.23678v1",
+      "title": "AIR: Adaptive Interleaved Reasoning with Code in MLLMs",
+      "abstract": "Following the paradigm shift initiated by OpenAI o3, interleaved reasoning with code to enhance multimodal large language models (MLLMs) has become a pivotal research frontier. The existing literature focuses primarily on tool-use within vision-perception tasks. However, such approaches typically rely on predefined heuristics for visual manipulation and are inherently incapable of addressing numerical computation problems due to their exclusive focus on visual operations. This paper empowers MLLMs with adaptive interleaved reasoning capabilities through extended reinforcement learning training on code-augmented complex numerical computation tasks. To this end, we propose a comprehensive three-component solution consisting of: a two-stage cold-start data construction pipeline, data filtering strategies for RL dataset curation, and an adaptive tool-invocation strategy leveraging a group-constrained reward function for interleaved reasoning trajectories. Extensive experiments demonstrate that after Reinforcement Learning training with the group-constrained reward function, performance improves by an average of 6.1 percentage points (pp) on evaluation benchmarks. Specifically, the accuracy for interleaved reasoning samples increases by 9.9 pp, and the overall success rate of tool-use exceeds 95%. Our data and code are available at: https://github.com/CongHan0808/AIR.git.",
+      "authors": [
+        "Cong Han",
+        "Xiaohan Lan",
+        "Haibo Qiu",
+        "Yujie Zhong"
+      ],
+      "published": "2026-06-22T17:58:54Z",
+      "updated": "2026-06-22T17:58:54Z",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2606.23678v1",
+      "abs_url": "http://arxiv.org/abs/2606.23678v1",
+      "source": "arXiv",
+      "venue": null,
+      "code_url": null,
+      "cited_by_count": null,
+      "topic_scores": {
+        "reasoning": 0.63
+      },
+      "semantic_score": null,
+      "personal_score": null,
+      "score_breakdown": {
+        "relevance": 63.0,
+        "quality": 61,
+        "novelty": 84.8,
+        "practical": 18,
+        "credibility": 35
+      },
+      "confidence": 59,
+      "risk_zh": null,
+      "llm_scores": {},
+      "score": 58.2,
+      "score_reasons": [
+        "命中主题：推理时扩展",
+        "优势：新颖 85、匹配 63"
+      ],
+      "summary_zh": null
+    },
+    {
+      "paper_id": "2606.23566v1",
+      "title": "LangMAP: A Language-Adaptive Approach to Tokenization",
+      "abstract": "Language-specific tokenizers improve tokenization quality and the downstream performance of models on those languages. However, using such a tokenizer comes at a cost: either a new model must be trained from scratch, or the vocabulary of an existing pretrained model must be adapted. We propose Language-adaptive Maximum a Posteriori (LangMAP) Tokenization, a tokenization scheme that extends the UnigramLM algorithm to the multilingual setting, producing language-specific tokenization from a single shared vocabulary. Notably, LangMAP can be used when training a multilingual language model from scratch or to adapt a pretrained model's tokenizer to individual languages without changing its vocabulary. While language labels are required at training time, a key feature of the algorithm is that it then performs language-specific tokenization at inference without knowledge of the input's language. Across 14 open-source tokenizers, 9 natural languages, and 9 programming languages, LangMAP improves morphological boundary alignment and, for all coding languages tested, alignment with abstract syntax tree (AST) leaf boundaries. In fine-tuning experiments, results are mixed: LangMAP improves target-language grammatical acceptability (MultiBLiMP) on the languages tested; its benefits are less consistent on knowledge-related tasks (Global-PIQA, Belebele).",
+      "authors": [
+        "Clara Meister",
+        "Suchir Salhan",
+        "Andrzej Szablewski",
+        "Pietro Lesci",
+        "Paula Buttery",
+        "Tiago Pimentel"
+      ],
+      "published": "2026-06-22T16:32:00Z",
+      "updated": "2026-06-22T16:32:00Z",
+      "categories": [
+        "cs.CL"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2606.23566v1",
+      "abs_url": "http://arxiv.org/abs/2606.23566v1",
+      "source": "arXiv",
+      "venue": null,
+      "code_url": null,
+      "cited_by_count": null,
+      "topic_scores": {
+        "post-training": 0.36
+      },
+      "semantic_score": null,
+      "personal_score": null,
+      "score_breakdown": {
+        "relevance": 36.0,
+        "quality": 43,
+        "novelty": 86.7,
+        "practical": 36,
+        "credibility": 35
+      },
+      "confidence": 43,
+      "risk_zh": null,
+      "llm_scores": {},
+      "score": 45.7,
+      "score_reasons": [
+        "命中主题：微调与对齐",
+        "优势：新颖 87、质量 43"
+      ],
+      "summary_zh": null
+    },
+    {
+      "paper_id": "2606.23546v1",
+      "title": "The Energy Consumption of Transformer Fine-Tuning: A Roofline-Inspired Scaling Model",
+      "abstract": "Transformer-based models underpin modern natural language processing but incur rapidly growing computational and energy costs. As training scales in both model size and parallelism, accurately predicting energy consumption has become critical for sustainable and cost-aware system design. We present a framework for modeling the energy consumption of Transformer training on multiple GPUs. Using controlled architectural sweeps of BERT models, we relate measured energy to lightweight proxies for compute, memory traffic, and hardware efficiency. Inspired by roofline models, our approach incorporates a speedup-based hardware-efficiency factor that captures the effects of tensor parallelism and fully sharded data parallelism. We derive a scaling law model that accurately predicts training energy across heterogeneous configurations.",
+      "authors": [
+        "Mansour Zoubeirou a Mayaki"
+      ],
+      "published": "2026-06-22T16:18:06Z",
+      "updated": "2026-06-22T16:18:06Z",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.AR",
+        "cs.CL",
+        "cs.DC"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2606.23546v1",
+      "abs_url": "http://arxiv.org/abs/2606.23546v1",
+      "source": "arXiv",
+      "venue": null,
+      "code_url": null,
+      "cited_by_count": null,
+      "topic_scores": {
+        "pretraining": 0.18,
+        "post-training": 0.45
+      },
+      "semantic_score": null,
+      "personal_score": null,
+      "score_breakdown": {
+        "relevance": 45.0,
+        "quality": 31,
+        "novelty": 91.1,
+        "practical": 54,
+        "credibility": 28
+      },
+      "confidence": 43,
+      "risk_zh": null,
+      "llm_scores": {},
+      "score": 47.8,
+      "score_reasons": [
+        "命中主题：预训练与优化、微调与对齐",
+        "优势：新颖 91、实用 54"
+      ],
+      "summary_zh": null
+    },
+    {
+      "paper_id": "2606.23521v1",
+      "title": "Concordia: JIT-Compiled Persistent-Kernel Checkpointing for Fault-Tolerant LLM Inference",
+      "abstract": "Long-running LLM agents keep valuable state resident on GPUs: KV caches, request schedulers, communication state, and sometimes online adapters. Losing this state after a GPU or communicator failure can discard minutes to hours of work, yet existing recovery mechanisms either restart the whole serving stack or require application-specific checkpoint logic inside every attention and runtime component. This paper argues that fault tolerance for such workloads needs a GPU-resident execution context: checkpoint hooks must run at device synchronization points, observe binary kernels that frameworks and libraries actually execute, and recover without putting the host CPU on the critical path. We present Concordia, a runtime that uses a device-resident persistent kernel as the substrate for fault-tolerant LLM inference. Concordia interposes on GPU module loading and supports PTX- and SASS-level instrumentation, allowing checkpoint and pause hooks to be inserted below framework code and library boundaries. For each registered LLM state region, Concordia JIT-compiles a specialized delta-checkpoint handler -- for example, a KV-block scanner, adapter-page scanner, or recovery applier -- and hot-swaps it into the persistent kernel's operator table. The persistent kernel consumes a lock-free ring buffer of compute, checkpoint, append-log, and recovery tasks, so the same always-on executor triggers dirty-page detection, stages deltas, and appends committed records to a CPU-visible log in CXL memory or host DRAM.",
+      "authors": [
+        "Yuhang Gan",
+        "Yiwei Yang",
+        "Yuyi Li",
+        "Xiangyu Gao",
+        "Yichen Wang",
+        "Rain Jiang",
+        "Xiaoning Ding",
+        "Andi Quinn",
+        "Chen Qian"
+      ],
+      "published": "2026-06-22T16:06:11Z",
+      "updated": "2026-06-22T16:06:11Z",
+      "categories": [
+        "cs.DC",
+        "cs.LG"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2606.23521v1",
+      "abs_url": "http://arxiv.org/abs/2606.23521v1",
+      "source": "arXiv",
+      "venue": null,
+      "code_url": null,
+      "cited_by_count": null,
+      "topic_scores": {
+        "serving": 0.81
+      },
+      "semantic_score": null,
+      "personal_score": null,
+      "score_breakdown": {
+        "relevance": 81.0,
+        "quality": 22,
+        "novelty": 92.3,
+        "practical": 45,
+        "credibility": 35
+      },
+      "confidence": 35,
+      "risk_zh": null,
+      "llm_scores": {},
+      "score": 58.6,
+      "score_reasons": [
+        "命中主题：推理系统",
+        "优势：新颖 92、匹配 81"
+      ],
+      "summary_zh": null
+    },
+    {
+      "paper_id": "2606.23419v1",
+      "title": "GRINQH: Graded Input-based Quantization Hierarchy for Efficient LLM Generation",
+      "abstract": "Autoregressive decoding with LLMs is primarily bottlenecked by GPU memory bandwidth, especially in edge-computing settings. While quantization is essential for mitigating this bottleneck, most existing methods treat inference as a uniform process and fail to account for the asymmetry between the compute-bound prefill stage and the memory-bound decoding stage. We propose GRINQH (GRaded INput-based Quantization Hierarchy), a weight-only post-training quantization framework that accelerates decoding by unifying quantization and sparsification. GRINQH leverages activation magnitudes as a proxy for computational importance to dynamically assign weight channels to different precision levels, enabling flexible average bit widths during decoding. Evaluated on Llama3 and Qwen3 models, GRINQH outperforms state-of-the-art fixed- and mixed-precision baselines at comparable 3- and 4-bit settings, even enabling effective 2-bit generation. We experimentally verify theoretical speedups by leveraging a hierarchical nested memory layout for multi-precision storage in a custom GPU kernel. Ultimately, GRINQH establishes a new state-of-the-art Pareto frontier for LLM generation, enabling a dynamic trade-off between generation quality and inference speed.",
+      "authors": [
+        "Jette Oberländer",
+        "Jan Finkbeiner",
+        "Catherine M. Schöfmann",
+        "Emre Neftci"
+      ],
+      "published": "2026-06-22T14:42:34Z",
+      "updated": "2026-06-22T14:42:34Z",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2606.23419v1",
+      "abs_url": "http://arxiv.org/abs/2606.23419v1",
+      "source": "arXiv",
+      "venue": null,
+      "code_url": null,
+      "cited_by_count": null,
+      "topic_scores": {
+        "post-training": 0.18,
+        "efficiency": 0.63
+      },
+      "semantic_score": null,
+      "personal_score": null,
+      "score_breakdown": {
+        "relevance": 63.0,
+        "quality": 79,
+        "novelty": 92.5,
+        "practical": 54,
+        "credibility": 35
+      },
+      "confidence": 75,
+      "risk_zh": null,
+      "llm_scores": {},
+      "score": 68.0,
+      "score_reasons": [
+        "命中主题：微调与对齐、压缩与高效推理",
+        "优势：新颖 92、质量 79"
+      ],
+      "summary_zh": null
+    },
+    {
+      "paper_id": "2606.23406v1",
+      "title": "HyperQuant: A Rate-Distortion-Optimal Quantization Pipeline for Large Language and Diffusion Models",
+      "abstract": "We present HyperQuant (Hadamard, optimallY Packing, Entropy Rice-coding), a unified post-training quantization pipeline for the weights and the KV cache of large language and diffusion transformers. Across a suite of self-contained experiments (Table 1), HyperQuant outperforms the recent HIGGS scheme at every operating point from 3 to 5 bits per scalar (bps) on weights, and beats both TurboQuant and OCTOPUS on KV quantization down to 1.7 bps. Beyond the LLM setting, HyperQuant quantizes the 19B-parameter LTX-2 DiT video model with no observable per-frame artifacts. End-to-end on an H100 at 4 bps, HyperQuant compresses the linear weights ~3.9x and the KV cache ~3.79x at near-lossless quality. HyperQuant combines four known ideas into a single construction: (i) a per-tile Randomized Hadamard Transform that makes the per-coordinate distribution of weights and activations approximately Gaussian; (ii) quantization to a low-dimensional optimal lattice (E8, D4, A2, or Z); (iii) lossless bit-stripping and near-entropy-optimal variable-length Rice coding of the lattice indices; and (iv) bias-correction methods for the KV cache that keep the reconstruction unbiased under inner products, preserving attention semantics. We further integrate the pipeline with 8-bit and 4-bit Tensor-Core MMA paths (fp8-e4m3, int8, nvfp4, mxfp4), and find that int8 beats fp8 on the post-RHT lattice output. Project page: https://moonmath.ai/hyperquant/",
+      "authors": [
+        "Yuval Domb",
+        "Hadar Sackstein",
+        "Tomer Solberg"
+      ],
+      "published": "2026-06-22T14:30:47Z",
+      "updated": "2026-06-22T14:30:47Z",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2606.23406v1",
+      "abs_url": "http://arxiv.org/abs/2606.23406v1",
+      "source": "arXiv",
+      "venue": null,
+      "code_url": null,
+      "cited_by_count": null,
+      "topic_scores": {
+        "post-training": 0.18,
+        "serving": 0.18,
+        "efficiency": 0.63
+      },
+      "semantic_score": null,
+      "personal_score": null,
+      "score_breakdown": {
+        "relevance": 63.0,
+        "quality": 60,
+        "novelty": 93.8,
+        "practical": 41,
+        "credibility": 35
+      },
+      "confidence": 51,
+      "risk_zh": null,
+      "llm_scores": {},
+      "score": 61.8,
+      "score_reasons": [
+        "命中主题：微调与对齐、推理系统、压缩与高效推理",
+        "优势：新颖 94、匹配 63"
+      ],
+      "summary_zh": null
+    },
+    {
+      "paper_id": "2606.23375v1",
+      "title": "Measuring & Mitigating Over-Alignment for LLMs in Multilingual Criminal Law Courts",
+      "abstract": "While the wider applicability of LLMs in the legal field is currently debated due to their reliability and the gravity of any errors, narrow uses with well-understood and mitigated risks have emerged. Notably the Swiss Federal Supreme Court uses small on-premises models for tentative translations and short-passage summarization across the four official languages. However, such usage is challenging in the context of Criminal Law. Since rulings and cases employees work on routinely can contain detailed descriptions of violent and sexual offenses, their legitimate work is compromised by refusals and disclaimers due to the activation of model guardrails (over-alignment). To measure this phenomenon, we introduce TF-RefusalBench, a multilingual benchmark for criminal-law translation and summarization derived from public Swiss Supreme Court rulings. TF-RefusalBench contains 5,200 total prompts across French, German, Italian, and English, corresponding to common task prompts and passages likely to trigger refusal. We then use TF-RefusalBench to show that over-alignment is a multifaceted phenomenon, influenced by the model and the prompt and text languages being processed, and that its impact cannot be evaluated solely from an over-refusal perspective, given the disclaimer's impact on task faithfulness. Finally, we evaluate approaches to enable on-premises LLMs for Criminal Law Tasks, demonstrating that while prompting can be effective, abliteration (refusal directions ablation) eliminates refusal with minimal impact on task performance.",
+      "authors": [
+        "Arthur Wuhrmann",
+        "Gaetan Stein",
+        "Daniel Brunner",
+        "Andrei Kucharavy"
+      ],
+      "published": "2026-06-22T14:08:08Z",
+      "updated": "2026-06-22T14:08:08Z",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2606.23375v1",
+      "abs_url": "http://arxiv.org/abs/2606.23375v1",
+      "source": "arXiv",
+      "venue": null,
+      "code_url": null,
+      "cited_by_count": null,
+      "topic_scores": {
+        "post-training": 0.63
+      },
+      "semantic_score": null,
+      "personal_score": null,
+      "score_breakdown": {
+        "relevance": 63.0,
+        "quality": 57,
+        "novelty": 91.1,
+        "practical": 18,
+        "credibility": 35
+      },
+      "confidence": 59,
+      "risk_zh": null,
+      "llm_scores": {},
+      "score": 58.2,
+      "score_reasons": [
+        "命中主题：微调与对齐",
+        "优势：新颖 91、匹配 63"
+      ],
+      "summary_zh": null
+    },
+    {
+      "paper_id": "2606.23357v1",
+      "title": "SOAP-Bubbles: Structured Weight Uncertainty for Neural Networks",
+      "abstract": "Structured weight-uncertainty can improve many aspects of deep learning, but it remains costly to estimate and difficult to implement. Here, we show that these issues can be addressed by adapting the SOAP optimizer. Our key idea is to run IVON, an existing diagonal-covariance variational method, in the eigenspace of SOAP's preconditioner and then use the preconditioner to transform the diagonal estimate into a non-diagonal covariance. The resulting method has costs similar to those of SOAP and requires no drastic changes to training pipelines. We call the posteriors obtained in this way SOAP-Bubbles and our new optimizer Eigenspace-VON (EVON). We show that, for logistic regression, EVON recovers the exact Gaussian covariance and that, for language model pretraining, it yields significantly better results than existing diagonal-covariance methods. Our work makes it easier to estimate more expressive posterior distributions for deep learning at scale.",
+      "authors": [
+        "Adrian Robert Minut",
+        "Nico Daheim",
+        "Marco Miani",
+        "Mohammad Emtiyaz Khan",
+        "Wu Lin",
+        "Thomas Möllenhoff"
+      ],
+      "published": "2026-06-22T13:56:59Z",
+      "updated": "2026-06-22T13:56:59Z",
+      "categories": [
+        "cs.LG"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2606.23357v1",
+      "abs_url": "http://arxiv.org/abs/2606.23357v1",
+      "source": "arXiv",
+      "venue": null,
+      "code_url": null,
+      "cited_by_count": null,
+      "topic_scores": {
+        "pretraining": 0.36
+      },
+      "semantic_score": null,
+      "personal_score": null,
+      "score_breakdown": {
+        "relevance": 36.0,
+        "quality": 34,
+        "novelty": 91.8,
+        "practical": 27,
+        "credibility": 35
+      },
+      "confidence": 35,
+      "risk_zh": null,
+      "llm_scores": {},
+      "score": 43.2,
+      "score_reasons": [
+        "命中主题：预训练与优化",
+        "优势：新颖 92、匹配 36"
+      ],
+      "summary_zh": null
+    },
+    {
+      "paper_id": "2606.23301v1",
+      "title": "EHR-Complex: Benchmarking Medical Agents for Complex Clinical Reasoning",
+      "abstract": "Clinical agents promise to democratize access to electronic health records (EHRs), yet existing benchmarks fail to reflect the complexity of practical EHR analysis, e.g., often operating on idealized, clean EHRs via static SQL generation rather than interactive execution. In this work, we introduce EHR-Complex, a large-scale benchmark designed for interactive clinical database reasoning. Built on the large MIMIC-IV substrate (365K patients, 31 tables, 500M+ records), EHR-Complex comprises about 52K tasks spanning six clinical intents, supporting both patient-level and population-level queries, where each task requires an agent to interact with a sandboxed environment by executing SQL queries or Python code. Notably, EHR-Complex considers the real-world SQL task complexity for longitudinal multi-table aggregation and compositional reasoning, resulting in 31.93 SQL structural components per query on average. Evaluation results on EHR-Complex reveal the clinical difficulty of these EHR reasoning scenarios, with the top-performing model achieving only 62.3% exact-match accuracy. Pass^k consistency drops below 50% for nearly all evaluated models at k=4, exposing broad stochastic fragility. A fine-grained analysis of more than 3,800 failed trajectories for representative LLMs reveals three dominant failure modes: SQL logic errors, medical-code lookup failures, and semantic misunderstandings. EHR-Complex provides a rigorous testbed for clinical agents and highlights remaining gaps in robust reasoning for large-scale EHR analysis.",
+      "authors": [
+        "Yitong Qiao",
+        "Lei Liu",
+        "Yue Shen",
+        "Jian Wang",
+        "Jinjie Gu",
+        "Zhixuan Chu",
+        "Kui Ren"
+      ],
+      "published": "2026-06-22T13:14:21Z",
+      "updated": "2026-06-22T13:14:21Z",
+      "categories": [
+        "cs.AI"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2606.23301v1",
+      "abs_url": "http://arxiv.org/abs/2606.23301v1",
+      "source": "arXiv",
+      "venue": null,
+      "code_url": null,
+      "cited_by_count": null,
+      "topic_scores": {
+        "reasoning": 0.63
+      },
+      "semantic_score": null,
+      "personal_score": null,
+      "score_breakdown": {
+        "relevance": 63.0,
+        "quality": 72,
+        "novelty": 84.9,
+        "practical": 18,
+        "credibility": 35
+      },
+      "confidence": 51,
+      "risk_zh": null,
+      "llm_scores": {},
+      "score": 61.1,
+      "score_reasons": [
+        "命中主题：推理时扩展",
+        "优势：新颖 85、质量 72"
+      ],
+      "summary_zh": null
+    },
+    {
+      "paper_id": "2606.23124v1",
+      "title": "PRIDE: Privileged Information-enhanced Distillation for Empathetic Dialogue Generation",
+      "abstract": "Large language models have demonstrated significant capabilities in generating diverse and context-aware responses for empathetic dialogue. However, their computational demands severely limit their deployment in resource-constrained environments. While knowledge distillation offers a promising compression solution, it often fails to transfer the nuanced understanding essential for empathy, as it overlooks the implicit contextual cues that guide human connection. To bridge this gap, we propose a \\textbf{pr}ivileged \\textbf{i}nformation-enhanced knowledge \\textbf{d}istillation method for \\textbf{e}mpathetic dialogue generation (PRIDE). Our method leverages privileged information, such as expert psychological annotations or future event summaries, which is available exclusively during training but unavailable at inference time. This allows us to transfer the teacher model's empathetic reasoning to smaller models without relying on extra inputs during deployment. Specifically, PRIDE has three key components: (1) An empathy-reasoning prompt that guides the teacher to explicitly decompose the empathetic process into understanding feelings and analyzing situations step-by-step; (2) A multi-source attention mechanism that directs the student to effectively integrate privileged information; (3) A dual-alignment loss that combines reversed Kullback-Leibler divergence and maximum mean discrepancy to ensure robust knowledge transfer at both logit and feature levels. Experiments on multi-modal and text-only datasets demonstrate that our method achieves competitive performance, and in some cases matches or even surpasses larger teacher models in terms of accuracy and semantic relevance.",
+      "authors": [
+        "Jiaqiang Wu",
+        "Zhouan Zhu",
+        "Shangfei Wang"
+      ],
+      "published": "2026-06-22T10:09:52Z",
+      "updated": "2026-06-22T10:09:52Z",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2606.23124v1",
+      "abs_url": "http://arxiv.org/abs/2606.23124v1",
+      "source": "arXiv",
+      "venue": null,
+      "code_url": null,
+      "cited_by_count": null,
+      "topic_scores": {
+        "post-training": 0.18,
+        "reasoning": 0.18,
+        "efficiency": 0.81
+      },
+      "semantic_score": null,
+      "personal_score": null,
+      "score_breakdown": {
+        "relevance": 81.0,
+        "quality": 52,
+        "novelty": 89.2,
+        "practical": 18,
+        "credibility": 35
+      },
+      "confidence": 51,
+      "risk_zh": null,
+      "llm_scores": {},
+      "score": 63.2,
+      "score_reasons": [
+        "命中主题：微调与对齐、推理时扩展、压缩与高效推理",
+        "优势：新颖 89、匹配 81"
+      ],
+      "summary_zh": null
+    },
+    {
+      "paper_id": "2606.23108v1",
+      "title": "TTFT-Aware Graph Chain-of-Thought:Distance-Indexed Neural A* for Low-Hallucination Multi-Hop Medical Reasoning",
+      "abstract": "Hallucinations and opaque reasoning remain unacceptable failure modes for clinical LLMs. We present a production-grade GraphRAG stack that constrains answers to verifiable graph chain-of-thought paths in a heterogeneous, ~700K-node medical knowledge graph powering a fertility assistant. The core idea is targeted navigation: a directed Pruned Landmark Labeling (PLL) oracle provides exact distances for sub-millisecond feasibility checks and simple-path enumeration, while a lightweight AStarNet heuristic operates strictly within the PLL corridor to prioritize clinically plausible expansions. We score and pack a small, diverse set of paths (CUI/semantic-type overlap, length prior, provenance priors) to condition generation, yielding compact prompts and improved Time to First Token (TTFT). On fertility-focused queries, the hybrid (PLL+AStarNet) establishes a better latency/recall Pareto frontier than text-only RAG and single-component baselines, lowers TTFT, and reduces clinician-audited hallucinations while preserving explanation clarity. The result is a practical recipe for explainable, low-hallucination multi-hop medical reasoning ready for real-world deployment.",
+      "authors": [
+        "Bechir Dardouri",
+        "Kaïs Zhioua",
+        "Yassine Msaddak"
+      ],
+      "published": "2026-06-22T09:51:28Z",
+      "updated": "2026-06-22T09:51:28Z",
+      "categories": [
+        "cs.AI"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2606.23108v1",
+      "abs_url": "http://arxiv.org/abs/2606.23108v1",
+      "source": "arXiv",
+      "venue": null,
+      "code_url": null,
+      "cited_by_count": null,
+      "topic_scores": {
+        "reasoning": 0.63
+      },
+      "semantic_score": null,
+      "personal_score": null,
+      "score_breakdown": {
+        "relevance": 63.0,
+        "quality": 43,
+        "novelty": 92.0,
+        "practical": 36,
+        "credibility": 35
+      },
+      "confidence": 43,
+      "risk_zh": null,
+      "llm_scores": {},
+      "score": 56.5,
+      "score_reasons": [
+        "命中主题：推理时扩展",
+        "优势：新颖 92、匹配 63"
+      ],
+      "summary_zh": null
+    },
+    {
+      "paper_id": "2606.23104v1",
+      "title": "ReNIO: Reweighting Negative Trajectory Importance for LLM On-Policy Distillation",
+      "abstract": "On-policy distillation (OPD) improves LLM reasoning by training a student model on its own generated outputs, but standard OPD treats all student-generated outputs (SGOs) equally regardless of their informativeness. We observe a consistent asymmetry in controlled filtering experiments: in both OPD and on-policy self distillation (OPSD), training only on incorrect SGOs outperforms training only on correct ones. Our further analysis suggests that models trained on correct-only SGOs tend to generate shorter reasoning traces and show weaker reflection behavior, while incorrect SGOs better preserve exploratory reasoning near the model's capability boundary. To exploit this signal without requiring full answer-containing rollouts, we introduce ReNIO, which Reweights Negative trajectory Importance for LLM On-policy distillation. By using the student-to-teacher probability ratio, ReNIO identifies pivotal tokens leading to wrong reasoning traces and aggregates their information into a normalized sample weight, inherently assigning larger weights to likely negative trajectories without observing the correctness of final-answer. Since Re-NIO only uses prefix-conditioned token probabilities, it preserves OPD's prefix training advantage over full-rollout reinforcement learning. Across both mathematical reasoning and code generation tasks, ReNIO improves both OPD and OPSD, with representative relative gains of up to 8.90% for Qwen3-1.7B and 10.00% for R1-Distill-Qwen-7B on mathematical reasoning benchmarks. Code repo: https://github.com/BDML-lab/ReNIO.",
+      "authors": [
+        "Chen Lin",
+        "Kedi Chen",
+        "Wei Zhang"
+      ],
+      "published": "2026-06-22T09:46:35Z",
+      "updated": "2026-06-22T09:46:35Z",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2606.23104v1",
+      "abs_url": "http://arxiv.org/abs/2606.23104v1",
+      "source": "arXiv",
+      "venue": null,
+      "code_url": null,
+      "cited_by_count": null,
+      "topic_scores": {
+        "reasoning": 0.18,
+        "efficiency": 0.63
+      },
+      "semantic_score": null,
+      "personal_score": null,
+      "score_breakdown": {
+        "relevance": 63.0,
+        "quality": 65,
+        "novelty": 87.1,
+        "practical": 27,
+        "credibility": 35
+      },
+      "confidence": 59,
+      "risk_zh": null,
+      "llm_scores": {},
+      "score": 60.6,
+      "score_reasons": [
+        "命中主题：推理时扩展、压缩与高效推理",
+        "优势：新颖 87、质量 65"
+      ],
+      "summary_zh": null
+    },
     {
       "paper_id": "2606.20560v1",
       "title": "How Transparent is DiffusionGemma?",
