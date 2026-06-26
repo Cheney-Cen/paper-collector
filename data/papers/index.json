@@ -2801,5 +2801,563 @@
       "优势：新颖 90、匹配 36"
     ],
     "summary_zh": null
+  },
+  "2606.26797v1": {
+    "paper_id": "2606.26797v1",
+    "title": "Reasoning Quality Emerges Early: Data Curation for Reasoning Models",
+    "abstract": "Supervised fine-tuning (SFT) on a small, high-quality set of long reasoning traces is an effective approach for eliciting strong reasoning capabilities in Large Language Models (LLMs). However, existing methods for curating high-quality SFT data rely heavily on strong reasoning models to filter examples based on diversity and difficulty, making the curation process costly while often yielding suboptimal data quality. In this work, we show that diverse and challenging reasoning examples can be identified using only the initial reasoning tokens. Specifically, we demonstrate that difficult problems can be reliably detected based on the loss of the first 100 reasoning tokens evaluated at a randomly perturbed checkpoint of the pretrained model. We further show that examples exhibiting similar loss patterns over their first 1k reasoning tokens across a small number of perturbed checkpoints extrapolating along the fine-tuning trajectory provably induce similar gradients. We validate our approach through extensive experiments on fine-tuning Qwen2.5-7B and Llama3.1-8B models on the M23K medical reasoning and OpenThoughts-Math datasets. Our method outperforms existing baselines by up to 1.7% while being 91% more token efficient.",
+    "authors": [
+      "Hongyi Henry Jin",
+      "Wenhan Yang",
+      "Meysam Ghaffari",
+      "Carlos Morato",
+      "Baharan Mirzasoleiman"
+    ],
+    "published": "2026-06-25T09:32:58Z",
+    "updated": "2026-06-25T09:32:58Z",
+    "categories": [
+      "cs.LG"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.26797v1",
+    "abs_url": "http://arxiv.org/abs/2606.26797v1",
+    "source": "arXiv",
+    "venue": null,
+    "code_url": null,
+    "cited_by_count": null,
+    "topic_scores": {
+      "post-training": 0.18,
+      "reasoning": 1.0
+    },
+    "semantic_score": null,
+    "personal_score": null,
+    "score_breakdown": {
+      "relevance": 100.0,
+      "quality": 87,
+      "novelty": 82.1,
+      "practical": 36,
+      "credibility": 35
+    },
+    "confidence": 75,
+    "risk_zh": null,
+    "llm_scores": {},
+    "score": 80.2,
+    "score_reasons": [
+      "命中主题：微调与对齐、推理时扩展",
+      "优势：匹配 100、质量 87"
+    ],
+    "summary_zh": null
+  },
+  "2606.26787v1": {
+    "paper_id": "2606.26787v1",
+    "title": "AIGP: An LLM-Based Framework for Long-Term Value Alignment in E-Commerce Pricing",
+    "abstract": "Traditional dynamic pricing models in large-scale e-commerce suffer from limited interpretability, poor utilization of unstructured information, and misalignment with long-term business objectives such as cumulative Gross Merchandise Value (GMV), Return on Investment (ROI) and milestone achievement. We propose AIGP, a novel framework that leverages a Large Language Model (LLM) prompted with domain knowledge, structured data and textual context to make interpretable, knowledge-aware pricing decisions. For efficient deployment while maintaining high-quality outputs, we employ supervised fine-tuning for knowledge distillation. Central to AIGP is the Long-Term Value Estimator (LTVE), trained via offline reinforcement learning on historical data, which serves as a reward model to score candidate pricing actions and select preference pairs for Direct Preference Optimization (DPO), thereby aligning the pricing policy with long-term business objectives. Extensive offline evaluations and large-scale online A/B tests on Tao Factory demonstrate that AIGP achieves significant improvements: +13.21% in GMV, +7.59% in ROI, and +8.20% in milestone achievement rate over 14 days compared to the production baseline, while simultaneously providing interpretable and transparent pricing rationales.",
+    "authors": [
+      "Chennan Ma",
+      "Yanning Zhang",
+      "Siqi Hong",
+      "Xiuchong Wang",
+      "Fei Xiao",
+      "Keping Yang"
+    ],
+    "published": "2026-06-25T09:21:42Z",
+    "updated": "2026-06-25T09:21:42Z",
+    "categories": [
+      "cs.LG",
+      "cs.AI",
+      "cs.CL"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.26787v1",
+    "abs_url": "http://arxiv.org/abs/2606.26787v1",
+    "source": "arXiv",
+    "venue": null,
+    "code_url": null,
+    "cited_by_count": null,
+    "topic_scores": {
+      "post-training": 0.99,
+      "efficiency": 0.18
+    },
+    "semantic_score": null,
+    "personal_score": null,
+    "score_breakdown": {
+      "relevance": 99.0,
+      "quality": 59,
+      "novelty": 87.3,
+      "practical": 27,
+      "credibility": 35
+    },
+    "confidence": 43,
+    "risk_zh": null,
+    "llm_scores": {},
+    "score": 72.3,
+    "score_reasons": [
+      "命中主题：微调与对齐、压缩与高效推理",
+      "优势：匹配 99、新颖 87"
+    ],
+    "summary_zh": null
+  },
+  "2606.26986v1": {
+    "paper_id": "2606.26986v1",
+    "title": "ReaORE: Reasoning-Guided Progressive Open Relation Extraction Empowered by Large Reasoning Models",
+    "abstract": "Open Relation Extraction (OpenRE) requires a model to extract unseen relations between head and tail entities from unstructured text for real-world applications. The core challenge of OpenRE lies in achieving reliable generalization to unseen relation types. Current OpenRE approaches either employ clustering techniques, which cannot generate relation labels and suffer from poor generalization, or rely on direct relation label generation via Large Language Models (LLMs), which lack sufficient discriminative capacity to distinguish easily confused relations. To address these limitations, we propose Reasoning-guided progressive OpenRE (ReaORE), a framework for performing relation extraction through coarse-to-fine relation reasoning. Specifically, ReaORE consists of two key stages: (i) relation filtering, which reasons over multiple aspects to understand relations and instances, yielding an initial relation set, and further supplements and filters relations via embedding-based similarity to ensure the target relation is included; (ii) relation prediction, which aims to predict the target relations from the above set via fine-grained comparative reasoning to better distinguish easily confused relations. Extensive experiments on two widely used OpenRE datasets demonstrate that ReaORE outperforms existing baselines.",
+    "authors": [
+      "Xin Lin",
+      "Liang Zhang",
+      "Guoqi Ma",
+      "Hongyao Tu",
+      "Jinsong Su"
+    ],
+    "published": "2026-06-25T12:59:53Z",
+    "updated": "2026-06-25T12:59:53Z",
+    "categories": [
+      "cs.CL",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.26986v1",
+    "abs_url": "http://arxiv.org/abs/2606.26986v1",
+    "source": "arXiv",
+    "venue": null,
+    "code_url": null,
+    "cited_by_count": null,
+    "topic_scores": {
+      "reasoning": 1.0
+    },
+    "semantic_score": null,
+    "personal_score": null,
+    "score_breakdown": {
+      "relevance": 100.0,
+      "quality": 58,
+      "novelty": 84.7,
+      "practical": 18,
+      "credibility": 35
+    },
+    "confidence": 67,
+    "risk_zh": null,
+    "llm_scores": {},
+    "score": 71.1,
+    "score_reasons": [
+      "命中主题：推理时扩展",
+      "优势：匹配 100、新颖 85"
+    ],
+    "summary_zh": null
+  },
+  "2606.27091v1": {
+    "paper_id": "2606.27091v1",
+    "title": "Inherited Circuits, Learned Semantics: How Fine-Tuning Creates Evasion Vulnerabilities Invisible to Standard Evaluation",
+    "abstract": "LLMs fine-tuned for security classification are usually evaluated on held-out examples from the same distribution as their training data. We show that this can miss vulnerabilities introduced by fine-tuning itself: models can learn token-level indicator semantics that preserve canonical accuracy while failing under behavior-preserving transformations such as PowerShell alias substitution, command reconstruction, string construction, execution indirection, and case mutation. We study Foundation-Sec-8B-Instruct and its base model, Llama-3.1-8B-Instruct, on matched PowerShell classification cohorts. Causal interventions localize the classification circuit to a late-attention route inherited from Llama rather than created by fine-tuning. Fine-tuning concentrates and semantically specializes this inherited structure, improving baseline behavior while creating transformation-sensitive attack surfaces. A three-tier evasion benchmark finds Foundation-Sec misses on iwr substitution, Invoke-Expression reconstruction, and case-mutated Invoke-Expression/IEX variants that Llama does not share. We also derive a pre-deployment monitoring method: a linear probe at the classification boundary and an indicator-token sign test identify command families where canonical indicators change role after fine-tuning. These signals prioritize red-team variant generation using only canonical inputs, showing that security fine-tuning can improve task accuracy while expanding the evasion surface. These results caution against treating small task-specific fine-tunes as straightforwardly safer security classifiers: specialization can convert inherited model structure into brittle indicator rules that preserve held-out accuracy while expanding the evasion surface. Robust AI-enabled security will require specifying the full transformation space of the task and monitoring semantic drift through fine-tuning.",
+    "authors": [
+      "Ryan Fetterman"
+    ],
+    "published": "2026-06-25T14:29:03Z",
+    "updated": "2026-06-25T14:29:03Z",
+    "categories": [
+      "cs.CR",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.27091v1",
+    "abs_url": "http://arxiv.org/abs/2606.27091v1",
+    "source": "arXiv",
+    "venue": null,
+    "code_url": null,
+    "cited_by_count": null,
+    "topic_scores": {
+      "post-training": 0.63
+    },
+    "semantic_score": null,
+    "personal_score": null,
+    "score_breakdown": {
+      "relevance": 63.0,
+      "quality": 73,
+      "novelty": 88.0,
+      "practical": 27,
+      "credibility": 28
+    },
+    "confidence": 59,
+    "risk_zh": null,
+    "llm_scores": {},
+    "score": 62.1,
+    "score_reasons": [
+      "命中主题：微调与对齐",
+      "优势：新颖 88、质量 73"
+    ],
+    "summary_zh": null
+  },
+  "2606.27205v1": {
+    "paper_id": "2606.27205v1",
+    "title": "Smaller Models, Unexpected Costs: Trade-offs in LLM Quantization for Automated Program Repair",
+    "abstract": "Language Models (LLMs) are powerful toolsand have been increasingly adopted for complex software engineering tasks. As the number of parameters increases, results can often be improved, but this also imposes substantialmemory requirements. While quantization effectively reduces thememory footprint, its overall impact is often summarized onlyby benchmark scores, which mask changes in model behaviorand non-functional overheads. In this work, we conduct anempirical evaluation of LLM quantization using AutomatedProgram Repair (APR), a complex task in software engineering.We analyze 13 quantization configurations spanning differentbit-widths, methods, and target components (weights and KVcache) across six representative LLMs, evaluated on two APRbenchmarks (HumanEval-Java and Defects4J). Our findings reveal that base and quantized models can provide different sets of repaired problems with little overlap, whileretaining a comparable number of repaired problems. Althoughquantization successfully reduces memory footprints by up to85%, it increases both inference time and energy consumption,which we attribute to suboptimal hardware utilization. OurPareto trade-off analysis shows that 48% of the configurationsevaluated are strictly dominated by alternatives. Rather thanidentifying a superior quantization method, our findings highlightthat the trade-offs between effectiveness, memory footprint,and energy efficiency are sensitive to the underlying modelarchitecture and the complexity of the task.",
+    "authors": [
+      "Fernando Vallecillos-Ruiz",
+      "Giordano d'Aloisio",
+      "Max Hort",
+      "Luca Traini",
+      "Antinisca Di Marco",
+      "Leon Moonen"
+    ],
+    "published": "2026-06-25T16:02:05Z",
+    "updated": "2026-06-25T16:02:05Z",
+    "categories": [
+      "cs.SE"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.27205v1",
+    "abs_url": "http://arxiv.org/abs/2606.27205v1",
+    "source": "arXiv",
+    "venue": null,
+    "code_url": null,
+    "cited_by_count": null,
+    "topic_scores": {
+      "efficiency": 0.63
+    },
+    "semantic_score": null,
+    "personal_score": null,
+    "score_breakdown": {
+      "relevance": 63.0,
+      "quality": 60,
+      "novelty": 87.7,
+      "practical": 36,
+      "credibility": 35
+    },
+    "confidence": 51,
+    "risk_zh": null,
+    "llm_scores": {},
+    "score": 60.3,
+    "score_reasons": [
+      "命中主题：压缩与高效推理",
+      "优势：新颖 88、匹配 63"
+    ],
+    "summary_zh": null
+  },
+  "2606.27103v1": {
+    "paper_id": "2606.27103v1",
+    "title": "The Riddle Riddle: Testing Flexible Reasoning in Large Language Models and Humans",
+    "abstract": "Humans flexibly adapt their reasoning strategies to the requirements of a given problem. Large language models (LLMs) have performed well on many cognitive tasks, however, it is unclear whether this accuracy is a result of pattern matching from training data or flexible reasoning. Here, we introduce a novel paradigm to test this question: the riddle riddle paradigm. Riddle riddles are word problems written to mimic popular riddles, but altered so their answers only require literal interpretations. Identifying correct answers requires looking past the structure of each question and flexibly apply different reasoning strategies based on the content. If LLMs respond to surface features, such as form, a riddle-like structure should cause models to use an inventive reasoning strategy even when a literal interpretation suffices. Alternatively, if LLMs reason based on content, they should flexibly switch strategies when appropriate. Across two experiments with nine state-of-the-art LLMs and 100 human participants, we show humans and LLMs fail on this paradigm in opposite directions. LLMs were far more accurate on genuine riddles than on riddle riddles (84.9% vs. 50.7%); whereas humans showed the reverse effect (50.5% vs. 80.5%). Error analysis shows that 90.8% of LLM errors on riddle riddles (the condition where they show diminished performance) were due to inappropriate use of inventive reasoning while only 57.6% of human errors on genuine riddles were due to overextending literal reasoning. Thus, while both groups make mistakes, reasoning mistakes are made more often by LLMs than by humans. Overall, LLMs' strong performance on genuine riddles may reflect memory retrieval rather than flexible strategy selection, and without stimuli designed to elicit this contrast, it becomes easy to conflate LLM-generated outputs that look like reasoning with genuine reasoning.",
+    "authors": [
+      "Bella Fascendini",
+      "Kathryn McGregor",
+      "Max D. Gupta",
+      "Thomas L. Griffiths"
+    ],
+    "published": "2026-06-25T14:41:12Z",
+    "updated": "2026-06-25T14:41:12Z",
+    "categories": [
+      "cs.CL"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.27103v1",
+    "abs_url": "http://arxiv.org/abs/2606.27103v1",
+    "source": "arXiv",
+    "venue": null,
+    "code_url": null,
+    "cited_by_count": null,
+    "topic_scores": {
+      "reasoning": 0.63
+    },
+    "semantic_score": null,
+    "personal_score": null,
+    "score_breakdown": {
+      "relevance": 63.0,
+      "quality": 63,
+      "novelty": 85.2,
+      "practical": 27,
+      "credibility": 35
+    },
+    "confidence": 43,
+    "risk_zh": null,
+    "llm_scores": {},
+    "score": 59.8,
+    "score_reasons": [
+      "命中主题：推理时扩展",
+      "优势：新颖 85、匹配 63"
+    ],
+    "summary_zh": null
+  },
+  "2606.26997v1": {
+    "paper_id": "2606.26997v1",
+    "title": "RolloutPipe: Overlapping Pipelined Rollout and Training in Disaggregated On-Policy LLM Reinforcement Learning",
+    "abstract": "Large language model (LLM) post-training for reasoning increasingly relies on reinforcement learning with verifiable rewards (RLVR), where models learn from ground-truth feedback on mathematical, logical, and scientific tasks. To enable flexible resource allocation and support heterogeneous training setups, modern RLVR systems adopt disaggregated architectures that decouple rollout generation and policy training across independent GPU pools. However, existing synchronous on-policy GRPO (Group Relative Policy Optimization) RLVR systems finish an entire rollout before starting training, leaving the trainer GPU pool idle while rollout is still ongoing. Asynchronous RL pipelines overlap the two stages, but at the cost of training on stale data. To address these challenges, we propose RolloutPipe, a post-training framework for disaggregated RLVR systems, which turns the fixed-weight rollout into a complete-group pipeline where trainable groups move to the trainer while later groups are still being generated. RolloutPipe achieves this through two techniques including complete-group pipelining (CGP) and frontier-group dispatch (FGD). CGP dispatches each trainable complete group to the trainer FIFO as soon as group materialization finishes, and FGD is an admission policy on the Rollout node that first admits requests for the frontier groups needed to form the next training batch, so that trainer-ready groups arrive earlier and more steadily. The design starts training before the rollout completes while maintaining on-policy correctness. Evaluated on Qwen3-1.7B across four reasoning and science benchmarks and twelve rollout settings, RolloutPipe shortens the rollout-to-train-end time by 30.7%-42.3%, and lowers the trainer waiting ratio by 37%-76% compared to Slime, a state-of-the-art rollout and training system.",
+    "authors": [
+      "Rongjian Chen",
+      "Jianmin Hu",
+      "Kejiang Ye",
+      "Minxian Xu"
+    ],
+    "published": "2026-06-25T13:14:14Z",
+    "updated": "2026-06-25T13:14:14Z",
+    "categories": [
+      "cs.DC",
+      "cs.LG"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.26997v1",
+    "abs_url": "http://arxiv.org/abs/2606.26997v1",
+    "source": "arXiv",
+    "venue": null,
+    "code_url": null,
+    "cited_by_count": null,
+    "topic_scores": {
+      "post-training": 0.54,
+      "reasoning": 0.18
+    },
+    "semantic_score": null,
+    "personal_score": null,
+    "score_breakdown": {
+      "relevance": 54.0,
+      "quality": 72,
+      "novelty": 80.9,
+      "practical": 36,
+      "credibility": 35
+    },
+    "confidence": 51,
+    "risk_zh": null,
+    "llm_scores": {},
+    "score": 59.1,
+    "score_reasons": [
+      "命中主题：微调与对齐、推理时扩展",
+      "优势：新颖 81、质量 72"
+    ],
+    "summary_zh": null
+  },
+  "2606.26899v1": {
+    "paper_id": "2606.26899v1",
+    "title": "Generative Retrieval via Diffusion Transformer with Metric-Ordered Sequence Training and Hybrid-Policy Preference Optimization",
+    "abstract": "Embedding-based retrieval ranks items by their similarity to a query in a shared vector space and usually aims to return the highest-scoring items. In many production settings this is not what is wanted: given a seed set that expresses a fine-grained pattern, one needs more items that both satisfy a target attribute and stay within that pattern. We formalize this as pattern-preserving attribute retrieval. The two goals pull against each other: averaging the seeds preserves the pattern but stays in a low-attribute region, while global attribute retrieval drifts to unrelated patterns. We approach the task with continuous generative retrieval, where a model reads a sequence of item embeddings and generates query embeddings for nearest-neighbor search. We propose MO-DiT+HPPO, a staged framework with raw-sequence pretraining, multi-domain metric-ordered continuation pretraining, tail-centroid fine-tuning, and HPPO. Metric-ordered training turns sparse online retrieval labels into in-pattern trajectories ordered from low to high predicted attribute density, teaching one model the metric-improvement direction across domains. HPPO aligns the generated query distribution with the true online objective by labeling a hybrid candidate pool with the online intersection metric and applying reference-anchored preference optimization. A Pareto pair filter keeps only winner pairs that do not lower same-pattern purity, raising the attribute metric without sacrificing the pattern. Across four attribute domains under item- and pattern-holdout protocols, metric-ordered DiT improves the intersection metric over a pretrained generative retriever, and HPPO improves it further, with significant gains on seven of eight domain-split cells and a marginal tie on the hardest split. Metric-predictor validation, order ablations, CPT/SFT comparisons, and a candidate-policy ablation show where the gains come from.",
+    "authors": [
+      "Chenghao Liu",
+      "Yu Zhang",
+      "Zhongtao Jiang",
+      "Kun Xu",
+      "Zhenwei An",
+      "Renzhi Wang",
+      "Zhao Wang",
+      "Jiachen Zhang",
+      "Yuxiao Zhang",
+      "Kun Xu",
+      "Songfang Huang"
+    ],
+    "published": "2026-06-25T11:29:51Z",
+    "updated": "2026-06-25T11:29:51Z",
+    "categories": [
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.26899v1",
+    "abs_url": "http://arxiv.org/abs/2606.26899v1",
+    "source": "arXiv",
+    "venue": null,
+    "code_url": null,
+    "cited_by_count": null,
+    "topic_scores": {
+      "pretraining": 0.18,
+      "post-training": 0.81
+    },
+    "semantic_score": null,
+    "personal_score": null,
+    "score_breakdown": {
+      "relevance": 81.0,
+      "quality": 31,
+      "novelty": 89.9,
+      "practical": 27,
+      "credibility": 35
+    },
+    "confidence": 43,
+    "risk_zh": null,
+    "llm_scores": {},
+    "score": 58.7,
+    "score_reasons": [
+      "命中主题：预训练与优化、微调与对齐",
+      "优势：新颖 90、匹配 81"
+    ],
+    "summary_zh": null
+  },
+  "2606.27161v1": {
+    "paper_id": "2606.27161v1",
+    "title": "TOPS: First-Principles Visual Token Pruning via Constructing Token Optimal Preservation Sets for Efficient MLLM Inference",
+    "abstract": "Multimodal large language models (MLLMs) have achieved strong multimodal reasoning capabilities, but their efficiency is limited by the large number of visual tokens, which introduces substantial computational overhead. Visual token pruning offers a natural solution, yet existing methods are imperfect: attention-based criteria tend to retain redundant tokens, while diversity-based criteria are often agnostic to user instructions. Even methods that combine multiple criteria still lack a principled formulation of the intrinsic objective of token pruning. In this paper, we revisit visual token pruning from a first-principles perspective and formulate it as constructing Token Optimal Preservation Sets. Through a top-down information-theoretic analysis, we identify three fundamental principles for effective token selection: Task Relevance, Information Coverage, and Semantic Diversity. Based on these principles, we propose TOPS, a training-free and model-agnostic pruning module that can be applied to various MLLMs. Extensive experiments on 7 MLLM backbones and 14 benchmarks demonstrate that TOPS outperforms prior methods under diverse pruning settings. Notably, on LLaVA-NeXT, TOPS removes 77.8% of visual tokens while preserving 100.0% and 100.6% performance on its 7B and 13B models, respectively, suggesting that pruning redundant visual tokens can sometimes mitigate hallucination and inspire future lightweight MLLM design.",
+    "authors": [
+      "Tinghao Wang",
+      "Yichen Guo",
+      "Rui Huang",
+      "Zheng Lu",
+      "Qizhe Zhang",
+      "Chenxi Li",
+      "Yuan Zhang",
+      "Jiajun Cao",
+      "Zhirong Shen",
+      "Yaosong Du",
+      "Guangyan Gan",
+      "Wenya Wang",
+      "Lin William Cong",
+      "Shanghang Zhang"
+    ],
+    "published": "2026-06-25T15:29:37Z",
+    "updated": "2026-06-25T15:29:37Z",
+    "categories": [
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.27161v1",
+    "abs_url": "http://arxiv.org/abs/2606.27161v1",
+    "source": "arXiv",
+    "venue": null,
+    "code_url": null,
+    "cited_by_count": null,
+    "topic_scores": {
+      "reasoning": 0.18,
+      "serving": 0.45
+    },
+    "semantic_score": null,
+    "personal_score": null,
+    "score_breakdown": {
+      "relevance": 45.0,
+      "quality": 69,
+      "novelty": 82.1,
+      "practical": 36,
+      "credibility": 35
+    },
+    "confidence": 59,
+    "risk_zh": null,
+    "llm_scores": {},
+    "score": 55.2,
+    "score_reasons": [
+      "命中主题：推理时扩展、推理系统",
+      "优势：新颖 82、质量 69"
+    ],
+    "summary_zh": null
+  },
+  "2606.27153v1": {
+    "paper_id": "2606.27153v1",
+    "title": "DMuon: Efficient Distributed Muon Training with Near-Adam Overhead",
+    "abstract": "Matrix-orthogonalization-based optimizers, exemplified by Muon, have demonstrated strong convergence behavior across a wide range of modern deep learning workloads. The matrix-aware updates offer a compelling alternative to conventional element-wise optimization, particularly as model architectures continue to grow in scale and heterogeneity. Yet contemporary distributed training infrastructure built around the assumption of element-wise optimizers is poorly matched to matrix-level optimizers such as Muon, whose updates couple entire weight matrices and require costly Newton-Schulz iterations. Vanilla Muon implementations incur more than 2x the cost of forward and backward passes. To close this gap, we present DMuon, an open-source distributed Muon implementation that integrates into existing training pipelines as a drop-in module, with no framework-level modifications. Across both embodied foundation model and large language model (LLM) training workloads, DMuon achieves a 1.48x-3.01x speedup in end-to-end step time and a 6.85x-163.00x speedup in optimizer-step time, bringing per-step latency to near-AdamW levels and enabling efficient scaling in our model training.",
+    "authors": [
+      "Vincent Chen",
+      "Starrick Liu",
+      "Regis Cheng",
+      "Dance Yang",
+      "Shalfun Li",
+      "Ryan Yu",
+      "Lucy Liang",
+      "Hang Su",
+      "Roy Gan",
+      "Hao Wang",
+      "Qian Wang"
+    ],
+    "published": "2026-06-25T15:23:03Z",
+    "updated": "2026-06-25T15:23:03Z",
+    "categories": [
+      "cs.DC",
+      "cs.LG"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.27153v1",
+    "abs_url": "http://arxiv.org/abs/2606.27153v1",
+    "source": "arXiv",
+    "venue": null,
+    "code_url": null,
+    "cited_by_count": null,
+    "topic_scores": {
+      "pretraining": 0.36
+    },
+    "semantic_score": null,
+    "personal_score": null,
+    "score_breakdown": {
+      "relevance": 36.0,
+      "quality": 63,
+      "novelty": 89.2,
+      "practical": 68,
+      "credibility": 35
+    },
+    "confidence": 43,
+    "risk_zh": null,
+    "llm_scores": {},
+    "score": 54.8,
+    "score_reasons": [
+      "命中主题：预训练与优化",
+      "优势：新颖 89、实用 68"
+    ],
+    "summary_zh": null
+  },
+  "2606.26904v1": {
+    "paper_id": "2606.26904v1",
+    "title": "Confidence-Aware Tool Orchestration for Robust Video Understanding",
+    "abstract": "Video reasoning language models implicitly assume that every input frame is equally reliable. This leads to what we term the Blind Trust Problem: under realistic perturbations such as motion blur, glare, or occlusion, frontier video reasoning models can suffer 15-30%p accuracy drops on real-world embodied benchmarks, while remaining unaware that their visual evidence has been degraded. To address this challenge, we propose Robust-TO, an agentic video understanding framework that explicitly integrates per-frame trustworthiness into every stage of reasoning. Robust-TO organizes heterogeneous visual perception tools under a unified evidence interface. Each tool receives a sub-query derived from the original question and a set of trustworthy frames selected by the reliability-relevance score. It returns evidence in a shared format: a concrete prediction (e.g., a bounding box, motion trajectory, recognized text, or action label), temporal grounding, and a calibrated reliability score. During reasoning, these calibrated scores guide evidence weighting in a three-tier synthesis process (high/medium/low) and define a confidence-cost GRPO reward that jointly optimizes correctness, evidence reliability, and efficiency. On two video reasoning benchmarks spanning eight tasks, Robust-TO achieves 56.4% average accuracy on clean inputs, surpassing the strongest open-source baseline by 10.6%p and outperforming Gemini-2.5-Pro (46.2%). Under five realistic corruption types, Robust-TO maintains 54.3% average accuracy, 5.8%p above the strongest open-source baseline, while exhibiting the smallest clean-to-corrupted accuracy drop among all compared methods.",
+    "authors": [
+      "Yangfan He",
+      "Yujin Choi",
+      "Jaehong Yoon"
+    ],
+    "published": "2026-06-25T11:37:51Z",
+    "updated": "2026-06-25T11:37:51Z",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.26904v1",
+    "abs_url": "http://arxiv.org/abs/2606.26904v1",
+    "source": "arXiv",
+    "venue": null,
+    "code_url": null,
+    "cited_by_count": null,
+    "topic_scores": {
+      "post-training": 0.18,
+      "reasoning": 0.36
+    },
+    "semantic_score": null,
+    "personal_score": null,
+    "score_breakdown": {
+      "relevance": 36.0,
+      "quality": 81,
+      "novelty": 85.9,
+      "practical": 41,
+      "credibility": 35
+    },
+    "confidence": 59,
+    "risk_zh": null,
+    "llm_scores": {},
+    "score": 56.1,
+    "score_reasons": [
+      "命中主题：微调与对齐、推理时扩展",
+      "优势：新颖 86、质量 81"
+    ],
+    "summary_zh": null
+  },
+  "2606.26861v1": {
+    "paper_id": "2606.26861v1",
+    "title": "Cascaded Multi-Granularity Pruning for On-Device LLM Inference in Industrial IoT",
+    "abstract": "Deploying large language models (LLMs) on Industrial Internet of Things (IIoT) edge devices demands extreme compression, yet existing structured pruning methods collapse at high compression ratios due to one-shot importance estimation, and their cross-architecture behavior remains unpredictable. This article presents a cascaded multi-granularity pruning framework that removes layers, attention heads, and feed-forward channels in coarse-to-fine order, with lightweight low-rank recovery between stages to re-estimate component importance. An information-theoretic analysis motivates this ordering, and the Structural Independence Assumption (SIA) is formalized as a checkable condition predicting whether per-component pruning criteria are reliable for a given architecture: Multi-Head Attention (MHA)+GELU designs satisfy the SIA, whereas Grouped Query Attention (GQA)+SwiGLU designs violate it. On bearing fault diagnosis spanning 88M to 6.25B-parameter models, the framework extends achievable compression to 13.8 times on MHA+GELU architectures with 83.82% accuracy (+3.70 percentage points (pp) over the strongest baseline), while exposing a ~74pp accuracy collapse on GQA+SwiGLU architectures that violate the SIA. Deployed on an industrial slewing bearing fault diagnosis platform with NVIDIA DGX Spark, compressed models reduce inference latency by up to 67.2% and peak memory by 62.5%, demonstrating viability for IIoT edge inference.",
+    "authors": [
+      "Jinghan Wang",
+      "Yanjun Chen",
+      "Wei Zhang",
+      "Xiaotong Huang",
+      "Tianchen Liu",
+      "Gaoliang Peng"
+    ],
+    "published": "2026-06-25T10:44:48Z",
+    "updated": "2026-06-25T10:44:48Z",
+    "categories": [
+      "cs.CL"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.26861v1",
+    "abs_url": "http://arxiv.org/abs/2606.26861v1",
+    "source": "arXiv",
+    "venue": null,
+    "code_url": null,
+    "cited_by_count": null,
+    "topic_scores": {
+      "serving": 0.45,
+      "efficiency": 0.36
+    },
+    "semantic_score": null,
+    "personal_score": null,
+    "score_breakdown": {
+      "relevance": 45.0,
+      "quality": 51,
+      "novelty": 89.1,
+      "practical": 36,
+      "credibility": 35
+    },
+    "confidence": 43,
+    "risk_zh": null,
+    "llm_scores": {},
+    "score": 51.5,
+    "score_reasons": [
+      "命中主题：推理系统、压缩与高效推理",
+      "优势：新颖 89、质量 51"
+    ],
+    "summary_zh": null
   }
 }
