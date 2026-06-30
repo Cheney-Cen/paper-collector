@@ -1,7 +1,574 @@
 {
   "date": "全部历史",
-  "selected_count": 93,
+  "selected_count": 105,
   "papers": [
+    {
+      "paper_id": "2606.30642v1",
+      "title": "LeVo 2: Stable and Melodious Song Generation via Hierarchical Representation Modeling and Progressive Post-Training",
+      "abstract": "Full-length song generation must preserve coherence and musicality, render detailed vocal and accompaniment acoustics, and follow lyrics and prompts. Existing language model-based systems face a structural trade-off: mixed-token modeling preserves vocal-instrument coordination but obscures track-specific details, whereas dual-track prediction improves acoustics but requires longer sequences and weakens global planning. We present LeVo 2, a hybrid LLM-Diffusion framework for controllable full-length song generation. LeVo 2 formulates this trade-off as hierarchical modeling: LeLM first predicts mixed tokens for semantic planning, then predicts vocal and accompaniment tokens in parallel for track-specific refinement, while a diffusion-based Music Codec reconstructs full-length waveforms. A central contribution of this extended version is an aesthetics-guided training schedule for alignment. During pre-training, an automated music aesthetic evaluation framework assigns musicality-tier conditions to large-scale data, providing musicality priors before preference alignment. Progressive post-training applies SFT, large-scale offline DPO, and closed-loop semi-online DPO to separately improve generation quality, controllability, and musicality. Modular extension then trains the Track-Specific LM for acoustic refinement while preserving the aligned semantic planner. This schedule separates musicality learning, controllability alignment, and acoustic refinement, mitigating optimization conflict and the limitations of static offline preference pairs. Expert listening tests and objective evaluations show that LeVo 2 outperforms open-source baselines across six subjective dimensions, and approaches leading commercial systems on several listening metrics. Ablations validate the effects of the training strategy, aesthetics guidance, scaling, and hierarchical architecture.",
+      "authors": [
+        "Shun Lei",
+        "Huaicheng Zhang",
+        "Dapeng Wu",
+        "Yaoxun Xu",
+        "Lishi Zuo",
+        "Wei Tan",
+        "Hangting Chen",
+        "Guangzheng Li",
+        "Jianwei Yu",
+        "Zhiyong Wu",
+        "Dong Yu"
+      ],
+      "published": "2026-06-29T17:59:20Z",
+      "updated": "2026-06-29T17:59:20Z",
+      "categories": [
+        "cs.SD",
+        "cs.AI"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2606.30642v1",
+      "abs_url": "http://arxiv.org/abs/2606.30642v1",
+      "source": "arXiv",
+      "venue": null,
+      "code_url": null,
+      "cited_by_count": null,
+      "topic_scores": {
+        "pretraining": 0.18,
+        "post-training": 0.81
+      },
+      "semantic_score": null,
+      "personal_score": null,
+      "score_breakdown": {
+        "relevance": 81.0,
+        "quality": 65,
+        "novelty": 87.7,
+        "practical": 27,
+        "credibility": 35
+      },
+      "confidence": 59,
+      "risk_zh": null,
+      "llm_scores": {},
+      "score": 67.3,
+      "score_reasons": [
+        "命中主题：预训练与优化、微调与对齐",
+        "优势：新颖 88、匹配 81"
+      ],
+      "summary_zh": null
+    },
+    {
+      "paper_id": "2606.30634v1",
+      "title": "One-Step Gradient Delay is Not a Barrier for Large-Scale Asynchronous Pipeline Parallel LLM Pretraining",
+      "abstract": "Modern large-scale LLM pretraining benefits from utilizing Pipeline Parallelism; however, synchronous implementations leave GPUs idle during pipeline bubbles, wasting computational resources. Asynchronous Pipeline Parallelism eliminates these bubbles, maximizing throughput at the cost of gradient staleness. Among asynchronous schedules, PipeDream-2BW is particularly appealing: unlike the original PipeDream schedule, it ensures a constant one-step gradient delay regardless of pipeline depth. However, its adoption remains limited due to the common belief that optimizing under staleness is fundamentally unstable. In this work, we challenge this assumption, demonstrating that degradation under one-step delay depends strongly on optimizer choice rather than being an intrinsic limitation. We provide the first comprehensive empirical analysis showing that while AdamW, the predominant optimizer at the time when PipeDream-2BW was introduced, indeed suffers from severe degradation, recent methods like Muon exhibit strong robustness under a one-step delay. We introduce an optimizer-agnostic Error Feedback-inspired correction to further mitigate delay effects. We provide supporting theoretical analysis demonstrating convergence for Muon with and without this correction. Extensive evaluation on models up to 10B parameters confirms that our strategies bridge the performance gap with synchronous training, highlighting the practical potential of asynchronous pipeline parallelism at scale.",
+      "authors": [
+        "Philip Zmushko",
+        "Egor Petrov",
+        "Nursultan Abdullaev",
+        "Mikhail Khrushchev",
+        "Samuel Horváth"
+      ],
+      "published": "2026-06-29T17:57:50Z",
+      "updated": "2026-06-29T17:57:50Z",
+      "categories": [
+        "cs.LG"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2606.30634v1",
+      "abs_url": "http://arxiv.org/abs/2606.30634v1",
+      "source": "arXiv",
+      "venue": null,
+      "code_url": null,
+      "cited_by_count": null,
+      "topic_scores": {
+        "pretraining": 0.81,
+        "serving": 0.18
+      },
+      "semantic_score": null,
+      "personal_score": null,
+      "score_breakdown": {
+        "relevance": 81.0,
+        "quality": 38,
+        "novelty": 88.4,
+        "practical": 45,
+        "credibility": 35
+      },
+      "confidence": 35,
+      "risk_zh": null,
+      "llm_scores": {},
+      "score": 62.2,
+      "score_reasons": [
+        "命中主题：预训练与优化、推理系统",
+        "优势：新颖 88、匹配 81"
+      ],
+      "summary_zh": null
+    },
+    {
+      "paper_id": "2606.30473v1",
+      "title": "Field Order Should Not Matter: Permutation-Invariant Embedding Model Fine-Tuning for Structured Metadata Retrieval",
+      "abstract": "We study retrieval over catalogs of structured metadata, where each record is a small schema whose fields answer different kinds of query. Embedding a record with a text encoder first serializes its fields into a string, which forces a choice of field order. We show this choice, usually treated as an implementation detail, silently controls retrieval quality once the encoder is fine-tuned. A standard fine-tune loses 7.4 nDCG@10 points when the index is rebuilt under a different field order, because it reads absolute position instead of the field labels. We propose permutation-invariant fine-tuning ($\\textbf{PI-FT}$), which serializes each record under a freshly sampled field order with random field dropout, so meaning binds to the labels rather than to position. The change is about two lines in the data loader; it costs negligible in-distribution accuracy and cuts the order-change penalty to 0.2 points. We study this in the discovery of development statistics, a catalog of nearly 10,000 indicators that should be searchable in many languages by a model small enough to self-host. As AI assistants and agents increasingly mediate access to public data and statistics, this retrieval step decides whether an answer is grounded in the right indicator or series, making discoverability a precondition for disseminating data through AI. Because usage logs cannot provide training signal for indicators no one has searched, we generate the queries instead. $\\textbf{DevDataBench}$ is a fully LLM-generated benchmark of grounded, facet-targeted queries across 15 languages, covering every indicator for both training and evaluation. A fine-tuned 118M-parameter CPU encoder outperforms every zero-shot baseline, including $\\texttt{text-embedding-3-large}$ (0.707 vs.\\ 0.556 nDCG@10), with the largest gains in low-resource languages. We release the benchmark, pipeline, models, and a reusable PI-FT framework.",
+      "authors": [
+        "Aivin V. Solatorio",
+        "Olivier Dupriez",
+        "Rafael Macalaba"
+      ],
+      "published": "2026-06-29T15:33:04Z",
+      "updated": "2026-06-29T15:33:04Z",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.IR",
+        "cs.LG",
+        "econ.GN"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2606.30473v1",
+      "abs_url": "http://arxiv.org/abs/2606.30473v1",
+      "source": "arXiv",
+      "venue": null,
+      "code_url": null,
+      "cited_by_count": null,
+      "topic_scores": {
+        "post-training": 0.63
+      },
+      "semantic_score": null,
+      "personal_score": null,
+      "score_breakdown": {
+        "relevance": 63.0,
+        "quality": 81,
+        "novelty": 86.5,
+        "practical": 27,
+        "credibility": 35
+      },
+      "confidence": 59,
+      "risk_zh": null,
+      "llm_scores": {},
+      "score": 64.7,
+      "score_reasons": [
+        "命中主题：微调与对齐",
+        "优势：新颖 86、质量 81"
+      ],
+      "summary_zh": null
+    },
+    {
+      "paper_id": "2606.30420v1",
+      "title": "Experience Augmented Policy Optimization for LLM Reasoning",
+      "abstract": "Reinforcement Learning with Verifiable Rewards (RLVR) is a powerful paradigm for improving the reasoning capabilities of large language models (LLMs). However, existing RLVR methods typically rely on on-policy optimization from scratch, resulting in high sampling costs and inefficient utilization of accumulated experience. As model capabilities and policy behaviors evolve during training, recent attempts to reuse experience via fixed reasoning trajectories further suffer from policy mismatch. Motivated by these limitations, we argue that experience in RLVR should not be reused as fixed reasoning trajectories, but instead expressed in a policy-adaptive manner. In this work, we propose Experience-Augmented Policy Optimization (EAPO), which leverages a prior RL-optimized policy as an action-level experience prior and selectively injects experience at critical decision points during rollout. To ensure stable and unbiased learning from experience-augmented rollouts, EAPO further incorporates an adapted importance sampling scheme. Experiments on using Qwen-2.5-math 7b and Qwen-3-8B on five different benchmarks demonstrate that EAPO consistently improves reasoning performance over state-of-the-art RLVR methods.",
+      "authors": [
+        "Jinda Lu",
+        "Kexin Huang",
+        "Junkang Wu",
+        "Shuo Yang",
+        "Jinghan Li",
+        "Chiyu Ma",
+        "Shaohang Wei",
+        "Xiang Wang",
+        "Guoyin Wang",
+        "Jingren Zhou"
+      ],
+      "published": "2026-06-29T15:05:28Z",
+      "updated": "2026-06-29T15:05:28Z",
+      "categories": [
+        "cs.LG"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2606.30420v1",
+      "abs_url": "http://arxiv.org/abs/2606.30420v1",
+      "source": "arXiv",
+      "venue": null,
+      "code_url": null,
+      "cited_by_count": null,
+      "topic_scores": {
+        "post-training": 0.18,
+        "reasoning": 0.63
+      },
+      "semantic_score": null,
+      "personal_score": null,
+      "score_breakdown": {
+        "relevance": 63.0,
+        "quality": 56,
+        "novelty": 84.4,
+        "practical": 36,
+        "credibility": 35
+      },
+      "confidence": 51,
+      "risk_zh": null,
+      "llm_scores": {},
+      "score": 58.7,
+      "score_reasons": [
+        "命中主题：微调与对齐、推理时扩展",
+        "优势：新颖 84、匹配 63"
+      ],
+      "summary_zh": null
+    },
+    {
+      "paper_id": "2606.30391v1",
+      "title": "Energy-Aware Scheduling for Serverless LLM Serving on Shared GPUs",
+      "abstract": "As LLM inference becomes a major cloud workload, its growing energy footprint makes cluster-wide energy optimization increasingly important. Serverless LLM serving helps platforms absorb traffic volatility by elastically sharing GPU resources across models, but this sharing also makes energy optimization difficult. Multiple co-resident models run under one device-wide operating point, while their resource demands and latency slack change across execution phases and load conditions. As a result, minimizing energy requires coordinated scheduling across request placement, runtime resource adaptation, and workload consolidation. We present Festina, a profiling-guided, power-aware control plane to minimize cluster-wide energy for serverless LLM serving. Unlike common global-local schedulers that focus on throughput or tail latency, Festina makes energy-first decisions by jointly coordinating request placement, SM partitioning, and GPU operating points under TTFT/TBT SLOs. In our system, a lightweight global scheduler performs fast, SLO-safe, energy-aware placement using constant-time lookups from offline profiles and GPU state summaries. On each GPU, a phase-aware local scheduler continuously adapts task batching and compute resources to minimize power consumption. Festina further performs energy-aware workload consolidation to reduce GPUs' static power consumption via SLO-aware migration. Comparison with four SOTA LLM serving systems and one DVFS-augmented system demonstrates that Festina reduces energy consumption by up to 56% while maintaining parity in SLO attainment (within a 2% margin)",
+      "authors": [
+        "Tianyu Wang",
+        "Gourav Rattihalli",
+        "Aditya Dhakal",
+        "Longfei Shangguan",
+        "Dejan Milojicic"
+      ],
+      "published": "2026-06-29T14:44:24Z",
+      "updated": "2026-06-29T14:44:24Z",
+      "categories": [
+        "cs.DC"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2606.30391v1",
+      "abs_url": "http://arxiv.org/abs/2606.30391v1",
+      "source": "arXiv",
+      "venue": null,
+      "code_url": null,
+      "cited_by_count": null,
+      "topic_scores": {
+        "serving": 0.36
+      },
+      "semantic_score": null,
+      "personal_score": null,
+      "score_breakdown": {
+        "relevance": 36.0,
+        "quality": 30,
+        "novelty": 88.7,
+        "practical": 54,
+        "credibility": 35
+      },
+      "confidence": 35,
+      "risk_zh": null,
+      "llm_scores": {},
+      "score": 44.5,
+      "score_reasons": [
+        "命中主题：推理系统",
+        "优势：新颖 89、实用 54"
+      ],
+      "summary_zh": null
+    },
+    {
+      "paper_id": "2606.30345v1",
+      "title": "DRIFT: Difficulty Routing Self-DIstillation with Rhythm-Gated Exploration and Success BuFfer Training",
+      "abstract": "Enabling large language models to achieve stable self-improvement without external expert supervision remains a central challenge in complex reasoning tasks. Existing self-distillation and reinforcement learning methods lack explicit mechanisms for tracking problem-level learning progress and adapting optimization strategies accordingly. Consequently, training may over-optimize easy problems, receive weak supervision from hard problems, and fail to sufficiently explore borderline cases. To resolve these issues, we propose DRIFT, an online self-evolution policy optimization framework for large language models. DRIFT regulates the model's self-improvement process through the joint use of Difficulty Routing and Rhythm Gating. The former identifies the model's learning state at the problem level and dynamically allocates self-distillation and reinforcement learning signals, while the latter refines policy updates at the token level, concentrating exploration on critical reasoning positions. By further incorporating a success buffer and a two-stage curriculum learning strategy, DRIFT preserves high-quality historical experience while progressively guiding the model from reliable behavior acquisition toward stable policy evolution. Evaluated across five benchmarks and three model scales, DRIFT surpasses the peak performance of both GRPO and SDPO across all evaluated metrics. On the average score over the five benchmarks, DRIFT achieves 79.5$\\%$, outperforming GRPO by 9.5$\\%$ and SDPO by 7.5$\\%$, establishing a new state-of-the-art result. Notably, on ToolUse, DRIFT reaches an accuracy of 79.2$\\%$, improving over GRPO by 13.5$\\%$ and SDPO by 10.7$\\%$, setting a new state-of-the-art and substantially outperforming all concurrent methods.",
+      "authors": [
+        "Haisen Luo",
+        "Yiwei Liu",
+        "Haoning Wang",
+        "Dan Liu",
+        "Junxi Yin",
+        "Haotian Wang",
+        "Lei Zhang",
+        "Xiaoyu Tian",
+        "Shuaiting Chen",
+        "Yuansheng Song",
+        "Baoyan Guo",
+        "Xiongfei Yan",
+        "Bolan Yang",
+        "Chengwei Liu",
+        "Ming Cui",
+        "Jiong Chen"
+      ],
+      "published": "2026-06-29T14:20:47Z",
+      "updated": "2026-06-29T14:20:47Z",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2606.30345v1",
+      "abs_url": "http://arxiv.org/abs/2606.30345v1",
+      "source": "arXiv",
+      "venue": null,
+      "code_url": null,
+      "cited_by_count": null,
+      "topic_scores": {
+        "post-training": 0.18,
+        "reasoning": 0.18,
+        "efficiency": 0.63
+      },
+      "semantic_score": null,
+      "personal_score": null,
+      "score_breakdown": {
+        "relevance": 63.0,
+        "quality": 69,
+        "novelty": 81.7,
+        "practical": 18,
+        "credibility": 35
+      },
+      "confidence": 59,
+      "risk_zh": null,
+      "llm_scores": {},
+      "score": 59.8,
+      "score_reasons": [
+        "命中主题：微调与对齐、推理时扩展、压缩与高效推理",
+        "优势：新颖 82、质量 69"
+      ],
+      "summary_zh": null
+    },
+    {
+      "paper_id": "2606.30339v1",
+      "title": "REAR: Test-time Preference Realignment through Reward Decomposition",
+      "abstract": "Aligning large language models (LLMs) with diverse user preferences is a critical yet challenging task. While post-training methods can adapt models to specific needs, they often require costly data curation and additional training. Test-time scaling (TTS) presents an efficient, training-free alternative, but its application has been largely limited to verifiable domains like mathematics and coding, where response correctness is easily judged. To extend TTS to preference alignment, we introduce a novel framework that models the task as a realignment problem, since the base model often fails to sufficiently align with the stated preference. Our key insight is to decompose the underlying reward function into two components: one related to the question and the other to preference information. This allows us to derive a REAlignment Reward (REAR) that selectively rescales the proportions of these two reward terms. We then show that REAR can be formulated as a linear combination of token-level policy log-probabilities, making it computationally efficient and easy to integrate with various TTS algorithms such as best-of-$N$ sampling and tree search. Experiments show that compared to other test-time baselines, REAR not only enables scalable test-time realignment for preference alignment tasks under diverse user requirements, but also generalizes to mathematical and visual tasks under appropriate preference settings.",
+      "authors": [
+        "Fuxiang Zhang",
+        "Pengcheng Wang",
+        "Chenran Li",
+        "Yi-Chen Li",
+        "Yuxin Chen",
+        "Lang Feng",
+        "Chenfeng Xu",
+        "Masayoshi Tomizuka",
+        "Bo An"
+      ],
+      "published": "2026-06-29T14:17:53Z",
+      "updated": "2026-06-29T14:17:53Z",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2606.30339v1",
+      "abs_url": "http://arxiv.org/abs/2606.30339v1",
+      "source": "arXiv",
+      "venue": null,
+      "code_url": null,
+      "cited_by_count": null,
+      "topic_scores": {
+        "post-training": 0.81,
+        "reasoning": 0.18
+      },
+      "semantic_score": null,
+      "personal_score": null,
+      "score_breakdown": {
+        "relevance": 81.0,
+        "quality": 52,
+        "novelty": 82.4,
+        "practical": 45,
+        "credibility": 35
+      },
+      "confidence": 51,
+      "risk_zh": null,
+      "llm_scores": {},
+      "score": 65.0,
+      "score_reasons": [
+        "命中主题：微调与对齐、推理时扩展",
+        "优势：新颖 82、匹配 81"
+      ],
+      "summary_zh": null
+    },
+    {
+      "paper_id": "2606.30265v1",
+      "title": "When Is a Draft Accepted? A Theory of Acceptance in Speculative Decoding",
+      "abstract": "Speculative decoding accelerates language model inference by using a fast drafter to propose candidate tokens that are then verified by a larger target model. Existing theory largely studies the stochastic, distribution-preserving setting, where the goal is to exactly sample from the target distribution. In contrast, many practical systems use greedy decoding, relaxed acceptance rules, or tree-based candidate sets, where success is governed by local ranking and threshold events rather than exact distributional equality. We develop a theory for these regimes. We identify that many common acceptance criteria have rejection regions that can be characterized as lower level sets of the target distribution. For these, we characterize the exact KL divergence required for rejection yielding exact certificates and sharp margin-based bounds for strict greedy decoding, additive and multiplicative relaxed acceptance, top-(m) relaxed criteria, and entropy-thresholded acceptance. We then extend the framework to greedy tree decoding, deriving exact and margin-only certificates for when the target greedy token remains covered by the drafter's top-(m) candidates. Finally, we evaluate the resulting certificates on Qwen3 models, showing that relaxed and tree-based criteria substantially enlarge the region of certified acceptance, especially on decoding steps with low target model distribution margin. These results complement existing distribution-preserving analyses of speculative decoding by characterizing the deterministic local acceptance events common in practical inference systems.",
+      "authors": [
+        "Aaryam Sharma"
+      ],
+      "published": "2026-06-29T13:14:51Z",
+      "updated": "2026-06-29T13:14:51Z",
+      "categories": [
+        "cs.LG",
+        "cs.CL",
+        "stat.ML"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2606.30265v1",
+      "abs_url": "http://arxiv.org/abs/2606.30265v1",
+      "source": "arXiv",
+      "venue": null,
+      "code_url": null,
+      "cited_by_count": null,
+      "topic_scores": {
+        "serving": 0.63
+      },
+      "semantic_score": null,
+      "personal_score": null,
+      "score_breakdown": {
+        "relevance": 63.0,
+        "quality": 43,
+        "novelty": 89.8,
+        "practical": 27,
+        "credibility": 28
+      },
+      "confidence": 43,
+      "risk_zh": null,
+      "llm_scores": {},
+      "score": 54.5,
+      "score_reasons": [
+        "命中主题：推理系统",
+        "优势：新颖 90、匹配 63"
+      ],
+      "summary_zh": null
+    },
+    {
+      "paper_id": "2606.30247v1",
+      "title": "Grounding LLM Reasoning under Incomplete Graph Evidence",
+      "abstract": "Knowledge graphs can guide large language models (LLMs) reasoning, but the graph seen by a system is usually a retrieved, linked, temporally scoped, and incomplete evidence state rather than a complete account of truth. We develop a theoretical perspective on grounding observable LLM trajectories under such incomplete graph evidence.The evidence state induces entity anchors, typed relation residuals, path energies, and support regions, while the language model supplies a prior over candidate trajectories. We show that, under open-world incompleteness, no hard rule based only on the observed state can both reject every false unsupported trajectory and retain every true-but-unobserved one.We then characterize soft grounding as a KL-regularized deformation of the LLM prior: finite slack preserves support for unsupported but non-contradicted trajectories, whereas hard conditioning appears as an infinite-penalty limit.The framework also yields stability bounds under evidence perturbations and clarifies the constraint regimes appropriate for GraphRAG, KGQA, graph agents, constrained decoding, and faithful generation. The claims are evidence-relative: KG compatibility is treated as declared support, not factual truth.",
+      "authors": [
+        "Jiaqi Li",
+        "Fanghui Song"
+      ],
+      "published": "2026-06-29T12:56:21Z",
+      "updated": "2026-06-29T12:56:21Z",
+      "categories": [
+        "cs.CL"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2606.30247v1",
+      "abs_url": "http://arxiv.org/abs/2606.30247v1",
+      "source": "arXiv",
+      "venue": null,
+      "code_url": null,
+      "cited_by_count": null,
+      "topic_scores": {
+        "reasoning": 0.63
+      },
+      "semantic_score": null,
+      "personal_score": null,
+      "score_breakdown": {
+        "relevance": 63.0,
+        "quality": 34,
+        "novelty": 88.2,
+        "practical": 18,
+        "credibility": 35
+      },
+      "confidence": 35,
+      "risk_zh": null,
+      "llm_scores": {},
+      "score": 51.7,
+      "score_reasons": [
+        "命中主题：推理时扩展",
+        "优势：新颖 88、匹配 63"
+      ],
+      "summary_zh": null
+    },
+    {
+      "paper_id": "2606.30217v1",
+      "title": "Before Thinking, Learn to Decide: Proactive Routing for Efficient Visual Reasoning",
+      "abstract": "Large multimodal models have achieved strong reasoning on complex visual tasks, but their inference efficiency is often restricted by long chains of thought. A promising solution is to pair a small draft model with a large target model, enabling cooperative inference employing a routing signal that adaptively routes queries to either the draft or target model based on their difficulties for optimal efficiency and accuracy. Yet, the remaining bottleneck is to establish a reliable query difficulty signal under multimodal settings. Existing approaches designed for language models either rely on post-hoc token probabilities, which fall short in multimodal scenarios, or depend on supervised fine-tuning, which is a data-sensitive strategy. Both paradigms perform routing only after a complete output, and ignore whether the target model can actually solve the routed instances. To address this, we propose PRP, a Proactive Routing Paradigm that enables early decision-making by jointly evaluating the competence of both the draft and target models. Our Draft Rating Learning (DRL) equips the draft model with an internal confidence estimator, while Joint Rating Learning (JRL) predicts how well the target model can handle a given query, thereby prioritizing the allocation of samples it excels at rather than the hardest ones. These ratings enable fine-grained, instance-level \\textbf{Proactive Routing} and substantially accelerate inference without compromising overall performance. Extensive experiments across multiple multimodal reasoning benchmarks validate our effectiveness and efficiency.",
+      "authors": [
+        "Yinan Zhou",
+        "Haokun Lin",
+        "Yichen Wu",
+        "Caifeng Shan",
+        "Zhenan Sun",
+        "Yuxin Chen",
+        "Teng Wang",
+        "Chen Ma",
+        "Li Zhu",
+        "Ying Shan"
+      ],
+      "published": "2026-06-29T12:30:24Z",
+      "updated": "2026-06-29T12:30:24Z",
+      "categories": [
+        "cs.CL"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2606.30217v1",
+      "abs_url": "http://arxiv.org/abs/2606.30217v1",
+      "source": "arXiv",
+      "venue": null,
+      "code_url": null,
+      "cited_by_count": null,
+      "topic_scores": {
+        "post-training": 0.18,
+        "reasoning": 0.63
+      },
+      "semantic_score": null,
+      "personal_score": null,
+      "score_breakdown": {
+        "relevance": 63.0,
+        "quality": 52,
+        "novelty": 79.4,
+        "practical": 27,
+        "credibility": 35
+      },
+      "confidence": 51,
+      "risk_zh": null,
+      "llm_scores": {},
+      "score": 56.0,
+      "score_reasons": [
+        "命中主题：微调与对齐、推理时扩展",
+        "优势：新颖 79、匹配 63"
+      ],
+      "summary_zh": null
+    },
+    {
+      "paper_id": "2606.30140v1",
+      "title": "DNA Language Models: An Assessment of Pre-Training for Fine-Tuning Tasks",
+      "abstract": "Recent breakthroughs in foundation models and Large Language Models (LLMs) have introduced new opportunities for studying and decoding genomic sequences. Several state-of-the-art approaches, such as DNABERT2, rely on transformer-based architectures, while others, such as ConvNova, still build upon more conventional convolutional models. However, systematic benchmark comparisons across these methods remain scarce. Given that transformer-based models require extensive and costly pretraining, it is crucial to evaluate whether their performance gains justify this overhead. Moreover, LLMs such as DNABERT2 typically rely on Byte Pair Encoding (BPE) tokenization, whose relevance for DNA sequence representation is still debated within the genomics community. In this work, we investigate three key questions: (i) do transformer-based models provide sufficient improvements on fine-tuning tasks upon heavy pretraining, (ii) what is the actual contribution of pretraining in this setting, and (iii) how does BPE tokenization impact performance on genomics-related tasks?",
+      "authors": [
+        "Romain Karpinsky",
+        "Julien Mozziconacci",
+        "Mickaël Delcey"
+      ],
+      "published": "2026-06-29T11:20:05Z",
+      "updated": "2026-06-29T11:20:05Z",
+      "categories": [
+        "q-bio.GN",
+        "cs.CL"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2606.30140v1",
+      "abs_url": "http://arxiv.org/abs/2606.30140v1",
+      "source": "arXiv",
+      "venue": null,
+      "code_url": null,
+      "cited_by_count": null,
+      "topic_scores": {
+        "pretraining": 0.63,
+        "post-training": 0.63
+      },
+      "semantic_score": null,
+      "personal_score": null,
+      "score_breakdown": {
+        "relevance": 63.0,
+        "quality": 40,
+        "novelty": 87.8,
+        "practical": 27,
+        "credibility": 35
+      },
+      "confidence": 51,
+      "risk_zh": null,
+      "llm_scores": {},
+      "score": 54.1,
+      "score_reasons": [
+        "命中主题：预训练与优化、微调与对齐",
+        "优势：新颖 88、匹配 63"
+      ],
+      "summary_zh": null
+    },
+    {
+      "paper_id": "2606.30077v1",
+      "title": "Online Data Selection for Instruction Tuning via Gaussian Processes",
+      "abstract": "With Large Language Model (LLM) pre-training and fine-tuning shifting its focus from data volume to data quality, quality data selection has emerged as a critical research topic. Existing online data selection methods for LLM training are typically \"batch-constrained\", limiting optimization to local utility within random batches. To overcome this, we propose GAIA (Global Adaptive Instruction tuning via GAussian processes), a framework that formulates data valuation as a global estimation process. GAIA employs Gaussian Process regression to model continuous utility manifolds across the semantic space, utilizing an adaptive strategy fusion mechanism to dynamically prioritize high-utility samples. By casting the strategy-posterior update as an instance of the classical fixed-share Hedge framework for tracking the best expert, we inherit a dynamic-regret guarantee that characterizes GAIA's robustness under non-stationary quality scores during training. Empirical evaluations on three datasets demonstrate that GAIA significantly outperforms state-of-the-art baselines like \\greats, establishing our method as a scalable and robust solution for efficient instruction tuning.",
+      "authors": [
+        "Jun Wang",
+        "Quoc Phong Nguyen",
+        "Julien Monteil",
+        "Vu Nguyen"
+      ],
+      "published": "2026-06-29T10:08:12Z",
+      "updated": "2026-06-29T10:08:12Z",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2606.30077v1",
+      "abs_url": "http://arxiv.org/abs/2606.30077v1",
+      "source": "arXiv",
+      "venue": null,
+      "code_url": null,
+      "cited_by_count": null,
+      "topic_scores": {
+        "pretraining": 0.18,
+        "post-training": 0.81
+      },
+      "semantic_score": null,
+      "personal_score": null,
+      "score_breakdown": {
+        "relevance": 81.0,
+        "quality": 49,
+        "novelty": 87.0,
+        "practical": 36,
+        "credibility": 35
+      },
+      "confidence": 59,
+      "risk_zh": null,
+      "llm_scores": {},
+      "score": 63.9,
+      "score_reasons": [
+        "命中主题：预训练与优化、微调与对齐",
+        "优势：新颖 87、匹配 81"
+      ],
+      "summary_zh": null
+    },
     {
       "paper_id": "2606.28186v1",
       "title": "Cognitive Episodes in LLM Reasoning Traces Enable Interpretable Human Item Difficulty Prediction",
