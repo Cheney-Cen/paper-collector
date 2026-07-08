@@ -6923,5 +6923,565 @@
       "优势：新颖 81、质量 49"
     ],
     "summary_zh": null
+  },
+  "2607.06519v1": {
+    "paper_id": "2607.06519v1",
+    "title": "FreqDepthKV: Frequency-Guided Depth Sharing for Robust KV Cache Compression in Long-Context LLM Inference",
+    "abstract": "Long-context LLM inference is increasingly limited by the memory and bandwidth cost of KV caches, yet aggressive compression can remove the layer-specific evidence needed for retrieval and multi-step reasoning. We introduce FreqDepthKV, an inference-time cache compression method that factorizes adjacent-layer KV states into shared low-frequency depth components and sparse high-frequency residuals. A lightweight online probe assigns attention heads to shared-depth, residual-depth, or exact cache modes according to their contribution to reconstruction-sensitive attention logits, allowing the compression policy to adapt to prompt structure without retraining. Across long-context question answering, needle retrieval, summarization, and code generation benchmarks, FreqDepthKV preserves task accuracy under substantially smaller cache budgets. With a 32k-token prefill window, FreqDepthKV reaches 58.3 Exact Match, 63.0 F1, 32.5 ROUGE-L, and 48.1 pass@1, closely matching full KV while outperforming prior compressed-cache methods. It also improves decoding throughput to 70.4 tokens/s, reduces TTFT to 2.06 seconds, and lowers peak KV memory to 6.2 GB, achieving a 3.9x effective compression ratio.",
+    "authors": [
+      "Anna Córdoba",
+      "Adam Puente Tercero",
+      "Nerea Angulo Hijo",
+      "Mar Linares Tercero",
+      "Julia Barrientos",
+      "Ainhoa Miranda",
+      "Jesús Olivera"
+    ],
+    "published": "2026-07-07T17:26:28Z",
+    "updated": "2026-07-07T17:26:28Z",
+    "categories": [
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.06519v1",
+    "abs_url": "http://arxiv.org/abs/2607.06519v1",
+    "source": "arXiv",
+    "venue": null,
+    "code_url": null,
+    "cited_by_count": null,
+    "topic_scores": {
+      "reasoning": 0.18,
+      "serving": 1.0,
+      "efficiency": 0.63
+    },
+    "semantic_score": null,
+    "personal_score": null,
+    "score_breakdown": {
+      "relevance": 100.0,
+      "quality": 60,
+      "novelty": 71.0,
+      "practical": 59,
+      "credibility": 35
+    },
+    "confidence": 51,
+    "risk_zh": null,
+    "llm_scores": {},
+    "score": 73.7,
+    "score_reasons": [
+      "命中主题：推理时扩展、推理系统、压缩与高效推理",
+      "优势：匹配 100、新颖 71"
+    ],
+    "summary_zh": null
+  },
+  "2607.05861v1": {
+    "paper_id": "2607.05861v1",
+    "title": "Mitigating Factual Hallucination in Large Reasoning Models via Mixed-Mode Advantage Regularization",
+    "abstract": "Large reasoning models (LRMs) improve language model capabilities by generating explicit thinking traces before final answers. In factuality-oriented question answering (QA), such thinking often improves overall performance by helping the model recover relevant knowledge and refine its answers. However, we find that this benefit is not uniform at the instance level: explicit thinking can also overturn correct non-thinking answers and lead to factual drift. We refer to this failure mode as \\emph{thinking-induced hallucination}. To explain this phenomenon, we formulate explicit thinking in factuality QA as a thinking residual over the model's direct-answer tendency, which can either recover missing knowledge or introduce unsupported associations. Based on this formulation, we propose MARGO, \\underline{\\textit{M}}ixed-Mode \\underline{\\textit{A}}dvantage \\underline{\\textit{R}}egularization for \\underline{\\textit{G}}rounded \\underline{\\textit{O}}ptimization, a reinforcement learning framework that uses non-thinking rollouts as same-model references in advantage estimation. By constructing mixed-mode rollout groups with both thinking and non-thinking trajectories, MARGO evaluates whether explicit thinking adds factual value beyond direct answering, thereby suppressing hallucination-prone thinking while preserving beneficial thinking behaviors. Experiments across multiple factuality-oriented QA benchmarks demonstrate that MARGO improves factual reliability over strong baselines, while evaluations on mathematical benchmarks show that it preserves general reasoning ability.",
+    "authors": [
+      "Kaishen Wang",
+      "Tong Zheng",
+      "Xuehao Cui",
+      "Ruibo Chen",
+      "Tianyi Xiong",
+      "Heng Huang"
+    ],
+    "published": "2026-07-07T05:34:25Z",
+    "updated": "2026-07-07T05:34:25Z",
+    "categories": [
+      "cs.CL",
+      "cs.LG"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.05861v1",
+    "abs_url": "http://arxiv.org/abs/2607.05861v1",
+    "source": "arXiv",
+    "venue": null,
+    "code_url": null,
+    "cited_by_count": null,
+    "topic_scores": {
+      "reasoning": 1.0
+    },
+    "semantic_score": null,
+    "personal_score": null,
+    "score_breakdown": {
+      "relevance": 100.0,
+      "quality": 58,
+      "novelty": 84.8,
+      "practical": 27,
+      "credibility": 35
+    },
+    "confidence": 67,
+    "risk_zh": null,
+    "llm_scores": {},
+    "score": 72.0,
+    "score_reasons": [
+      "命中主题：推理时扩展",
+      "优势：匹配 100、新颖 85"
+    ],
+    "summary_zh": null
+  },
+  "2607.06326v1": {
+    "paper_id": "2607.06326v1",
+    "title": "DT-Guard: Intent-Driven Reasoning-Active Training for Reasoning-Free LLM Safety Guardrail",
+    "abstract": "Large language models deployed in open-world applications require safety guardrails that are both robust to complex risks and efficient enough for low-latency runtime moderation. Existing guardrails face a practical trade-off between lightweight classification-based models, which are efficient but often struggle with concealed intent, ambiguous semantics, and borderline safety decisions, and reasoning-based guards, which improve judgment quality but introduce additional token generation and inference latency. We present DT-Guard, a content safety guardrail model based on a Reasoning-Active Training, Reasoning-Free Inference paradigm. The key idea is to use reasoning supervision during training while emitting only structured safety labels at inference time. DT-Guard formulates safety judgment as a progressive decision process, Intent - Category - Safety, and constructs an intent-driven dataset with intent labels, risk categories, safety labels, and structured reasoning trajectories. To further improve hard-case robustness, we propose Rollout-Guided Progressive Hard-Case Optimization (RG-PHO), which uses multi-rollout consistency to identify stably mastered, persistently failed, and preference-unstable samples, and applies targeted supervised and preference optimization accordingly. At inference time, DT-Guard directly generates structured labels without explicit reasoning traces, preserving deployment efficiency. Experiments on prompt-side and response-side safety benchmarks show that DT-Guard achieves average F1 scores of 0.886 and 0.870, respectively. With only a 4B backbone, it reaches a dual-side average F1 of 0.878, outperforming strong 8B guardrail baselines. These results demonstrate that reasoning supervision can be effectively internalized into low-latency safety discrimination.",
+    "authors": [
+      "He Liu",
+      "Changtao Miao",
+      "Xinjie Yang",
+      "Tianle Song",
+      "Yin Wu",
+      "Junchi Chen",
+      "Bintao He",
+      "Xinyuan Zhang",
+      "Bo Zhang",
+      "Shi Yan",
+      "Wei Lu",
+      "Wei Wang",
+      "Danyang Xu",
+      "Jiansheng Cai",
+      "Zhe Li"
+    ],
+    "published": "2026-07-07T14:25:05Z",
+    "updated": "2026-07-07T14:25:05Z",
+    "categories": [
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.06326v1",
+    "abs_url": "http://arxiv.org/abs/2607.06326v1",
+    "source": "arXiv",
+    "venue": null,
+    "code_url": null,
+    "cited_by_count": null,
+    "topic_scores": {
+      "post-training": 0.18,
+      "reasoning": 0.63
+    },
+    "semantic_score": null,
+    "personal_score": null,
+    "score_breakdown": {
+      "relevance": 63.0,
+      "quality": 87,
+      "novelty": 83.4,
+      "practical": 45,
+      "credibility": 35
+    },
+    "confidence": 75,
+    "risk_zh": null,
+    "llm_scores": {},
+    "score": 67.7,
+    "score_reasons": [
+      "命中主题：微调与对齐、推理时扩展",
+      "优势：质量 87、新颖 83"
+    ],
+    "summary_zh": null
+  },
+  "2607.06523v1": {
+    "paper_id": "2607.06523v1",
+    "title": "DepthWeave-KV: Token-Adaptive Cross-Layer Residual Factorization for Long-Context KV Cache Compression",
+    "abstract": "Long-context language model inference is increasingly limited by the memory bandwidth and capacity required to store key-value caches, yet existing compression methods often apply uniform budgets across layers or tokens and degrade retrieval when lexical cues and semantic states require different preservation. We introduce DepthWeave-KV, a token-adaptive cache compression method that factorizes key and value states across neighboring transformer layers using shared low-rank channel bases while retaining lightweight token-specific residuals where attention behavior is sensitive. DepthWeave-KV combines cross-depth residual factorization with a token-conditional depth router that allocates higher reconstruction rank to instruction-bearing and retrieval-critical tokens, and uses calibration-free online error tracking from attention-output probes to adapt compression during generation without retraining the base model. A fused CUDA implementation jointly performs basis lookup, residual dequantization, and attention projection to reduce decode-time memory traffic. Across LongBench, Needle-in-a-Haystack, L-Eval, and long-form QA and summarization benchmarks, DepthWeave-KV achieves near-full-cache task quality with substantially lower memory use, improving average score and retrieval accuracy over prior compressed caches while reaching 8.3x KV memory reduction and 72.8 tokens per second at 64K context.",
+    "authors": [
+      "Anna Cordoba",
+      "Adam Puente Tercero",
+      "Nerea Angulo Hijo",
+      "Mar Linares Tercero",
+      "Julia Barrientos",
+      "Ainhoa Miranda",
+      "Jesus Olivera"
+    ],
+    "published": "2026-07-07T17:29:01Z",
+    "updated": "2026-07-07T17:29:01Z",
+    "categories": [
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.06523v1",
+    "abs_url": "http://arxiv.org/abs/2607.06523v1",
+    "source": "arXiv",
+    "venue": null,
+    "code_url": null,
+    "cited_by_count": null,
+    "topic_scores": {
+      "serving": 0.45,
+      "efficiency": 0.99
+    },
+    "semantic_score": null,
+    "personal_score": null,
+    "score_breakdown": {
+      "relevance": 99.0,
+      "quality": 39,
+      "novelty": 71.0,
+      "practical": 41,
+      "credibility": 35
+    },
+    "confidence": 43,
+    "risk_zh": null,
+    "llm_scores": {},
+    "score": 65.9,
+    "score_reasons": [
+      "命中主题：推理系统、压缩与高效推理",
+      "优势：匹配 99、新颖 71"
+    ],
+    "summary_zh": null
+  },
+  "2607.05872v1": {
+    "paper_id": "2607.05872v1",
+    "title": "No Subspace to Track: Non-Identifiability and Optimizer State in Low-Rank Training",
+    "abstract": "Memory-efficient optimizers such as GaLore train large language models by projecting gradients onto a rank-r subspace recomputed every T steps, assuming this subspace is a slowly drifting object that can be tracked. We show that beyond a small reproducible core, there is no such object. Two estimates of the top-r subspace computed at the same step from disjoint minibatches disagree as much as estimates computed T steps apart (0.73 vs 0.74 of the maximal chordal distance sqrt(2r), at Pythia-160M with r=128): the apparent rotation at each refresh is dominated by estimator noise. This holds across four model families in three architecture classes from 70M to 6.9B parameters, strengthening with scale, and more weakly in a vision transformer. Only ~39 of 128 directions are reproducible across minibatches, and averaging cannot recover the rest: under N-fold averaging the gradient's spectral tail shrinks as N^(-1/4) rather than the N^(-1/2) of pure noise, so no averaging budget makes the subspace well defined. What helps instead follows from treating each refresh as a change of coordinates for Adam's state. Carrying the second moment blindly is provably about (r-k*)/2 worse than the best rotation-blind estimator, while the first moment transports exactly through the rotation, the optimal linear map under isotropic gradients and the rule LDAdam uses. At 1B over 40k steps (3 seeds), full LDAdam reaches 18.7 perplexity at beta2=0.999, beating untransported GaLore after its best beta2 fix (19.3); shortening the second-moment memory to beta2=0.99 helps the refreshing optimizers, though for canonical GaLore the effect is small and a full-rank control reverses it. One measurable fact, subspace non-identifiability, clarifies why GaLore works, which patches work, and what to check before trusting a low-rank assumption: the reproducible rank k*.",
+    "authors": [
+      "Noel Thomas"
+    ],
+    "published": "2026-07-07T06:06:04Z",
+    "updated": "2026-07-07T06:06:04Z",
+    "categories": [
+      "cs.LG",
+      "math.OC",
+      "stat.ML"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.05872v1",
+    "abs_url": "http://arxiv.org/abs/2607.05872v1",
+    "source": "arXiv",
+    "venue": null,
+    "code_url": null,
+    "cited_by_count": null,
+    "topic_scores": {
+      "pretraining": 0.63,
+      "efficiency": 0.81
+    },
+    "semantic_score": null,
+    "personal_score": null,
+    "score_breakdown": {
+      "relevance": 81.0,
+      "quality": 54,
+      "novelty": 88.2,
+      "practical": 36,
+      "credibility": 28
+    },
+    "confidence": 35,
+    "risk_zh": null,
+    "llm_scores": {},
+    "score": 64.7,
+    "score_reasons": [
+      "命中主题：预训练与优化、压缩与高效推理",
+      "优势：新颖 88、匹配 81"
+    ],
+    "summary_zh": null
+  },
+  "2607.06140v1": {
+    "paper_id": "2607.06140v1",
+    "title": "CurateEvo: Data-Curation Evolving for Agentic Post-Training",
+    "abstract": "Large language model (LLM) agents require post-training methods that can improve long-horizon decision making from environment feedback. However, existing agentic post-training pipelines often treat data curation as a fixed preprocessing step, focusing mainly on data augmentation while neglecting filtering, refinement, and adaptation to downstream failures. We propose CurateEvo, a failure-driven dynamic evolution framework for agentic post-training data curation. CurateEvo represents the curation strategy as executable code and iteratively rewrites it using failed trajectories from a held-out development set. At each epoch, the evolved strategy transforms a fixed raw corpus into supervised fine-tuning data, reinforcement learning data, and an inference-time memory bank. The evolution process first improves effectiveness by diagnosing recurring failure modes and augmenting, filtering, or refining data accordingly, and then improves efficiency by pruning redundant or low-utility training turns under a cost-aware objective. Experiments on ACEBench-Agent, BFCL-V4, and τ^2-Bench under both labeled and wild-data settings show that CurateEvo consistently outperforms prior curation methods, improving average scores by 3.2 and 2.7 points, respectively. Further analyses demonstrate that CurateEvo is compatible with different post-training recipes and substantially reduces curation overhead.",
+    "authors": [
+      "Dingzirui Wang",
+      "Xuanliang Zhang",
+      "Keyan Xu",
+      "Qingfu Zhu",
+      "Wanxiang Che"
+    ],
+    "published": "2026-07-07T11:07:00Z",
+    "updated": "2026-07-07T11:07:00Z",
+    "categories": [
+      "cs.CL"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.06140v1",
+    "abs_url": "http://arxiv.org/abs/2607.06140v1",
+    "source": "arXiv",
+    "venue": null,
+    "code_url": null,
+    "cited_by_count": null,
+    "topic_scores": {
+      "post-training": 0.81
+    },
+    "semantic_score": null,
+    "personal_score": null,
+    "score_breakdown": {
+      "relevance": 81.0,
+      "quality": 52,
+      "novelty": 83.4,
+      "practical": 36,
+      "credibility": 35
+    },
+    "confidence": 51,
+    "risk_zh": null,
+    "llm_scores": {},
+    "score": 64.2,
+    "score_reasons": [
+      "命中主题：微调与对齐",
+      "优势：新颖 83、匹配 81"
+    ],
+    "summary_zh": null
+  },
+  "2607.05933v1": {
+    "paper_id": "2607.05933v1",
+    "title": "Energy-Efficient GPU DVFS for Fine-Tuning of SLMs on Resource-constrained Embedded Devices",
+    "abstract": "Dynamic Voltage Frequency Scaling (DVFS) on resource-constrained embedded GPU platforms is essential for energy-efficient small language model (SLM) fine-tuning, as privacy- and personalization-driven adaptation increasingly requires local execution and involves repeated forward-backward optimization over many mini-batches, making it substantially more time- and energy-intensive than single-pass inference. To this end, 1) we first characterize the fine-tuning behavior of representative encoder-only SLMs of BERT variants, and autoregressive decoder-only SLMs of Pythia variants on GLUE benchmarks. In addition to the characterizations, 2) we propose a simple yet effective ML-based model selection that selects energy-optimal GPU DVFS settings on resource-constrained embedded platforms. Our results on NVIDIA Jetson AGX Orin demonstrate average 13.11% energy savings (up to 26.73%) over MAXN Mode 0, which has no explicit power cap.",
+    "authors": [
+      "Jurn-Gyu Park",
+      "Sanzhar Zholdybayev",
+      "Aidar Amangeldi",
+      "Ademi Zhanuzakova"
+    ],
+    "published": "2026-07-07T07:34:56Z",
+    "updated": "2026-07-07T07:34:56Z",
+    "categories": [
+      "cs.PF",
+      "cs.LG"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.05933v1",
+    "abs_url": "http://arxiv.org/abs/2607.05933v1",
+    "source": "arXiv",
+    "venue": null,
+    "code_url": null,
+    "cited_by_count": null,
+    "topic_scores": {
+      "post-training": 0.63
+    },
+    "semantic_score": null,
+    "personal_score": null,
+    "score_breakdown": {
+      "relevance": 63.0,
+      "quality": 63,
+      "novelty": 90.1,
+      "practical": 36,
+      "credibility": 35
+    },
+    "confidence": 43,
+    "risk_zh": null,
+    "llm_scores": {},
+    "score": 61.5,
+    "score_reasons": [
+      "命中主题：微调与对齐",
+      "优势：新颖 90、匹配 63"
+    ],
+    "summary_zh": null
+  },
+  "2607.06447v1": {
+    "paper_id": "2607.06447v1",
+    "title": "Danus: Orchestrating Mathematical Reasoning Agents with Fact-Graph Memory",
+    "abstract": "Recent LLM-based mathematical reasoning agents have begun to tackle research-level problems and, in several cases, have contributed to the resolution of open problems. However, scaling and orchestrating such agents effectively remains challenging, due to the difficulty of coordinating parallel proof search while keeping intermediate claims organized and reliable. In this paper, we propose Danus, an orchestration system for research-level mathematical reasoning centered on a shared fact graph as a global memory-management mechanism. Danus consists of a main agent that performs planning and coordination, multiple worker agents that carry out proof search in parallel, and a stateless verifier that checks proposed mathematical claims before they are admitted into the fact graph. Each verified fact is stored together with its proof and logical dependencies, allowing the system to build long arguments incrementally while keeping the shared proof state organized. The main agent periodically summarizes the evolving proof state, redirects workers across promising directions, and supports interaction with human mathematicians through progress reports. We evaluate Danus through six research-level case studies in algebraic geometry, singularity theory, and combinatorics, illustrating how the fact-graph memory mechanism enables Danus to construct long, detailed mathematical proofs. Our results suggest that fact-graph-based orchestration provides an effective route toward scaling mathematical reasoning agents for long-horizon research problems. Danus is open source at https://github.com/frenzymath/Danus.",
+    "authors": [
+      "Jihao Liu",
+      "Guoxiong Gao",
+      "Zeming Sun",
+      "Bin Wu",
+      "Shurui Liu",
+      "Jiedong Jiang",
+      "Haocheng Ju",
+      "Leheng Chen",
+      "Ronnie Cheng",
+      "Xiping Zhang",
+      "Bin Dong"
+    ],
+    "published": "2026-07-07T16:11:30Z",
+    "updated": "2026-07-07T16:11:30Z",
+    "categories": [
+      "cs.AI",
+      "cs.CL",
+      "cs.MA"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.06447v1",
+    "abs_url": "http://arxiv.org/abs/2607.06447v1",
+    "source": "arXiv",
+    "venue": null,
+    "code_url": null,
+    "cited_by_count": null,
+    "topic_scores": {
+      "reasoning": 0.81
+    },
+    "semantic_score": null,
+    "personal_score": null,
+    "score_breakdown": {
+      "relevance": 81.0,
+      "quality": 31,
+      "novelty": 89.3,
+      "practical": 27,
+      "credibility": 35
+    },
+    "confidence": 43,
+    "risk_zh": null,
+    "llm_scores": {},
+    "score": 58.6,
+    "score_reasons": [
+      "命中主题：推理时扩展",
+      "优势：新颖 89、匹配 81"
+    ],
+    "summary_zh": null
+  },
+  "2607.06481v1": {
+    "paper_id": "2607.06481v1",
+    "title": "Prompt-Adapter Context Routing for Parameter-Efficient Multi-Shot Long Video Extrapolation",
+    "abstract": "We present PACR-Video, a parameter-efficient framework for multi-shot long video extrapolation that preserves recurring entities, scene structure, visual style, and causal progression without full generator fine-tuning. PACR-Video keeps a text-to-video diffusion transformer frozen and augments it with low-rank temporal adapters conditioned by learned shot-role prompt tokens. To maintain long-horizon coherence, it builds a recursive prompt bank that stores compact entity, location, action, and style prompts from previous shots, then routes them through adapter gates according to predicted narrative dependencies. A Shot-Local/Story-Global tuning objective combines next-shot reconstruction, cross-shot identity contrast, and prompt sparsity regularization, while an adapter composition schedule balances early-shot visual consistency with later-shot event progression and viewpoint change. Across six multi-shot and long-video benchmarks, PACR-Video outperforms text-to-video, tuning-based, memory-augmented, streaming, and recursive-context baselines on distributional quality, semantic alignment, identity consistency, temporal smoothness, motion stability, transition coherence, and human preference. These results show that compact prompt routing and lightweight temporal adaptation provide sufficient controllable capacity for stable long video extrapolation.",
+    "authors": [
+      "Anna Córdoba",
+      "Adam Puente Tercero",
+      "Nerea Angulo Hijo",
+      "Mar Linares Tercero",
+      "Julia Barrientos",
+      "Ainhoa Miranda",
+      "Jesús Olivera"
+    ],
+    "published": "2026-07-07T16:41:25Z",
+    "updated": "2026-07-07T16:41:25Z",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.06481v1",
+    "abs_url": "http://arxiv.org/abs/2607.06481v1",
+    "source": "arXiv",
+    "venue": null,
+    "code_url": null,
+    "cited_by_count": null,
+    "topic_scores": {
+      "post-training": 0.36,
+      "efficiency": 0.36
+    },
+    "semantic_score": null,
+    "personal_score": null,
+    "score_breakdown": {
+      "relevance": 36.0,
+      "quality": 49,
+      "novelty": 86.6,
+      "practical": 36,
+      "credibility": 35
+    },
+    "confidence": 59,
+    "risk_zh": null,
+    "llm_scores": {},
+    "score": 47.3,
+    "score_reasons": [
+      "命中主题：微调与对齐、压缩与高效推理",
+      "优势：新颖 87、质量 49"
+    ],
+    "summary_zh": null
+  },
+  "2607.05891v1": {
+    "paper_id": "2607.05891v1",
+    "title": "Few-Medoids: An Embarrassingly Simple Coreset Selection Method for Few-Shot Knowledge Distillation",
+    "abstract": "Coreset selection aims to identify a small and highly representative subset of a massive dataset for efficient model training. The problem remains challenging even in the few-shot knowledge distillation (KD) setup, where a full-scale pre-trained teacher informs the student network. Typical sample selection strategies often struggle to surpass the random selection baseline. In this paper, we showcase few-medoids, an embarrassingly simple coreset selection strategy that chooses the samples closest to the centroid (average image) of each class. We present extensive KD experiments on four datasets, covering a wide range of image classification problems, and three teacher-student model pairs, comprising both convolutional and transformer networks. Although the proposed method is embarrassingly simple, our empirical results indicate that few-medoids is able to consistently surpass the random selection baseline, as well as the other coreset selection strategies. We therefore consider that few-medoids can be used as a drop-in replacement for commonly-used baselines (e.g. herding or k-center Greedy), in future research on coreset selection. To reproduce the reported results, we publicly release our code at https://github.com/CemilAndreiDilmac/Few-Shot-KD-Coreset.",
+    "authors": [
+      "Cemil-Andrei Dilmac",
+      "Florinel-Alin Croitoru",
+      "Radu Tudor Ionescu"
+    ],
+    "published": "2026-07-07T06:40:58Z",
+    "updated": "2026-07-07T06:40:58Z",
+    "categories": [
+      "cs.CV",
+      "cs.AI",
+      "cs.LG"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.05891v1",
+    "abs_url": "http://arxiv.org/abs/2607.05891v1",
+    "source": "arXiv",
+    "venue": null,
+    "code_url": null,
+    "cited_by_count": null,
+    "topic_scores": {
+      "efficiency": 0.63
+    },
+    "semantic_score": null,
+    "personal_score": null,
+    "score_breakdown": {
+      "relevance": 63.0,
+      "quality": 49,
+      "novelty": 88.1,
+      "practical": 27,
+      "credibility": 35
+    },
+    "confidence": 59,
+    "risk_zh": null,
+    "llm_scores": {},
+    "score": 56.5,
+    "score_reasons": [
+      "命中主题：压缩与高效推理",
+      "优势：新颖 88、匹配 63"
+    ],
+    "summary_zh": null
+  },
+  "2607.06125v1": {
+    "paper_id": "2607.06125v1",
+    "title": "Evaluating Fine-Tuning and Metrics for Neural Decompilation of Dart AOT Binaries",
+    "abstract": "Neural decompilation is increasingly studied as a code-generation problem, yet its evaluation methodology remains underdeveloped for modern languages. We present a systematic empirical study of fine-tuning effectiveness and metric validity for Dart Ahead-of-Time (AOT) neural decompilation. We evaluate six fine-tuned model variants across three base architectures (4B-8B parameters) using three metrics: CodeBLEU, compile@k, and pass@k on a new 154-task HumanEval-Dart benchmark. Our study yields three principal findings grounded in paired task-level statistical tests. First, no fine-tuning configuration produces a statistically significant pass@k improvement. The sole positive case yields +0.71 pp (McNemar p=0.21), while fine-tuning the strongest base (Qwen3-8B) causes a highly significant regression of -5.65 pp (p<0.001). This capacity-dependent trend is consistent across architectures but needs broader scale sweeps. Second, cross-lingual interference from Swift training is highly significant at 4B (-2.66 pp, p<0.001) but statistically indistinguishable from zero at 8B, consistent with the scaling hypothesis. Third, we demonstrate metric divergence: CodeBLEU and compile@k can improve significantly while pass@k moves in the opposite direction. This has implications for any LLM code generation task where fine-tuning targets superficial similarity. Error analysis reveals assembly sequence length is the strongest predictor of task difficulty (p=0.001), with a capability cliff at 200 instructions. We contribute the HumanEval-Dart benchmark, a Dart-adapted CodeBLEU, and empirical evidence that pass@k must be the primary evaluation metric for neural decompilation.",
+    "authors": [
+      "Raafat Abualazm",
+      "Ayman AboElhassan",
+      "Amr G. Wassal"
+    ],
+    "published": "2026-07-07T10:36:12Z",
+    "updated": "2026-07-07T10:36:12Z",
+    "categories": [
+      "cs.SE",
+      "cs.AI",
+      "cs.CR"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.06125v1",
+    "abs_url": "http://arxiv.org/abs/2607.06125v1",
+    "source": "arXiv",
+    "venue": null,
+    "code_url": null,
+    "cited_by_count": null,
+    "topic_scores": {
+      "post-training": 0.63
+    },
+    "semantic_score": null,
+    "personal_score": null,
+    "score_breakdown": {
+      "relevance": 63.0,
+      "quality": 60,
+      "novelty": 87.9,
+      "practical": 18,
+      "credibility": 35
+    },
+    "confidence": 51,
+    "risk_zh": null,
+    "llm_scores": {},
+    "score": 58.5,
+    "score_reasons": [
+      "命中主题：微调与对齐",
+      "优势：新颖 88、匹配 63"
+    ],
+    "summary_zh": null
+  },
+  "2607.06327v1": {
+    "paper_id": "2607.06327v1",
+    "title": "Estimating Uncertainty from Reasoning: A Large-Scale Study of Multi- and Crosslingual MCQA Performance in LLMs",
+    "abstract": "Uncertainty estimation (UE) enables LLM-powered systems to recognize when to abstain, yet existing research has predominantly focused on English. We present the first large-scale evaluation of UE methods across 22 languages, spanning high-, mid-, and low-resource settings. Using two human-curated Q\\&A datasets, we compare open and closed box UE methods (nine in total) across different model sizes and architectures while eliciting long-form reasoning, avoiding LLM-as-a-judge and embedding-based scoring, which can introduce evaluation noise. We report three main actionable findings. First, we find that prompting models to reason in English while keeping questions in low-resource languages substantially improves UE performance, suggesting that comprehension of low-resource languages is largely intact, and that the reliability bottleneck lies in generation rather than understanding. Second, prompting models to reason in English closes the UE performance gap between low and high-resource languages, demonstrating that generation language matters more than the question language. Third, the choice of UE method should depend on model scale: at smaller scales, open-box probability-based methods outperform alternatives; at larger scales, closed-box self-verbalized uncertainty becomes superior. Finally, we provide an analysis of threshold selection for selective prediction, offering guidance on calibrating abstention in multilingual settings.",
+    "authors": [
+      "Andrea Alfarano",
+      "Andrea Bacciu",
+      "Saab Mansour",
+      "Amin Mantrach",
+      "Marcello Federico"
+    ],
+    "published": "2026-07-07T14:25:09Z",
+    "updated": "2026-07-07T14:25:09Z",
+    "categories": [
+      "cs.CL",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.06327v1",
+    "abs_url": "http://arxiv.org/abs/2607.06327v1",
+    "source": "arXiv",
+    "venue": null,
+    "code_url": null,
+    "cited_by_count": null,
+    "topic_scores": {
+      "reasoning": 0.63
+    },
+    "semantic_score": null,
+    "personal_score": null,
+    "score_breakdown": {
+      "relevance": 63.0,
+      "quality": 56,
+      "novelty": 84.0,
+      "practical": 18,
+      "credibility": 35
+    },
+    "confidence": 51,
+    "risk_zh": null,
+    "llm_scores": {},
+    "score": 56.8,
+    "score_reasons": [
+      "命中主题：推理时扩展",
+      "优势：新颖 84、匹配 63"
+    ],
+    "summary_zh": null
   }
 }
