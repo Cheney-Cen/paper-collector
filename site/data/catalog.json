@@ -1,7 +1,566 @@
 {
   "date": "全部历史",
-  "selected_count": 158,
+  "selected_count": 170,
   "papers": [
+    {
+      "paper_id": "2607.07708v1",
+      "title": "Accurate, Interdisciplinary and Transparent Structure-property Understanding with Deep Native Structural Reasoning",
+      "abstract": "Structure-property relationships are foundational to biology, chemistry and materials science, where function, reactivity and physical response emerge from spatial, chemical and periodic organization. Mechanistically explaining these relationships requires interpreting structural evidence through scientific principles and physical constraints, from stereochemistry and bonding to symmetry, energetics and periodic order. However, applying artificial intelligence to this process presents a joint challenge of representation and reasoning: models must preserve domain-native structural information while showing how specific evidence supports predictions under these constraints. Here we introduce SciReasoner, a multimodal scientific foundation model for native structural reasoning across proteins, small molecules and inorganic crystals. SciReasoner discretizes coordinates, topologies and periodic connectivities into a unified structure-aware vocabulary, treating structural tokens as addressable evidence units during reasoning. In homology-controlled Gene Ontology prediction, SciReasoner improves Cellular Component annotation for low-homology and orphan-like proteins, increasing $F_{\\max}$ from 0.42 to 0.55. In chemistry, it raises single-step retrosynthesis accuracy from 0.63 to 0.72 while generating fragment-level disconnection and precursor-verification traces. In materials science, its representations separate elemental and compound phases and resolve high- and low-band-gap regimes. Across 86 benchmarks, SciReasoner achieves state-of-the-art performance on 67 tasks. Double-blind expert evaluation rates its reasoning traces as preferred or at least comparable to those of a frontier large language model in 98% of cases. By making structure an inspectable substrate for reasoning under scientific constraints, SciReasoner connects accurate prediction with interpretable scientific inference.",
+      "authors": [
+        "Chen Tang",
+        "Yizhou Wang",
+        "Jianyu Wu",
+        "Lintao Wang",
+        "Shixiang Tang",
+        "Pengze Li",
+        "Encheng Su",
+        "Jun Yao",
+        "Jiabei Xiao",
+        "Yuqi Shi",
+        "Jielan Li",
+        "Hongxia Hao",
+        "Zhangyang Gao",
+        "Fang Wu",
+        "Ben Fei",
+        "Xiangyu Yue",
+        "Pan Tan",
+        "Bozitao Zhong",
+        "Jinouwen Zhang",
+        "Aoran Wang",
+        "Yan Lu",
+        "Jiaheng Liu",
+        "Xinzhu Ma",
+        "Liang Hong",
+        "Mingyue Zheng",
+        "Phil Torr",
+        "Bowen Zhou",
+        "Wanli Ouyang",
+        "Lei Bai"
+      ],
+      "published": "2026-07-08T17:59:59Z",
+      "updated": "2026-07-08T17:59:59Z",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.CE",
+        "cs.LG"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2607.07708v1",
+      "abs_url": "http://arxiv.org/abs/2607.07708v1",
+      "source": "arXiv",
+      "venue": null,
+      "code_url": null,
+      "cited_by_count": null,
+      "topic_scores": {
+        "reasoning": 0.63
+      },
+      "semantic_score": null,
+      "personal_score": null,
+      "score_breakdown": {
+        "relevance": 63.0,
+        "quality": 51,
+        "novelty": 89.1,
+        "practical": 18,
+        "credibility": 35
+      },
+      "confidence": 43,
+      "risk_zh": null,
+      "llm_scores": {},
+      "score": 56.3,
+      "score_reasons": [
+        "命中主题：推理时扩展",
+        "优势：新颖 89、匹配 63"
+      ],
+      "summary_zh": null
+    },
+    {
+      "paper_id": "2607.07646v1",
+      "title": "RL Post-Training Builds Compositional Reasoning Strategies",
+      "abstract": "Does RL post-training merely amplify primitive skills already latent in a base model, or can it compose primitive skills into new higher-level strategies? We study this question in a fully observable rewrite-grammar environment where the pretraining distribution is known and every generated rewrite can be audited. A Transformer is pretrained on primitive symbol-rewrite chains and post-trained on a Trace-based reasoning task with only a binary final-answer reward. RL solves held-out problems that remain rarely solved by the pretrained model even under much larger sampling budgets, while rejection fine-tuning improves early but plateaus. Trace analysis shows that RL reorganizes primitive competence through a phased compositional mechanism: it first strengthens primitive reductions, then discovers valid composed procedures. These include sequential compositions, which collapse ordered chains of primitive contractions, and parallel compositions, which combine independent primitive contractions in a single step. The composed procedures are not isolated samples; they are reused and consolidated into a stable repertoire. Comparing RL with rejection fine-tuning shows that the key difference is not exploration volume but selectivity: RFT produces many shortcut-like rewrites, much of them invalid, whereas RL concentrates exploration into valid reusable structure. Pretraining ablations show that the emergence of compositional strategies is gated not by primitive exposure alone, but by whether pretraining organizes primitive competence into reduction procedures that RL can later compress. The base model provides weak procedural ingredients; RL builds them into reliable higher-level strategies.",
+      "authors": [
+        "Azwar Abdulsalam",
+        "Nishil Patel",
+        "Andrew Saxe"
+      ],
+      "published": "2026-07-08T17:04:42Z",
+      "updated": "2026-07-08T17:04:42Z",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2607.07646v1",
+      "abs_url": "http://arxiv.org/abs/2607.07646v1",
+      "source": "arXiv",
+      "venue": null,
+      "code_url": null,
+      "cited_by_count": null,
+      "topic_scores": {
+        "pretraining": 0.18,
+        "post-training": 0.81,
+        "reasoning": 0.63
+      },
+      "semantic_score": null,
+      "personal_score": null,
+      "score_breakdown": {
+        "relevance": 81.0,
+        "quality": 31,
+        "novelty": 87.0,
+        "practical": 18,
+        "credibility": 35
+      },
+      "confidence": 43,
+      "risk_zh": null,
+      "llm_scores": {},
+      "score": 57.3,
+      "score_reasons": [
+        "命中主题：预训练与优化、微调与对齐、推理时扩展",
+        "优势：新颖 87、匹配 81"
+      ],
+      "summary_zh": null
+    },
+    {
+      "paper_id": "2607.07626v1",
+      "title": "Future Confidence Distillation in Large Language Models",
+      "abstract": "Reliable confidence estimation is essential for deploying large language models (LLMs) in confidence-aware systems, where downstream decisions such as retrieval, tool use, and adaptive computation depend on accurately estimating answer reliability. Existing approaches, however, largely treat confidence as a property of completed responses, overlooking how confidence-related information evolves throughout the answering process. In this work, we investigate confidence from a temporal perspective by comparing pre-solution Feeling-of-Knowing (FOK) and post-solution Judgement-of-Learning (JOL) confidence estimates across frontier and open-source LLMs. We show that post-solution confidence is consistently better calibrated and more discriminative than pre-solution confidence, while linear probes trained on hidden representations recover substantially richer confidence-related information than models explicitly verbalise. Building on this observation, we introduce future confidence distillation, which trains predictors operating on pre-solution hidden representations using teacher confidence estimates produced by post-solution correctness probes. Despite requiring only pre-solution representations for inference, distilled predictors recover much of the calibration improvement achieved by post-solution confidence, remain highly sample efficient, and transfer across datasets within the same domain. Together, our findings demonstrate that confidence-related information evolves throughout the answering process and can be anticipated before answer generation is complete, enabling significantly more reliable yet low-cost confidence estimation.",
+      "authors": [
+        "Sahil Kale"
+      ],
+      "published": "2026-07-08T16:43:11Z",
+      "updated": "2026-07-08T16:43:11Z",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2607.07626v1",
+      "abs_url": "http://arxiv.org/abs/2607.07626v1",
+      "source": "arXiv",
+      "venue": null,
+      "code_url": null,
+      "cited_by_count": null,
+      "topic_scores": {
+        "efficiency": 0.63
+      },
+      "semantic_score": null,
+      "personal_score": null,
+      "score_breakdown": {
+        "relevance": 63.0,
+        "quality": 43,
+        "novelty": 86.0,
+        "practical": 36,
+        "credibility": 28
+      },
+      "confidence": 43,
+      "risk_zh": null,
+      "llm_scores": {},
+      "score": 54.8,
+      "score_reasons": [
+        "命中主题：压缩与高效推理",
+        "优势：新颖 86、匹配 63"
+      ],
+      "summary_zh": null
+    },
+    {
+      "paper_id": "2607.07557v1",
+      "title": "PALS: Percentile-Aware Layerwise Sparsity for LLM Pruning",
+      "abstract": "One-shot pruning methods like Wanda and SparseGPT apply the same sparsity ratio to every layer of a transformer, ignoring known variation in layer importance. We propose PALS (Percentile-Aware Layerwise Sparsity), which adjusts per-layer sparsity based on the 99th percentile of activation magnitudes, bounded to $\\pm 5\\%$ around the target ratio. On LLaMA-2-7B at 50\\% sparsity, PALS achieves 10.96 WikiText-2 perplexity versus 12.92 for uniform Wanda (mean over 9 runs, $p < 0.001$). The benefit is architecture-dependent: LLaMA-3-8B shows marginal gains and Mistral-7B shows none. We also find that gradient-based allocation -- the seemingly more principled approach -- produces results worse than random, suggesting that gradient magnitude does not predict the impact of discrete weight removal. PALS adds negligible cost to the pruning pipeline and requires no fine-tuning.",
+      "authors": [
+        "Yazdan Jamshidi",
+        "Alexey Shvets"
+      ],
+      "published": "2026-07-08T15:51:57Z",
+      "updated": "2026-07-08T15:51:57Z",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2607.07557v1",
+      "abs_url": "http://arxiv.org/abs/2607.07557v1",
+      "source": "arXiv",
+      "venue": null,
+      "code_url": null,
+      "cited_by_count": null,
+      "topic_scores": {
+        "post-training": 0.18,
+        "efficiency": 0.63
+      },
+      "semantic_score": null,
+      "personal_score": null,
+      "score_breakdown": {
+        "relevance": 63.0,
+        "quality": 54,
+        "novelty": 91.1,
+        "practical": 27,
+        "credibility": 35
+      },
+      "confidence": 35,
+      "risk_zh": null,
+      "llm_scores": {},
+      "score": 58.3,
+      "score_reasons": [
+        "命中主题：微调与对齐、压缩与高效推理",
+        "优势：新颖 91、匹配 63"
+      ],
+      "summary_zh": null
+    },
+    {
+      "paper_id": "2607.07494v1",
+      "title": "GIFT: Geometry-Informed Low-precision Gradient Communication for LLM Pretraining",
+      "abstract": "Gradient communication is a primary scaling bottleneck in large language model (LLM) pretraining. Communicating gradients in low-precision formats, such as FP8 and NVFP4, can significantly reduce the communication volume. Existing methods quantize gradients via linear or nonlinear mappings in Euclidean space, often degrading model performance because highly anisotropic gradients incur direction-dependent distortion. We present GIFT, a geometry-informed gradient scaling method that performs low-precision communication in geometry-aware coordinates. By transforming gradients into a near-isotropic space before quantization, GIFT makes low-precision representations substantially more faithful to their high-precision counterparts. GIFT only changes the coordinate system used for low-precision gradient communication and does not change the optimizer, training recipe, communication collective, or low-precision format. We also develop a simplified geometry-aware transformation algorithm with low-rank approximation and selective application to balance the computation overhead and communication reduction. We examine the empirical convergence of GIFT using Llama-300M and Llama-600M models. Our results show that GIFT reduces the end-to-end pretraining time of Llama-600M by 7.6% on 64 NVIDIA GH200 Superchips, while improving the downstream task preservation profile over direct Euclidean FP8 communication under the same optimizer and communication path.",
+      "authors": [
+        "Jieying Wang",
+        "Shuyuan Fan",
+        "Mingkai Zheng",
+        "Zhao Zhang"
+      ],
+      "published": "2026-07-08T14:55:51Z",
+      "updated": "2026-07-08T14:55:51Z",
+      "categories": [
+        "cs.DC",
+        "cs.LG"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2607.07494v1",
+      "abs_url": "http://arxiv.org/abs/2607.07494v1",
+      "source": "arXiv",
+      "venue": null,
+      "code_url": null,
+      "cited_by_count": null,
+      "topic_scores": {
+        "pretraining": 0.81,
+        "efficiency": 0.36
+      },
+      "semantic_score": null,
+      "personal_score": null,
+      "score_breakdown": {
+        "relevance": 81.0,
+        "quality": 42,
+        "novelty": 86.8,
+        "practical": 27,
+        "credibility": 35
+      },
+      "confidence": 35,
+      "risk_zh": null,
+      "llm_scores": {},
+      "score": 61.1,
+      "score_reasons": [
+        "命中主题：预训练与优化、压缩与高效推理",
+        "优势：新颖 87、匹配 81"
+      ],
+      "summary_zh": null
+    },
+    {
+      "paper_id": "2607.07391v1",
+      "title": "MIRA-Math: A Benchmark for Minimal Information Requesting and Mathematical Reasoning",
+      "abstract": "Mathematical reasoning benchmarks typically provide all facts needed to solve each problem, while interactive benchmarks often mix reasoning with tools, retrieval, and long-horizon dialogue. We introduce MIRA-Math, a benchmark for a narrower diagnostic capability: solving mathematical problems whose full latent state has a unique answer, but whose solver-facing view is missing exactly one necessary atomic fact. The solver must request the missing information in natural language under a strict budget and then integrate the returned fact into an exact final answer. A fixed constrained LLM responder sees only the dataset-provided atomic fact and must either offer the quoted fact when the request matches it, or decline otherwise. Thus, instance generation, typed hint specifications, validation, and final-answer verification are deterministic, while request metrics are measured under a fixed LLM-mediated responder channel. MIRA-Math contains 2{,}310 generated instances from 22 typed mathematical families spanning algebra, probability, linear systems, discrete structures, signal processing, Markov chains, circuits, interpolation, and numerical boundary-value problems. Experiments across frontier and small models show that request success and final-answer accuracy are separable: models may ask for the right fact yet fail the downstream computation, or fail before obtaining the canonical hint. We release generators, verifiers, prompts, run metadata, and dataset documentation to support reproducible evaluation of minimal information requesting in mathematical reasoning.",
+      "authors": [
+        "Charbel Al Bateh",
+        "Samer Saab"
+      ],
+      "published": "2026-07-08T13:23:56Z",
+      "updated": "2026-07-08T13:23:56Z",
+      "categories": [
+        "cs.AI"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2607.07391v1",
+      "abs_url": "http://arxiv.org/abs/2607.07391v1",
+      "source": "arXiv",
+      "venue": null,
+      "code_url": null,
+      "cited_by_count": null,
+      "topic_scores": {
+        "reasoning": 0.81
+      },
+      "semantic_score": null,
+      "personal_score": null,
+      "score_breakdown": {
+        "relevance": 81.0,
+        "quality": 61,
+        "novelty": 87.8,
+        "practical": 18,
+        "credibility": 35
+      },
+      "confidence": 59,
+      "risk_zh": null,
+      "llm_scores": {},
+      "score": 65.3,
+      "score_reasons": [
+        "命中主题：推理时扩展",
+        "优势：新颖 88、匹配 81"
+      ],
+      "summary_zh": null
+    },
+    {
+      "paper_id": "2607.07388v1",
+      "title": "TF-Engram: A Train-Free Engram with SSD-Backed Memory for Large Language Models",
+      "abstract": "Large Language Models (LLMs) store factual knowledge and domain-specific patterns implicitly in dense Transformer parameters, making knowledge expansion costly through pretraining, fine-tuning, retrieval augmentation, or longer contexts. Engram-style memory offers a compact hidden-state injection pathway, but existing GPU-resident designs often rely on hash-based compression, causing unrelated phrases to collide in shared slots and weakening phrase-level semantic fidelity. We present TF-Engram, a train-free Engram system that constructs phrase-specific semantic memory offline from external corpora, stores large memory tables across a GPU--DRAM--SSD hierarchy, and uses Early-Exit Guided Predictive Prefetching to hide external-memory latency during autoregressive decoding. On Qwen3-0.6B, TF-Engram improves the average downstream score from 57.6 to 59.4, outperforming both the frozen backbone and a parameter-matched LoRA baseline. System evaluation shows that large TF-Engram tables can be built with moderate offline cost, SSD-backed storage substantially reduces GPU memory demand, and predictive prefetching recovers much of the throughput loss caused by external memory access. These results demonstrate that static phrase memory can be integrated into LLM inference as a scalable, train-free, and low-overhead system component.",
+      "authors": [
+        "Yutang Ma",
+        "Kecheng Huang",
+        "Xikun Jiang",
+        "Zili Shao"
+      ],
+      "published": "2026-07-08T13:19:52Z",
+      "updated": "2026-07-08T13:19:52Z",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2607.07388v1",
+      "abs_url": "http://arxiv.org/abs/2607.07388v1",
+      "source": "arXiv",
+      "venue": null,
+      "code_url": null,
+      "cited_by_count": null,
+      "topic_scores": {
+        "pretraining": 0.18,
+        "post-training": 0.18,
+        "serving": 0.36,
+        "efficiency": 0.18
+      },
+      "semantic_score": null,
+      "personal_score": null,
+      "score_breakdown": {
+        "relevance": 36.0,
+        "quality": 52,
+        "novelty": 87.0,
+        "practical": 72,
+        "credibility": 35
+      },
+      "confidence": 51,
+      "risk_zh": null,
+      "llm_scores": {},
+      "score": 51.9,
+      "score_reasons": [
+        "命中主题：预训练与优化、微调与对齐、推理系统、压缩与高效推理",
+        "优势：新颖 87、实用 72"
+      ],
+      "summary_zh": null
+    },
+    {
+      "paper_id": "2607.07386v1",
+      "title": "Sparse Delta Memory: Scaling the State of Linear RNNs through Sparsity",
+      "abstract": "Linear attention models allow a fixed state size and a fixed amount of compute per token. However, due to their limited state size, linear attention models fall behind in long-context recall compared to softmax-attention-based transformer architectures. Increasing the state size of linear attention improves recall performance but at the cost of higher FLOPs. In this work, we introduce Sparse Delta Memory (SDM), an architecture that scales the hidden state of gated linear RNNs to orders of magnitude higher capacity using a sparse addressing scheme. SDM extends the Gated DeltaNet architecture by replacing the dense key-value outer product with sparse reads and writes to a large explicit memory. We show that, under an isoFLOP constraint and with an identical number of parameters, a higher state memory capacity significantly improves performance on in-context learning and long-context retrieval tasks. Moreover, by learning the initial state of the SDM memory and therefore using it as a parametric memory, we show that the model further improves on a wide range of common-knowledge and reasoning tasks.",
+      "authors": [
+        "Loïc Cabannes",
+        "Pierre-Emmanuel Mazaré",
+        "Gergely Szilvasy",
+        "Matthijs Douze",
+        "Maria Lomeli",
+        "Ilze Amanda Auzina",
+        "Justin Carpentier",
+        "Gabriel Synnaeve",
+        "Hervé Jégou"
+      ],
+      "published": "2026-07-08T13:17:19Z",
+      "updated": "2026-07-08T13:17:19Z",
+      "categories": [
+        "cs.LG"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2607.07386v1",
+      "abs_url": "http://arxiv.org/abs/2607.07386v1",
+      "source": "arXiv",
+      "venue": null,
+      "code_url": null,
+      "cited_by_count": null,
+      "topic_scores": {
+        "reasoning": 0.18,
+        "efficiency": 0.45
+      },
+      "semantic_score": null,
+      "personal_score": null,
+      "score_breakdown": {
+        "relevance": 45.0,
+        "quality": 34,
+        "novelty": 89.4,
+        "practical": 36,
+        "credibility": 35
+      },
+      "confidence": 35,
+      "risk_zh": null,
+      "llm_scores": {},
+      "score": 47.1,
+      "score_reasons": [
+        "命中主题：推理时扩展、压缩与高效推理",
+        "优势：新颖 89、匹配 45"
+      ],
+      "summary_zh": null
+    },
+    {
+      "paper_id": "2607.07144v1",
+      "title": "Fractal KV-Cache Archives: Lossless Symbolic Storage with In-Place Retrieval for Long-Context LLM Inference",
+      "abstract": "The key-value (KV) cache dominates the memory cost of long-context autoregressive inference, and a growing body of work compresses it through quantization, eviction, or offloading. We study a complementary question: once a position's KV state has been quantized to codebook indices, how should the resulting symbol stream be stored, and can the storage layer do more than store? A family of contractive iterated-map codes that serialize a symbol sequence into a sequence of low-dimensional real vectors is revisited, and it is shown that they form a natural archive format for a quantized KV cache with the following features. The method provides exactly the access pattern a growing cache requires. It is lossless, it runs in linear time, and supports O(1) random access and O(1) amortized append. A controlled study of the quantizer feeding this archive is conducted on GPT-2 with 1024-token contexts. Keeping a small exact window (4 attention sinks + 32 recent tokens) and archiving the rest, per-head residual vector quantization reduces the archived cache by 36-54x relative to an fp16 cache at a perplexity cost of 11-15%, and we quantify a sharp key/value asymmetry -- quantizing keys is roughly 4x more damaging than quantizing values, consistent with prior low-bit KV work -- and use it to allocate bits in a hybrid scheme. Finally, we show the archive is simultaneously a search index: approximate substring queries execute directly on the stored vectors, and matched context is decoded from the matched vector without ever materializing the surrounding text. We release all code; every number reproduces from a single command on a laptop CPU.",
+      "authors": [
+        "Vladimir Gusev"
+      ],
+      "published": "2026-07-08T08:37:49Z",
+      "updated": "2026-07-08T08:37:49Z",
+      "categories": [
+        "cs.LG"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2607.07144v1",
+      "abs_url": "http://arxiv.org/abs/2607.07144v1",
+      "source": "arXiv",
+      "venue": null,
+      "code_url": null,
+      "cited_by_count": null,
+      "topic_scores": {
+        "serving": 0.63,
+        "efficiency": 0.18
+      },
+      "semantic_score": null,
+      "personal_score": null,
+      "score_breakdown": {
+        "relevance": 63.0,
+        "quality": 54,
+        "novelty": 86.8,
+        "practical": 50,
+        "credibility": 28
+      },
+      "confidence": 35,
+      "risk_zh": null,
+      "llm_scores": {},
+      "score": 59.3,
+      "score_reasons": [
+        "命中主题：推理系统、压缩与高效推理",
+        "优势：新颖 87、匹配 63"
+      ],
+      "summary_zh": null
+    },
+    {
+      "paper_id": "2607.07117v1",
+      "title": "Tree-of-Thoughts Reasoning for Text-to-Image In-Context Learning",
+      "abstract": "In text-to-image in-context learning (T2I-ICL), a model has to infer a latent compositional pattern from fewshot demonstrations for generating a query image. Recent studies show that state-of-the-art multimodal large language models struggle with this setting, particularly due to limited compositional reasoning and sensitivity to prompt construction. In this work, we propose a Tree-of-Thoughts (ToT) reasoning framework for T2I-ICL that introduces a multi-stage reasoning and selection layer that generates, evaluates, and selects among multiple candidate hypotheses before constructing the final prompt for image synthesis. By exploring alternative reasoning branches and selecting a coherent interpretation, the proposed approach mitigates prompt ambiguity and compositional errors. We implement the proposed approach in a complete ToT-T2IICL inference pipeline and evaluate it on the CoBSAT benchmark. Both qualitative and quantitative results show that structured multi-branch reasoning leads to more consistent and semantically aligned image generation compared to baseline and Chain-of-Thought prompting strategies, without any additional training or fine-tuning.",
+      "authors": [
+        "Stepanida Alekseeva",
+        "Jenifer Kalafatovich",
+        "Seong-Whan Lee"
+      ],
+      "published": "2026-07-08T07:58:48Z",
+      "updated": "2026-07-08T07:58:48Z",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2607.07117v1",
+      "abs_url": "http://arxiv.org/abs/2607.07117v1",
+      "source": "arXiv",
+      "venue": null,
+      "code_url": null,
+      "cited_by_count": null,
+      "topic_scores": {
+        "post-training": 0.18,
+        "reasoning": 0.63
+      },
+      "semantic_score": null,
+      "personal_score": null,
+      "score_breakdown": {
+        "relevance": 63.0,
+        "quality": 61,
+        "novelty": 85.5,
+        "practical": 18,
+        "credibility": 35
+      },
+      "confidence": 59,
+      "risk_zh": null,
+      "llm_scores": {},
+      "score": 58.3,
+      "score_reasons": [
+        "命中主题：微调与对齐、推理时扩展",
+        "优势：新颖 86、匹配 63"
+      ],
+      "summary_zh": null
+    },
+    {
+      "paper_id": "2607.06948v1",
+      "title": "Self-Supervised Pretraining Improves Cross-Site and Cross-Scale Robustness of Point Cloud Leaf-Wood Segmentation",
+      "abstract": "The accuracy of existing leaf-wood segmentation methods for tree point clouds varies across forest types and sites. Self-supervised learning (SSL) on point clouds has improved the generalization of deep learning models for forestry point cloud tasks, including biomass regression and individual tree segmentation, but its applicability to leaf-wood segmentation remains untested. In this study, we pretrained Point-M2AE, a widely used SSL architecture for point clouds, on ShapeNet-55 augmented with 2,400 individual tree point clouds. For fine-tuning and inference, we used recursive voxel subdivision to handle the wide variation in point density across inputs, allowing the same model to operate at both individual-tree and plot scales without architecture change. Compared to the model without pretraining, the pretrained model improved wood IoU from 60.5% to 70.0% for needleleaf and from 69.7% to 76.3% for broadleaf trees. On a benchmark spanning four countries across three climatic zones, the pretrained model achieved the smallest cross-site variation and highest overall performance among compared methods (LeWos, CWLS, and PointTransformer). Plot-level segmentation maintained accuracy comparable to individual-tree performance, with mIoU of 84.7% for broadleaf and 77.7% for needleleaf plots, showing that the model generalizes across scales without additional finetuning. As a downstream test in tropical forests, where dense canopies make segmentation challenging, we applied our model and a quantitative structure model to estimate wood volume for 28 trees from Guyana, Indonesia, and Peru to assess whether the segmentation improvements from SSL pretraining translate into improved downstream performance. The resulting volume estimates achieved the lowest error among all methods tested (MAE = 2.40 m$^3$), less than half that of algorithmic baselines (LeWos: 5.94 m$^3$; CWLS: 5.27 m$^3$).",
+      "authors": [
+        "Heeju Mun",
+        "Tackang Yang",
+        "Yunsoo Nam",
+        "Changhyun Choi"
+      ],
+      "published": "2026-07-08T03:17:06Z",
+      "updated": "2026-07-08T03:17:06Z",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2607.06948v1",
+      "abs_url": "http://arxiv.org/abs/2607.06948v1",
+      "source": "arXiv",
+      "venue": null,
+      "code_url": null,
+      "cited_by_count": null,
+      "topic_scores": {
+        "pretraining": 0.63,
+        "post-training": 0.36
+      },
+      "semantic_score": null,
+      "personal_score": null,
+      "score_breakdown": {
+        "relevance": 63.0,
+        "quality": 72,
+        "novelty": 88.7,
+        "practical": 18,
+        "credibility": 35
+      },
+      "confidence": 51,
+      "risk_zh": null,
+      "llm_scores": {},
+      "score": 61.7,
+      "score_reasons": [
+        "命中主题：预训练与优化、微调与对齐",
+        "优势：新颖 89、质量 72"
+      ],
+      "summary_zh": null
+    },
+    {
+      "paper_id": "2607.06918v1",
+      "title": "LoCA: Spatially-Aware Low-Rank Convolutional Adaptation of Vision Foundation Models",
+      "abstract": "Pre-trained Vision Foundation Models (VFMs) provide strong visual representations for diverse downstream tasks. The key challenge of VFM adaptation stems from the prohibitive costs of full fine-tuning and catastrophic forgetting. To address this, Low-Rank Adaptation (LoRA) has emerged as the prevailing paradigm for Parameter-Efficient Fine-Tuning (PEFT). However, LoRA is typically designed for transformer self-attention layers parameterized by 2D matrices. Since convolutional kernels inherently couple spatial and channel information within a 4D tensor, forcing them into a monolithic 2D matrix disrupts the inherent spatial topology. In this paper, we propose Low-Rank Convolutional Adaptation (LoCA), a convolution-aware PEFT framework that addresses spatial-channel entanglement by decoupling channel and spatial adaptation. LoCA introduces a low-rank channel adaptation for dense cross-channel mixing and refines spatial bases extracted from pre-trained kernels via Singular Value Decomposition (SVD). Experimental results show that LoCA preserves pre-trained spatial priors and achieves competitive or state-of-the-art performance across fine-grained classification, domain-generalized semantic segmentation, and generative benchmarks.",
+      "authors": [
+        "Sojung An",
+        "Junha Lee",
+        "Sujeong You",
+        "Nam Ik Cho",
+        "Donghyun Kim"
+      ],
+      "published": "2026-07-08T02:19:01Z",
+      "updated": "2026-07-08T02:19:01Z",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2607.06918v1",
+      "abs_url": "http://arxiv.org/abs/2607.06918v1",
+      "source": "arXiv",
+      "venue": null,
+      "code_url": null,
+      "cited_by_count": null,
+      "topic_scores": {
+        "post-training": 0.18,
+        "efficiency": 0.63
+      },
+      "semantic_score": null,
+      "personal_score": null,
+      "score_breakdown": {
+        "relevance": 63.0,
+        "quality": 40,
+        "novelty": 84.8,
+        "practical": 36,
+        "credibility": 35
+      },
+      "confidence": 51,
+      "risk_zh": null,
+      "llm_scores": {},
+      "score": 54.6,
+      "score_reasons": [
+        "命中主题：微调与对齐、压缩与高效推理",
+        "优势：新颖 85、匹配 63"
+      ],
+      "summary_zh": null
+    },
     {
       "paper_id": "2607.06523v1",
       "title": "DepthWeave-KV: Token-Adaptive Cross-Layer Residual Factorization for Long-Context KV Cache Compression",
