@@ -9765,5 +9765,554 @@
       "优势：新颖 86、匹配 63"
     ],
     "summary_zh": null
+  },
+  "2607.11444v1": {
+    "paper_id": "2607.11444v1",
+    "title": "UMoE:Unlocking Every Expert in Domain-Specific Training",
+    "abstract": "Mixture-of-Experts (MoE) models scale capacity without proportional compute cost and have become a key architecture for frontier large language models (LLMs). Yet domain-specific post-training inherits an expert pool shaped by mixed-domain pre-training: a substantial subset of experts contributes little on the target domain, and standard supervised fine-tuning (SFT) leaves the composition of this pool unchanged. We propose a simple, budget-preserving pipeline that realigns the expert pool to the target domain before fine-tuning. Given a target domain, we (1) prune the experts with lowest domain-aligned saliency, (2) regrow the expert pool to its original size through perturbation-based expert expansion, and (3) apply standard SFT. The resulting model preserves the original expert count, parameter count, and inference cost. With a single frozen recipe and no per-domain hyperparameter tuning, UMoE consistently improves over direct sft across two MoE architectures (Qwen3-30B-A3B and Qwen3.5-35B-A3B), five domains (math, code, science, tool-use, and agentic coding), and 12 benchmarks. Representative improvements are 3.4 points in math average accuracy, 6.0 points on SWE-bench Verified. On a strong in-house math corpus, direct sft already surpasses Qwen3-30B-A3B-Thinking (82.81 vs.\\ 81.06), yet UMoE further raises the average to 84.17, an additional 1.36 points, demonstrating robustness to a substantially stronger SFT regime. Data-scaling experiments further show that the gain persists as training data grows. Analysis reveals that the direct-SFT model allocates substantial routed-expert compute to a low-saliency subset that can be removed post hoc with little average degradation; UMoE turns this redundant capacity into useful domain capacity and achieves lower training loss, with gains spanning all difficulty levels in downstream evaluation.",
+    "authors": [
+      "Xuefeng Li",
+      "Pengfei Liu"
+    ],
+    "published": "2026-07-13T11:52:42Z",
+    "updated": "2026-07-13T11:52:42Z",
+    "categories": [
+      "cs.CL"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.11444v1",
+    "abs_url": "http://arxiv.org/abs/2607.11444v1",
+    "source": "arXiv",
+    "venue": null,
+    "code_url": null,
+    "cited_by_count": null,
+    "topic_scores": {
+      "pretraining": 0.81,
+      "post-training": 0.36
+    },
+    "semantic_score": null,
+    "personal_score": null,
+    "score_breakdown": {
+      "relevance": 81.0,
+      "quality": 60,
+      "novelty": 83.5,
+      "practical": 36,
+      "credibility": 35
+    },
+    "confidence": 51,
+    "risk_zh": null,
+    "llm_scores": {},
+    "score": 66.3,
+    "score_reasons": [
+      "命中主题：预训练与优化、微调与对齐",
+      "优势：新颖 84、匹配 81"
+    ],
+    "summary_zh": null
+  },
+  "2607.11696v1": {
+    "paper_id": "2607.11696v1",
+    "title": "Think Through a Bottleneck: Hourglass Reasoning for Rigorous Induction",
+    "abstract": "Self-refinement often fails to strengthen few-shot inductive reasoning in large language models. Prompting a model to explicitly state its inferred rule does little on its own. What actually matters is a structurally enforced isolation between reasoning stages, so that information can only pass between them as a compressed symbolic state. We introduce \\textbf{Hourglass reasoning}, which enforces strict context isolation between reasoning stages. The frozen LLM acts as a meta-constructor, building for each task a symbolic encoder--decoder: an Induction module compresses the support examples into a schema $φ$ (encoder) and a transient scaffold $z$; a Deduction module derives rule $T$ (decoder) from these and discards $z$; an Implementer compiles $(φ, T)$ into artifacts; an error-driven Refiner revises $(φ, T)$ and regenerates artifacts from scratch. Only $(φ, T)$ crosses stage boundaries, so all refinement stays anchored to the rule. We evaluate Hourglass across three benchmarks spanning visual abstraction, hardware synthesis, and textual rule induction, using GPT-5.5 and Gemini 3.1 Pro. On ARC-AGI-2, it raises best-of-5 accuracy by up to 14 points over an iterative-refinement baseline. On ChipBench, it nearly doubles Verilog synthesis accuracy with GPT-5.5, from 31\\% to 58\\%. BBEH-Linguini draws on puzzles from the International Linguistics Olympiad, a setting where prior work has shown that explicit verbalization can hurt performance. Hourglass mitigates this tendency, and on Gemini 3.1 Pro, it reverses the effect entirely. Ablations confirm that these gains come from the isolation between stages and the quality of the initial induction, not from prompt wording or the particular symbolic form used. It is how information flows through the reasoning process, rather than the language used to express it, that drives inductive reasoning in frozen LLMs.",
+    "authors": [
+      "Huan Zhu"
+    ],
+    "published": "2026-07-13T15:29:24Z",
+    "updated": "2026-07-13T15:29:24Z",
+    "categories": [
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.11696v1",
+    "abs_url": "http://arxiv.org/abs/2607.11696v1",
+    "source": "arXiv",
+    "venue": null,
+    "code_url": null,
+    "cited_by_count": null,
+    "topic_scores": {
+      "reasoning": 0.63
+    },
+    "semantic_score": null,
+    "personal_score": null,
+    "score_breakdown": {
+      "relevance": 63.0,
+      "quality": 90,
+      "novelty": 86.4,
+      "practical": 18,
+      "credibility": 28
+    },
+    "confidence": 67,
+    "risk_zh": null,
+    "llm_scores": {},
+    "score": 65.4,
+    "score_reasons": [
+      "命中主题：推理时扩展",
+      "优势：质量 90、新颖 86"
+    ],
+    "summary_zh": null
+  },
+  "2607.11883v1": {
+    "paper_id": "2607.11883v1",
+    "title": "Requential Coding: Pushing the Limits of Model Compression with Self-Generated Training Data",
+    "abstract": "Compression is fundamental to intelligence. A model that can represent its training data as a short code has discovered regularities that enable generalization. Large neural networks may learn functions far simpler than their parameter counts suggest, but it is challenging to construct codes that realize this simplicity. Parameter-based methods such as quantization produce code lengths that scale with model size, insensitive to how much information the parameters store. Prequential coding bypasses this issue by compressing the training trajectory, but codes the exact data sequence regardless of how much the model learns, yielding large codes when the data has high entropy. We introduce requential coding, where a teacher model selects training samples drawn from the student's own distribution. The student's code records only these selections, which cost bits only where teacher and student disagree. The resulting code length is independent of parameter count and data entropy, and often orders of magnitude shorter than the prequential counterpart, with an advantage that grows with scale. This compression sheds light on phenomena inaccessible to prior compressors. Holding loss fixed, larger models and ensembles compress to much smaller sizes despite more parameters. Plugged into a PAC-Bayes bound, the requential code yields state-of-the-art generalization guarantees for billion-parameter LLMs, outperforming bounds built on aggressive post-training quantization even granted zero error. The bound tightens with scale in the compute-optimal regime, as models become increasingly compressible relative to dataset size. The same code predicts that models gradually overfit when trained for multiple epochs. It also isolates the learnable information in a dataset from its unpredictable, random content, revealing that lower-entropy text holds far more learnable structure than higher-entropy image data.",
+    "authors": [
+      "Shikai Qiu",
+      "Marc Finzi",
+      "Yujia Zheng",
+      "Kun Zhang",
+      "Andrew Gordon Wilson"
+    ],
+    "published": "2026-07-13T17:58:50Z",
+    "updated": "2026-07-13T17:58:50Z",
+    "categories": [
+      "cs.LG"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.11883v1",
+    "abs_url": "http://arxiv.org/abs/2607.11883v1",
+    "source": "arXiv",
+    "venue": null,
+    "code_url": null,
+    "cited_by_count": null,
+    "topic_scores": {
+      "post-training": 0.18,
+      "efficiency": 0.81
+    },
+    "semantic_score": null,
+    "personal_score": null,
+    "score_breakdown": {
+      "relevance": 81.0,
+      "quality": 52,
+      "novelty": 87.5,
+      "practical": 27,
+      "credibility": 35
+    },
+    "confidence": 51,
+    "risk_zh": null,
+    "llm_scores": {},
+    "score": 63.9,
+    "score_reasons": [
+      "命中主题：微调与对齐、压缩与高效推理",
+      "优势：新颖 88、匹配 81"
+    ],
+    "summary_zh": null
+  },
+  "2607.11258v1": {
+    "paper_id": "2607.11258v1",
+    "title": "TreeThink: A Modular Tree Search Library for Mathematical Reasoning with LLMs",
+    "abstract": "Tree search algorithms enable systematic exploration of the proof space in neural theorem proving. Existing LLM tree search libraries primarily target natural language reasoning and do not provide native integration with formal verifiers, while theorem proving systems often rely on task-specific search implementations. We introduce TreeThink, an open-source Python library for modular, fully asynchronous tree search in neural theorem proving. It integrates established tree search methods with vLLM-based inference pipelines and diverse node evaluation techniques, ranging from lightweight heuristics to neural evaluators. We support Lean~4, Rocq, and Isabelle/HOL alongside natural language. It connects directly to each language's Read-Eval-Print Loop (REPL) server for real-time verification and proof state extraction. We evaluate TreeThink on miniF2F and MATH500, demonstrating cross-language formal proof search, natural language reasoning support, and up to 6.3$\\times$ wall-clock speedup from asynchronous execution. Source code is released under the MIT license at https://github.com/GGLAB-KU/treethink , and the library is accessible as a downloadable package at https://pypi.org/project/treethink/ .",
+    "authors": [
+      "Burak S. Akbudak",
+      "Zeynel A. Uluşan",
+      "Can S. Erer",
+      "Gözde Gül Şahin"
+    ],
+    "published": "2026-07-13T08:40:33Z",
+    "updated": "2026-07-13T08:40:33Z",
+    "categories": [
+      "cs.CL"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.11258v1",
+    "abs_url": "http://arxiv.org/abs/2607.11258v1",
+    "source": "arXiv",
+    "venue": null,
+    "code_url": null,
+    "cited_by_count": null,
+    "topic_scores": {
+      "reasoning": 0.81,
+      "serving": 0.18
+    },
+    "semantic_score": null,
+    "personal_score": null,
+    "score_breakdown": {
+      "relevance": 81.0,
+      "quality": 48,
+      "novelty": 89.3,
+      "practical": 27,
+      "credibility": 35
+    },
+    "confidence": 51,
+    "risk_zh": null,
+    "llm_scores": {},
+    "score": 63.1,
+    "score_reasons": [
+      "命中主题：推理时扩展、推理系统",
+      "优势：新颖 89、匹配 81"
+    ],
+    "summary_zh": null
+  },
+  "2607.11615v1": {
+    "paper_id": "2607.11615v1",
+    "title": "ThinkLog: Leveraging Reasoning for Log Statement Generation",
+    "abstract": "Runtime logs are an important source of information that supports software maintenance. To obtain useful logs, developers spend significant effort identifying appropriate log locations, assigning correct severity levels, and writing concise yet informative messages. Therefore, end-to-end automated log statement generation can help reduce this burden, and prior work has proposed many methods for this task. However, existing methods still exhibit limited accuracy. To address this problem, we propose ThinkLog, an LLM-based end-to-end log statement generation method. The core idea of ThinkLog is to incorporate reasoning that helps LLMs make decisions about log insertion, severity level assignment, and message generation, thereby improving log statement generation accuracy. ThinkLog injects reasoning into prompts as few-shot examples and guides LLMs to generate appropriate log statements. Evaluated on 9,619 Java methods extracted from public GitHub repositories, ThinkLog achieves 20.55% log statement generation accuracy, representing a 15.4% improvement over the best existing method. Moreover, these improvements were achieved at approximately 50% of the inference cost (USD) compared to the best existing method. These results show that leveraging reasoning is an effective and cost-efficient way to improve the accuracy of end-to-end log statement generation.",
+    "authors": [
+      "Kazuki Kusama",
+      "Honglin Shu",
+      "Masanari Kondo",
+      "Tao Xiao",
+      "Yasutaka Kamei"
+    ],
+    "published": "2026-07-13T14:37:35Z",
+    "updated": "2026-07-13T14:37:35Z",
+    "categories": [
+      "cs.SE"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.11615v1",
+    "abs_url": "http://arxiv.org/abs/2607.11615v1",
+    "source": "arXiv",
+    "venue": null,
+    "code_url": null,
+    "cited_by_count": null,
+    "topic_scores": {
+      "reasoning": 0.63
+    },
+    "semantic_score": null,
+    "personal_score": null,
+    "score_breakdown": {
+      "relevance": 63.0,
+      "quality": 63,
+      "novelty": 83.6,
+      "practical": 36,
+      "credibility": 35
+    },
+    "confidence": 43,
+    "risk_zh": null,
+    "llm_scores": {},
+    "score": 60.5,
+    "score_reasons": [
+      "命中主题：推理时扩展",
+      "优势：新颖 84、匹配 63"
+    ],
+    "summary_zh": null
+  },
+  "2607.11357v1": {
+    "paper_id": "2607.11357v1",
+    "title": "OpsMem: Dual-Memory Reasoning with Cross-Memory Resonance for Failure Diagnosis",
+    "abstract": "Failure diagnosis in modern software systems requires iterative evidence acquisition and hypothesis reasoning guided by operational experience. Existing LLM-based methods improve diagnosis through agentic reasoning or knowledge augmentation, but they often lack a mechanism to coordinate the evolving diagnostic state with operational experience during iterative diagnosis. We propose OpsMem, a dual-memory framework that maintains a short-term memory for the current diagnostic state and a long-term memory for reusable operational experience. OpsMem uses cross-memory resonance to activate state-relevant long-term memory, conditions multi-agent diagnosis on the short-term and activated long-term memories, and consolidates reusable experience from solved incidents back into long-term memory. Experiments on a real-world Huawei microservice failure diagnosis dataset show that OpsMem outperforms representative agentic-reasoning and knowledge-augmented baselines, improving Match and Relevant by up to 46.88% and 18.39% over the strongest baseline, respectively.",
+    "authors": [
+      "Yongqian Sun",
+      "Rongchen Gao",
+      "Yu Luo",
+      "Wenwei Gu",
+      "Shenglin Zhang",
+      "Qingyi Guo",
+      "Qiuai Fu",
+      "Yaoliang Wu",
+      "Dan Pei"
+    ],
+    "published": "2026-07-13T10:22:44Z",
+    "updated": "2026-07-13T10:22:44Z",
+    "categories": [
+      "cs.AI",
+      "cs.SE"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.11357v1",
+    "abs_url": "http://arxiv.org/abs/2607.11357v1",
+    "source": "arXiv",
+    "venue": null,
+    "code_url": null,
+    "cited_by_count": null,
+    "topic_scores": {
+      "reasoning": 0.63
+    },
+    "semantic_score": null,
+    "personal_score": null,
+    "score_breakdown": {
+      "relevance": 63.0,
+      "quality": 66,
+      "novelty": 84.9,
+      "practical": 27,
+      "credibility": 35
+    },
+    "confidence": 67,
+    "risk_zh": null,
+    "llm_scores": {},
+    "score": 60.5,
+    "score_reasons": [
+      "命中主题：推理时扩展",
+      "优势：新颖 85、质量 66"
+    ],
+    "summary_zh": null
+  },
+  "2607.11505v1": {
+    "paper_id": "2607.11505v1",
+    "title": "Proxy Exploration and Reusable Guidance: A Modular LLM Post-Training Paradigm via Proxy-Guided Update Signals",
+    "abstract": "Post-training is essential for refining the domain-specific capabilities of large language models (LLMs), yet existing reward optimization and distribution matching methods tightly couple policy exploration with distribution alignment. This coupling forces expensive exploration directly on the policy model and severely hinders the asynchronous generation, reuse, and cross-model transfer of optimization signals. In this paper, we propose Proxy-guided Update Signal Transfer (PUST), a novel post-training framework that fundamentally decouples update-signal exploration from distribution alignment. Instead of utilizing the primary model for costly exploration, PUST employs a lightweight proxy model as an efficient testbed to discover high-reward behaviors. We extract the relative improvement signal between the proxy's initial and optimized states, transferring this directional update to the primary model to guide its policy alignment. This decoupled pipeline, comprising proxy exploration, update-signal extraction, and signal transfer, significantly reduces computational overhead and enables optimization signals to be asynchronously generated, cached, and reused. Crucially, by transferring relative improvements rather than absolute policy distributions, PUST naturally supports weak-to-strong improvement and seamless cross-model transfer. Systematic evaluations on Qwen3-family models across math and code domains demonstrate that update signals extracted from substantially weaker proxies can robustly and adjustably enhance stronger primary models. Ultimately, PUST transforms post-training from a monolithic online optimization process into a highly modular, reusable, and cost-efficient paradigm.",
+    "authors": [
+      "Daocheng Fu",
+      "Rong Wu",
+      "Yu Yang",
+      "Xuemeng Yang",
+      "Jianbiao Mei",
+      "Licheng Wen",
+      "Pinlong Cai",
+      "Yong Liu",
+      "Botian Shi",
+      "Yu Qiao"
+    ],
+    "published": "2026-07-13T12:56:21Z",
+    "updated": "2026-07-13T12:56:21Z",
+    "categories": [
+      "cs.LG",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.11505v1",
+    "abs_url": "http://arxiv.org/abs/2607.11505v1",
+    "source": "arXiv",
+    "venue": null,
+    "code_url": null,
+    "cited_by_count": null,
+    "topic_scores": {
+      "post-training": 0.81
+    },
+    "semantic_score": null,
+    "personal_score": null,
+    "score_breakdown": {
+      "relevance": 81.0,
+      "quality": 34,
+      "novelty": 86.2,
+      "practical": 36,
+      "credibility": 35
+    },
+    "confidence": 35,
+    "risk_zh": null,
+    "llm_scores": {},
+    "score": 59.9,
+    "score_reasons": [
+      "命中主题：微调与对齐",
+      "优势：新颖 86、匹配 81"
+    ],
+    "summary_zh": null
+  },
+  "2607.11374v1": {
+    "paper_id": "2607.11374v1",
+    "title": "Surprisingly Simple and Effective Multi-Domain Graph Foundation Model through Graph-to-Table Alignment",
+    "abstract": "Graph Foundation Models (GFMs) have emerged as a promising paradigm for learning transferable representations across diverse graph domains. Recent advancements in GFMs have been largely dominated by two paradigms: Graph Neural Network and Large Language Model (LLM) based methods. However, these methods often face a fundamental dilemma between training with limited data and a heavy reliance on textual attributes. Tabular foundation models (TFMs) offer a potential alternative, as node features and representations can be naturally organized in a tabular form. However, how to enable TFMs to effectively capture structural information of graphs remains largely unexplored. The key challenge is to learn a graph-to-table alignment mechanism that enables graph structural understanding for TFMs. To address this, we propose GTAlign, a surprisingly simple yet effective Graph-to-Table Alignment framework for text-free Graph Foundation Model. Specifically, we first pretrain a graph encoder that maps diverse graphs into a unified latent space to capture domain-agnostic graph representations. To further bridge the gap between graph topology and the tabular representation space, we propose community-guided continual pre-training, where pseudo-labels derived from graph community are used to construct few-shot prediction episodes. Lastly, we adapt the graph encoder for an unseen target domain and perform in-context inference. Extensive experiments on five benchmark datasets demonstrate that GTAlign significantly outperforms state-of-the-art baselines on both node and graph classification, offering a simple, effective, and text-free GFM model. Code will be released upon acceptance.",
+    "authors": [
+      "Chunyu Hu",
+      "Tianyin Liao",
+      "Ge Lan",
+      "Xingxuan Zhang",
+      "Jianxin Li",
+      "Peng Cui",
+      "Ziwei Zhang"
+    ],
+    "published": "2026-07-13T10:35:56Z",
+    "updated": "2026-07-13T10:35:56Z",
+    "categories": [
+      "cs.LG"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.11374v1",
+    "abs_url": "http://arxiv.org/abs/2607.11374v1",
+    "source": "arXiv",
+    "venue": null,
+    "code_url": null,
+    "cited_by_count": null,
+    "topic_scores": {
+      "pretraining": 0.18,
+      "post-training": 0.63
+    },
+    "semantic_score": null,
+    "personal_score": null,
+    "score_breakdown": {
+      "relevance": 63.0,
+      "quality": 67,
+      "novelty": 82.2,
+      "practical": 18,
+      "credibility": 35
+    },
+    "confidence": 75,
+    "risk_zh": null,
+    "llm_scores": {},
+    "score": 59.4,
+    "score_reasons": [
+      "命中主题：预训练与优化、微调与对齐",
+      "优势：新颖 82、质量 67"
+    ],
+    "summary_zh": null
+  },
+  "2607.11211v1": {
+    "paper_id": "2607.11211v1",
+    "title": "FastTPS: An Optimized Method for LLM Token Phase for AI accelerators",
+    "abstract": "The popularity of large language models (LLMs) escalates an ongoing demand for effective inference. However, due to the sequential processing of tokens during the token phase in decoder-only LLMs inference, the inherent low parallelism leads to reduced throughput and suboptimal utilization of the computing units on artificial intelligence (AI) accelerators, particularly when handling long-sequence inputs that impose significant memory overhead. Recently, many reported methods have been developed as potential solutions, since they emerge with numeric deviation. This paper presents FastTPS, a high performance and low-precision loss method for accelerating the token-phase in LLM inference on general AI accelerators which includes three key components: (1) AI accelerator-enabled reloading-free KV Cache concatenation which decreases memory access overhead as well as enables full fusion of Attention, (2) high-efficiency and high-accuracy 'RoPE' attention based on the tiling optimized FLAT, and (3) highly-fused MLP with fine-grain pipeline scheduling. Our results confirm that FastTPS significantly alleviates memory bottlenecks in the token phase, delivering a 6x speed improvement (compared to none-fusion) on an AMD Ryzen AI 300 series NPU with BF16 precision while sustaining 93% peak memory bandwidth utilization during Phi3-mini-4k-instruct inference.",
+    "authors": [
+      "Wenzong Yang",
+      "Danyang Zhang",
+      "Kun Cao",
+      "Tejus Siddagangaiah",
+      "Rajeev Patwari",
+      "Zhanxing Pu",
+      "Siyin Kong",
+      "Zijiang Yang",
+      "Hao Zhu",
+      "Varun Sharma",
+      "Yue Gao",
+      "Tianping Li",
+      "Fan Yang",
+      "Jicheng Chen",
+      "Yushan Chen",
+      "Fennian Zhao",
+      "Aaron Ng",
+      "Elliott Delaye",
+      "Ashish Sirasao",
+      "Sudip Nag"
+    ],
+    "published": "2026-07-13T08:02:26Z",
+    "updated": "2026-07-13T08:02:26Z",
+    "categories": [
+      "cs.LG"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.11211v1",
+    "abs_url": "http://arxiv.org/abs/2607.11211v1",
+    "source": "arXiv",
+    "venue": null,
+    "code_url": null,
+    "cited_by_count": null,
+    "topic_scores": {
+      "serving": 0.54
+    },
+    "semantic_score": null,
+    "personal_score": null,
+    "score_breakdown": {
+      "relevance": 54.0,
+      "quality": 54,
+      "novelty": 86.2,
+      "practical": 50,
+      "credibility": 35
+    },
+    "confidence": 35,
+    "risk_zh": null,
+    "llm_scores": {},
+    "score": 56.7,
+    "score_reasons": [
+      "命中主题：推理系统",
+      "优势：新颖 86、匹配 54"
+    ],
+    "summary_zh": null
+  },
+  "2607.11586v1": {
+    "paper_id": "2607.11586v1",
+    "title": "HCRMap: Pressure-Aware Hot-Expert Residency Mapping for 3.5D MoE Chiplet Inference",
+    "abstract": "Mixture-of-Experts (MoE) large language models (LLM) activate only a small number of experts during inference, but token routing introduces persistent expert hotness skew: a small set of hot experts continuously receives most tokens, while the remaining experts are lightly loaded. On 3.5D multi-chiplet systems, this skew not only causes compute imbalance but also amplifies pressure on communication, memory bandwidth, I/O, and execution queues. Therefore, the core problem is not simply to reduce token movement, but to dynamically place and reuse hot expert replicas across different memory tiers. This paper proposes HCRMap, a hot expert residency mapping framework for pressure-aware expert replica management in 3.5D MoE inference. Based on expert hotness, weight loading cost, migration overhead, and runtime resource pressure, HCRMap dynamically determines which experts should be promoted, retained, demoted, or evicted. It then maps routed token groups to suitable resident replicas, thereby jointly mitigating communication, memory, and queue bottlenecks. Experimental results show that HCRMap reduces end-to-end latency by 43.6% and 43.0% over Hydra in the prefill and decode stages, respectively; by 34.5% and 33.1% over MoEntwine; and by 46.7% and 46.0% over PIMoE.",
+    "authors": [
+      "Yongqin Zhang"
+    ],
+    "published": "2026-07-13T14:05:55Z",
+    "updated": "2026-07-13T14:05:55Z",
+    "categories": [
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.11586v1",
+    "abs_url": "http://arxiv.org/abs/2607.11586v1",
+    "source": "arXiv",
+    "venue": null,
+    "code_url": null,
+    "cited_by_count": null,
+    "topic_scores": {
+      "pretraining": 0.63
+    },
+    "semantic_score": null,
+    "personal_score": null,
+    "score_breakdown": {
+      "relevance": 63.0,
+      "quality": 51,
+      "novelty": 85.8,
+      "practical": 45,
+      "credibility": 28
+    },
+    "confidence": 43,
+    "risk_zh": null,
+    "llm_scores": {},
+    "score": 57.9,
+    "score_reasons": [
+      "命中主题：预训练与优化",
+      "优势：新颖 86、匹配 63"
+    ],
+    "summary_zh": null
+  },
+  "2607.11257v1": {
+    "paper_id": "2607.11257v1",
+    "title": "LaGuadia: Language-Guided Adaptive Distillation from Pathology Foundation Models",
+    "abstract": "Pathology Foundation Models (PFMs) offer powerful Whole Slide Image (WSI) representations but suffer from massive computational costs. While Knowledge Distillation (KD) can create efficient student models, existing multi-teacher methods often use suboptimal uniform weighting that ignores tissue heterogeneity. We propose LaGuadia (Language-Guided Adaptive DistillAtion), a framework that develops a compact pathology image encoder by dynamically integrating expertise from multiple PFMs under clinical linguistic guidance. Our approach utilizes a multi-stage pipeline: first, extracting visually observable clinical keywords from pathology reports; second, aligning visual features with these keywords via a Vision-Language meta-teacher (MedSigLIP) to provide dense semantic guidance; and finally, performing adaptive KD where teacher contributions are weighted based on their semantic alignment with the clinical narrative. Experiments on WSI captioning, visual question answering, and slide-level classification tasks demonstrate that an 87M parameter LaGuadia student model matches or exceeds foundation-scale models such as GigaPath and UNI, achieving strong factual consistency and robust generalization. These results highlight clinical language as an effective semantic anchor for building efficient and reliable digital pathology systems. Code is available at https://github.com/hvcl/LaGuadia.",
+    "authors": [
+      "Gangsu Kim",
+      "Won-Ki Jeong"
+    ],
+    "published": "2026-07-13T08:38:21Z",
+    "updated": "2026-07-13T08:38:21Z",
+    "categories": [
+      "cs.CV",
+      "cs.LG"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.11257v1",
+    "abs_url": "http://arxiv.org/abs/2607.11257v1",
+    "source": "arXiv",
+    "venue": null,
+    "code_url": null,
+    "cited_by_count": null,
+    "topic_scores": {
+      "post-training": 0.18,
+      "efficiency": 0.63
+    },
+    "semantic_score": null,
+    "personal_score": null,
+    "score_breakdown": {
+      "relevance": 63.0,
+      "quality": 35,
+      "novelty": 85.4,
+      "practical": 36,
+      "credibility": 35
+    },
+    "confidence": 43,
+    "risk_zh": null,
+    "llm_scores": {},
+    "score": 53.4,
+    "score_reasons": [
+      "命中主题：微调与对齐、压缩与高效推理",
+      "优势：新颖 85、匹配 63"
+    ],
+    "summary_zh": null
+  },
+  "2607.11475v1": {
+    "paper_id": "2607.11475v1",
+    "title": "HyperSafe: Inference-Time Safety Recovery for Fine-Tuned Language Models",
+    "abstract": "Safety alignment in large language models can be fragile under fine-tuning, as even benign task adaptation may increase harmful compliance. Existing defenses mainly follow two directions: they either intervene during or after fine-tuning through retraining or weight modification, which can be costly and may hurt task performance, or they use model-agnostic safety classifiers, which may miss failures specific to a given fine-tuned checkpoint. These limitations motivate a post hoc, model-specific, and non-invasive approach to safety restoration. To meet these requirements, we propose HyperSafe, a framework that restores safety behavior by generating a model-specific Safe Side Network (SSN) for each fine-tuned checkpoint. HyperSafe uses layer-wise activation fingerprints to capture how fine-tuning changes the model's inner representations. With a small set of given calibration prompts, the hypernetwork maps these fingerprints to the parameters of the \\ssn{} in a single forward pass. The generated \\ssn{} runs alongside the frozen fine-tuned model and performs prompt-level safety classification: harmful prompts are routed to refusal, while safe prompts are answered by the original fine-tuned model. Thus, HyperSafe requires no gradient updates, no safety data at deployment time, and no modification to the deployed model weights. We evaluate HyperSafe on two model families, Qwen2-7B and LLaMA-3-8B, across multiple safety benchmarks. HyperSafe reduces harmful response rates from 19-31% to below 1% on every held-out checkpoint, while keeping downstream task accuracy within 1% of the fine-tuned baseline on average. Code is available at https://github.com/nokronim/project-safety-remedy.",
+    "authors": [
+      "Aznaur Aliev",
+      "Carlos Hinojosa",
+      "Abdelrahman Eldesokey",
+      "Bang An",
+      "Bernard Ghanem",
+      "Yibo Yang"
+    ],
+    "published": "2026-07-13T12:28:43Z",
+    "updated": "2026-07-13T12:28:43Z",
+    "categories": [
+      "cs.LG",
+      "cs.CL"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.11475v1",
+    "abs_url": "http://arxiv.org/abs/2607.11475v1",
+    "source": "arXiv",
+    "venue": null,
+    "code_url": null,
+    "cited_by_count": null,
+    "topic_scores": {
+      "post-training": 0.36
+    },
+    "semantic_score": null,
+    "personal_score": null,
+    "score_breakdown": {
+      "relevance": 36.0,
+      "quality": 69,
+      "novelty": 86.9,
+      "practical": 27,
+      "credibility": 35
+    },
+    "confidence": 59,
+    "risk_zh": null,
+    "llm_scores": {},
+    "score": 51.7,
+    "score_reasons": [
+      "命中主题：微调与对齐",
+      "优势：新颖 87、质量 69"
+    ],
+    "summary_zh": null
   }
 }
