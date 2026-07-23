@@ -13356,5 +13356,599 @@
       "优势：新颖 88、匹配 63"
     ],
     "summary_zh": null
+  },
+  "2607.20345v1": {
+    "paper_id": "2607.20345v1",
+    "title": "Closing the Lab-to-Store Gap: A Data-Efficient Post-Training and Experience-Driven Learning VLA Framework for Retail Humanoids",
+    "abstract": "Closing the gap between benchmark performance and reliable real-world operation remains a central challenge for Vision-Language-Action (VLA) humanoid robots, which must handle execution errors, distribution shifts, and environmental variability. This paper presents DEED (Data-Efficient Post-Training and Experience-Driven Learning), a systems-level approach evaluated on a supermarket chip-restocking task using a Unitree G1-Edu humanoid robot and the GR00T N1.6 foundation model. DEED comprises three key components: (1) a data-efficient post-training pipeline with control-frequency alignment, data curation, task-relevant visual highlighting, and reduced VLA dependence; (2) a real-world study of experience-driven refinement, adapted from RECAP via a text-based advantage prefix and a vision-language value function; and (3) a latent-space analysis tool for studying in- and out-of-distribution behavior. Our results suggest that bridging the lab-to-store gap is primarily a systems integration challenge rather than an architectural one: careful data design and targeted post-training can transform a policy that fails under naive fine-tuning into a competent real-world system using only a single GPU.",
+    "authors": [
+      "Roger Sala Sisó",
+      "Tiago Silvério",
+      "Jakob Sand",
+      "Tran Nguyen Le"
+    ],
+    "published": "2026-07-22T16:30:51Z",
+    "updated": "2026-07-22T16:30:51Z",
+    "categories": [
+      "cs.RO",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.20345v1",
+    "abs_url": "http://arxiv.org/abs/2607.20345v1",
+    "source": "arXiv",
+    "venue": null,
+    "code_url": null,
+    "cited_by_count": null,
+    "topic_scores": {
+      "post-training": 0.99
+    },
+    "semantic_score": null,
+    "personal_score": null,
+    "score_breakdown": {
+      "relevance": 99.0,
+      "quality": 68,
+      "novelty": 84.8,
+      "practical": 36,
+      "credibility": 35
+    },
+    "confidence": 51,
+    "risk_zh": null,
+    "llm_scores": {},
+    "score": 75.2,
+    "score_reasons": [
+      "命中主题：微调与对齐",
+      "优势：匹配 99、新颖 85"
+    ],
+    "summary_zh": null
+  },
+  "2607.19966v1": {
+    "paper_id": "2607.19966v1",
+    "title": "Towards Reliable C-to-Rust Translation with Rule-Guided Reasoning and Reinforcement Learning",
+    "abstract": "The migration of legacy C programs to Rust has become an important direction for improving software memory safety while alleviating the high cost of manual rewriting. Leveraging large language models (LLMs) for automated C-to-Rust translation has emerged as a promising direction. However, existing LLM-based approaches remain limited. On the one hand, LLMs exhibit limited capability in identifying Rust-specific rules, and inadequate handling of Rust syntax often results in incorrect translations. On the other hand, existing LLMs often struggle to accurately capture the semantics of complex code, resulting in incorrect translations. To address these challenges, we propose a Translation fRAmework Via rule-guided reasoning and rEinforcement Learning, namely TRAVEL, consisting of two modules. The first module employs Monte Carlo Tree Search (MCTS)-based reasoning path construction guided by Rust-specific rules, steering the search toward translation steps that respect the syntactic rules that LLMs frequently violate. The second module introduces reinforcement learning that couples execution feedback with reasoning-quality signals, encouraging the model to construct reasoning paths that accurately capture program semantics, thereby ensuring that the generated Rust code preserves the intended behavior of the original C program. We evaluate TRAVEL on three datasets: xCodeEval (a public benchmark), OS-Bench (functions collected from the Linux kernel), and HW-Bench (an industrial dataset from Huawei). On xCodeEval, TRAVEL outperforms all baselines across three backbone LLMs. In particular, compared to the strongest prompting baseline IRENE, TRAVEL improves computational accuracy (CA) by 26.22% and compilation success rate (CSR) by 18.77%. On HW-Bench and OS-Bench, TRAVEL further improves CSR by 18.28% and 16.51%, respectively, while reducing unsafe rate (UR) by 13.06% and 13.08%, respectively.",
+    "authors": [
+      "Feng Luo",
+      "Jiachen Liu",
+      "Cuiyun Gao",
+      "Jia Feng",
+      "Kui Liu"
+    ],
+    "published": "2026-07-22T09:50:01Z",
+    "updated": "2026-07-22T09:50:01Z",
+    "categories": [
+      "cs.SE"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.19966v1",
+    "abs_url": "http://arxiv.org/abs/2607.19966v1",
+    "source": "arXiv",
+    "venue": null,
+    "code_url": null,
+    "cited_by_count": null,
+    "topic_scores": {
+      "reasoning": 0.63
+    },
+    "semantic_score": null,
+    "personal_score": null,
+    "score_breakdown": {
+      "relevance": 63.0,
+      "quality": 99,
+      "novelty": 84.9,
+      "practical": 36,
+      "credibility": 35
+    },
+    "confidence": 75,
+    "risk_zh": null,
+    "llm_scores": {},
+    "score": 70.1,
+    "score_reasons": [
+      "命中主题：推理时扩展",
+      "优势：质量 99、新颖 85"
+    ],
+    "summary_zh": null
+  },
+  "2607.20145v1": {
+    "paper_id": "2607.20145v1",
+    "title": "SLAI T-Rex: Full-Parameter Post-training of the DeepSeek-V4 Family on Ascend SuperPOD",
+    "abstract": "Full-parameter post-training of trillion-parameter-scale MoE models introduces substantial system-level challenges for large-scale distributed training, including severe memory pressure, non-overlapped communication overhead, and inefficient kernel execution. While most large-scale LLM training systems are built around GPU-based clusters, this report presents an end-to-end optimization practice on the Ascend NPU SuperPOD. Using the DeepSeek-V4 model family as the target workload, we develop a hierarchical optimization framework spanning model-level parallelism, computation-communication orchestration, and low-level kernel execution. The resulting system achieves 34.22% Model FLOPs Utilization (MFU) with a 2.93x improvement over the open-source baseline recipe while maintaining training stability. Building on this optimized infrastructure, we further establish a CPT and SFT workflow for complex Operations Research (OR) tasks. We refer to the integrated framework as SLAI T-Rex. Using DeepSeek-V4-Flash, we develop OR-oriented CPT and SFT data pipelines that combine collected domain resources with solver-verified synthetic optimization documents. The resulting dataset contains 10K high-quality SFT samples spanning four task categories and three problem representations. The specialized model achieves the highest average zero-shot Pass@1 score among the evaluated models, reaching 71.81% and outperforming GPT-5.4-Mini and the base DeepSeek-V4-Flash model by 3.98 and 11.27 percentage points, respectively. Overall, this work demonstrates a full-stack pathway from efficient trillion-parameter model post-training on Ascend infra to domain-specialized Flash models for solver-grounded mathematical modeling, advancing frontier-model systems for complex reasoning.",
+    "authors": [
+      "Dongfang Li",
+      "Xiaodong Luo",
+      "Ruoyu Sun",
+      "Xuhui Chen",
+      "Linyuan Qiu",
+      "Jian Meng",
+      "Zhengxuan Lu",
+      "Yiting Wang",
+      "Yucheng Xie",
+      "Tao Guo",
+      "Tianxiang Fang",
+      "Jing Li",
+      "Sihang Chen",
+      "Shihao Hong",
+      "Chang Liu",
+      "Weihua Dai",
+      "Zirong Zeng",
+      "Ziwei Zhu",
+      "Zhuohan Wang",
+      "Zhengjun Yue",
+      "Igor Vasilyev",
+      "Min Liu",
+      "Weijian Sun",
+      "Xin Chen",
+      "Yingmeng Gao",
+      "Jinhua Zhou",
+      "Taolue Chen",
+      "Chenwei Wu",
+      "Dong Zhang",
+      "Wenlong Jin",
+      "Jinmin Xiang",
+      "Barkova Maria",
+      "Ushakov Anton",
+      "Xianfei Jin",
+      "Tian Ding",
+      "Zhihang Lin",
+      "Qian Chen",
+      "Linxin Yang",
+      "Mingzhe Yang",
+      "Bingwei Zhang",
+      "Hongzhang Yang",
+      "Fangxue Zhang",
+      "Shijun Qin",
+      "Jie Yu",
+      "Cuihua Hu",
+      "Tolstykh Vasiliy",
+      "Nosov Ivan",
+      "Abdullin Amir",
+      "Zhichen Zhou",
+      "Xin Zhang",
+      "Zhixiong Ning",
+      "Xutong Zhao",
+      "Junjie Huang",
+      "Jiajun Liu",
+      "Weiyan Kong",
+      "Zheng Zhang",
+      "Wenhan Luo",
+      "Lin Hu",
+      "Yangbo Guo",
+      "Li Zeng",
+      "Shihao Zeng",
+      "Baotian Hu",
+      "Min Zhang",
+      "Haizhou Li",
+      "Zhiquan Luo"
+    ],
+    "published": "2026-07-22T13:49:17Z",
+    "updated": "2026-07-22T13:49:17Z",
+    "categories": [
+      "cs.CL",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.20145v1",
+    "abs_url": "http://arxiv.org/abs/2607.20145v1",
+    "source": "arXiv",
+    "venue": null,
+    "code_url": null,
+    "cited_by_count": null,
+    "topic_scores": {
+      "pretraining": 0.36,
+      "post-training": 0.63,
+      "reasoning": 0.18
+    },
+    "semantic_score": null,
+    "personal_score": null,
+    "score_breakdown": {
+      "relevance": 63.0,
+      "quality": 78,
+      "novelty": 89.2,
+      "practical": 59,
+      "credibility": 35
+    },
+    "confidence": 67,
+    "risk_zh": null,
+    "llm_scores": {},
+    "score": 67.7,
+    "score_reasons": [
+      "命中主题：预训练与优化、微调与对齐、推理时扩展",
+      "优势：新颖 89、质量 78"
+    ],
+    "summary_zh": null
+  },
+  "2607.20129v1": {
+    "paper_id": "2607.20129v1",
+    "title": "CUSUM-Shaped Inference-Time Monitoring and Targeted Re-Decoding for Quantized Small Language Model Reasoning",
+    "abstract": "Quantized small autoregressive reasoning models can enter long, repetitive, or unproductive trajectories, yet inference-time compute is usually allocated without observing how a trajectory develops. Building on an earlier token-level e-CUSUM controller, we develop MGT-B (Monitoring-Guided Test-time Backtracking), a revised external controller that maps overlapping windows of pre-sampling uncertainty and degeneration features to position-conditional empirical tail probabilities, accumulates mixture betting factors with a CUSUM-shaped reset, and responds to an alarm by estimating a rollback point, restoring token and key-value-cache state, and performing constrained re-decoding. To audit whether the effect persists on problem identities first observed after the manual choice of log threshold h = 10, we retrospectively exclude 260 IDs present in pre-threshold artifacts and retain the chronologically first post-threshold pair for each remaining ID, yielding a 240-pair chronology-audit set. On this set, accuracy changes from 82/240 to 88/240 (+2.50 percentage points; 13 corrections, 7 regressions; exact McNemar p = 0.2632; paired bootstrap 95% interval [-1.25, +6.25]). A broader 467-pair historical-coverage set of seed-matched pairs changes accuracy from 146/467 to 167/467 (+4.50 points; McNemar p = 0.000753), but includes 200 seed-1 IDs available before or during threshold selection and is reported only as an exploratory estimate. All 316 no-alarm outputs in the 467-pair set are identical to vanilla, while the 151 alarmed trajectories contain 29 corrections and 8 regressions. Neither analysis is confirmatory, and the empirical factors are not established as a valid e-process or e-detector. The results support a selective monitoring-and-repair mechanism for the studied MATH-500 setting, rather than a general or theoretically certified reasoning improvement.",
+    "authors": [
+      "El Hassane Ettifouri",
+      "Ayoub Belfatmi",
+      "Mahaman Sanoussi Yahaya Alassan",
+      "Walid Dahhane"
+    ],
+    "published": "2026-07-22T13:34:17Z",
+    "updated": "2026-07-22T13:34:17Z",
+    "categories": [
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.20129v1",
+    "abs_url": "http://arxiv.org/abs/2607.20129v1",
+    "source": "arXiv",
+    "venue": null,
+    "code_url": null,
+    "cited_by_count": null,
+    "topic_scores": {
+      "reasoning": 0.81
+    },
+    "semantic_score": null,
+    "personal_score": null,
+    "score_breakdown": {
+      "relevance": 81.0,
+      "quality": 54,
+      "novelty": 89.1,
+      "practical": 27,
+      "credibility": 35
+    },
+    "confidence": 35,
+    "risk_zh": null,
+    "llm_scores": {},
+    "score": 64.6,
+    "score_reasons": [
+      "命中主题：推理时扩展",
+      "优势：新颖 89、匹配 81"
+    ],
+    "summary_zh": null
+  },
+  "2607.19824v1": {
+    "paper_id": "2607.19824v1",
+    "title": "Rewarding Better Thinking for LLM Preference Alignment",
+    "abstract": "LLM preference alignment aims to optimize models toward human preferences across diverse user instructions. Reinforcement learning has become a major post-training approach for this goal, but existing proxy rewards are often outcome-level, mainly evaluating the final response while providing limited guidance for the reasoning trajectory. This can make credit assignment coarse when multiple responses receive similar final scores, leaving trajectory-level preferences under-specified. To address this limitation, we propose Thinking Checklist Reward (TCR), a process-oriented reward for RL-based preference alignment. TCR converts preference pairs into sample-specific thinking checklists and uses them to evaluate whether the generated reasoning trace addresses the preference-implied considerations. To reduce overlap with outcome-level supervision, TCR further introduces an exponential moving average (EMA) residual formulation to isolate a complementary thinking surplus beyond what is predictable from the outcome reward. Experiments on five models from three model families show that TCR consistently improves alignment performance across diverse benchmarks, with ablations further validating the importance of EMA-based residual formulation and sample-specific checklist supervision.",
+    "authors": [
+      "Xubo Liu",
+      "Wenya Guo",
+      "Ruxue Yan",
+      "Xinying Qian",
+      "Ying Zhang"
+    ],
+    "published": "2026-07-22T06:57:55Z",
+    "updated": "2026-07-22T06:57:55Z",
+    "categories": [
+      "cs.AI",
+      "cs.CL"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.19824v1",
+    "abs_url": "http://arxiv.org/abs/2607.19824v1",
+    "source": "arXiv",
+    "venue": null,
+    "code_url": null,
+    "cited_by_count": null,
+    "topic_scores": {
+      "post-training": 0.81,
+      "reasoning": 0.18
+    },
+    "semantic_score": null,
+    "personal_score": null,
+    "score_breakdown": {
+      "relevance": 81.0,
+      "quality": 58,
+      "novelty": 83.6,
+      "practical": 18,
+      "credibility": 35
+    },
+    "confidence": 67,
+    "risk_zh": null,
+    "llm_scores": {},
+    "score": 63.9,
+    "score_reasons": [
+      "命中主题：微调与对齐、推理时扩展",
+      "优势：新颖 84、匹配 81"
+    ],
+    "summary_zh": null
+  },
+  "2607.19768v1": {
+    "paper_id": "2607.19768v1",
+    "title": "AlphaRoute: Large Language Models as Semantic Optimizers for Multi-Objective Routing",
+    "abstract": "Very Large Scale Integration (VLSI) global routing is an NP-hard combinatorial optimization problem requiring signal net assignment across capacity-constrained 3D grids while minimizing congestion, wirelength, and via transitions. Because traditional heuristics rely on static penalty schedules that fail on complex congestion topologies, we present AlphaRoute: a multi-objective adaptive search framework reformulating rip-up and reroute (R&R) into a dynamic optimization system. We introduce SHAP-based overflow decomposition to isolate per-net congestion, driving targeted subgraph extraction via 3D Dijkstra maze routing and an adaptive PathFinder policy. Crucially, AlphaRoute employs Large Language Models (LLMs) as semantic policy optimizers. Bounded by a deterministic knowledge graph, the LLMs interpret congestion metrics to dynamically adjust penalty parameters. Evaluated on ISPD 2025 benchmarks, AlphaRoute reduces overflow by 98.6% on MEMPOOL. On the constrained ARIANE design, we achieve an overflow of 146,109 (a 29.8x reduction in overflow over the state of the art), yielding a penalized score of S_orig = 0.0538 versus the State-of-the-art (SOTA) 1.780. These results demonstrate that superior algorithmic search geometry can overcome the latency of interpreted Python implementations.",
+    "authors": [
+      "Kabir Murjani",
+      "Mishri Bhavsar",
+      "Manish I. Patel",
+      "Jonti Talukdar"
+    ],
+    "published": "2026-07-22T05:27:55Z",
+    "updated": "2026-07-22T05:27:55Z",
+    "categories": [
+      "cs.LG",
+      "cs.AR"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.19768v1",
+    "abs_url": "http://arxiv.org/abs/2607.19768v1",
+    "source": "arXiv",
+    "venue": null,
+    "code_url": null,
+    "cited_by_count": null,
+    "topic_scores": {
+      "pretraining": 0.63
+    },
+    "semantic_score": null,
+    "personal_score": null,
+    "score_breakdown": {
+      "relevance": 63.0,
+      "quality": 72,
+      "novelty": 87.2,
+      "practical": 41,
+      "credibility": 35
+    },
+    "confidence": 51,
+    "risk_zh": null,
+    "llm_scores": {},
+    "score": 63.9,
+    "score_reasons": [
+      "命中主题：预训练与优化",
+      "优势：新颖 87、质量 72"
+    ],
+    "summary_zh": null
+  },
+  "2607.20268v1": {
+    "paper_id": "2607.20268v1",
+    "title": "PoTRE: Test-Time Reasoning inspired by Cognitive Heterogeneity",
+    "abstract": "While Large Language Models (LLMs) excel at many tasks, they frequently struggle with complex reasoning that requires long-horizon planning and iterative error correction. Furthermore, standard single-stream prompting proves brittle when models encounter novel abstractions or rigorous domain constraints. We introduce PoTRE (Poly-Topological Reasoning Ensembles), a heterogeneous framework that decouples inference into four agents: (1) Adversarial Refinement Agent, (2) Hierarchical strategic Planning Agent, (3) Spectrum Search Agent, and (4) Direct Chain Agent. A final Task-Adaptive Aggregation Layer dynamically reconciles these perspectives -- via final candidate selection, semantic synthesis, or neuro-symbolic verification -- to produce a robust global solution. We evaluate PoTRE on three frontier benchmarks: ARC-AGI-2, Humanity's Last Exam (HLE), and PRBench Finance. PoTRE achieves state-of-the-art accuracy of 49.92% on HLE, surpassing the previous best official score. We demonstrate that this architectural heterogeneity achieves improved reasoning performance using similar or fewer inference tokens compared to heavily scaled homogeneous baselines.",
+    "authors": [
+      "Anmol Kankariya",
+      "Sercan Ö. Arık"
+    ],
+    "published": "2026-07-22T15:20:53Z",
+    "updated": "2026-07-22T15:20:53Z",
+    "categories": [
+      "cs.AI",
+      "cs.CL"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.20268v1",
+    "abs_url": "http://arxiv.org/abs/2607.20268v1",
+    "source": "arXiv",
+    "venue": null,
+    "code_url": null,
+    "cited_by_count": null,
+    "topic_scores": {
+      "reasoning": 0.63
+    },
+    "semantic_score": null,
+    "personal_score": null,
+    "score_breakdown": {
+      "relevance": 63.0,
+      "quality": 81,
+      "novelty": 84.2,
+      "practical": 18,
+      "credibility": 35
+    },
+    "confidence": 59,
+    "risk_zh": null,
+    "llm_scores": {},
+    "score": 63.4,
+    "score_reasons": [
+      "命中主题：推理时扩展",
+      "优势：新颖 84、质量 81"
+    ],
+    "summary_zh": null
+  },
+  "2607.20064v1": {
+    "paper_id": "2607.20064v1",
+    "title": "PRO-LONG: Programmatic Memory Enables Long-Horizon Reasoning",
+    "abstract": "Long-horizon tasks require sustained perception, reasoning, and exploration, and are a persistent challenge for large language model (LLM) agents. This gap is reflected in their limited performance on continual learning benchmarks such as ARC-AGI-3, especially when models are evaluated out of the box. Various agent harnesses have been proposed to close this gap, and each commits to a strategy for handling long sequences of observations, i.e., what information to save from the environment and how to load it into model context, a choice we argue is particularly consequential. Existing methods for context management face a significant tradeoff, as preserving more information makes retrieving relevant details less tractable. We propose PRO-LONG, a minimal context management framework built around programmatic memory for LLM agents in long-horizon, exploratory settings. PRO-LONG addresses the tradeoff by keeping a complete, structured interaction log and capitalizing on recent progress in coding agents to search this history efficiently. On the full ARC-AGI-3 public game set, PRO-LONG improves over a base coding agent by an average of 18.0 percentage points across frontier models, and matches or exceeds state-of-the-art specialized harnesses (up to 76.1% pass@1) while using 4.2-5.8x fewer tokens. With Fable 5, PRO-LONG achieves 97.4% best@2 at a total cost of \\$1,750. Relevant code and logs are available at https://github.com/alexisfox7/PRO-LONG.",
+    "authors": [
+      "Alexis Fox",
+      "Junlin Wang",
+      "Paul Rosu",
+      "Bhuwan Dhingra"
+    ],
+    "published": "2026-07-22T12:11:51Z",
+    "updated": "2026-07-22T12:11:51Z",
+    "categories": [
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.20064v1",
+    "abs_url": "http://arxiv.org/abs/2607.20064v1",
+    "source": "arXiv",
+    "venue": null,
+    "code_url": null,
+    "cited_by_count": null,
+    "topic_scores": {
+      "reasoning": 0.63
+    },
+    "semantic_score": null,
+    "personal_score": null,
+    "score_breakdown": {
+      "relevance": 63.0,
+      "quality": 60,
+      "novelty": 84.3,
+      "practical": 68,
+      "credibility": 35
+    },
+    "confidence": 51,
+    "risk_zh": null,
+    "llm_scores": {},
+    "score": 63.2,
+    "score_reasons": [
+      "命中主题：推理时扩展",
+      "优势：新颖 84、实用 68"
+    ],
+    "summary_zh": null
+  },
+  "2607.20214v1": {
+    "paper_id": "2607.20214v1",
+    "title": "ELSAA: Efficient Low-Rank and Sparse Attention Approximation for Training Transformers",
+    "abstract": "The quadratic $N\\times N$ attention score matrix remains a central obstacle to extending Transformers to longer input lengths. Existing efficient attention methods usually reduce this bottleneck by either imposing sparsity, so that each query attends to only a small subset of keys, or by using low-rank/kernel sketches, so that global interactions are compressed into a lower-dimensional representation. We propose \\emph{ELSAA}, an efficient low-rank and sparse approximation of attention. Importantly, ELSAA does \\emph{not} decompose the learned projection or output matrices of the Transformer into sparse and low-rank factors. Instead, after dense projections produce $Q,K,V$, ELSAA approximates the induced attention score operator itself: a sparse branch captures selected high-similarity interactions, while a low-rank branch summarizes diffuse global interactions. Since the two branches can be normalized over supports with very different denominator mass, ELSAA introduces a denominator-aware fusion term that scales the sparse branch according to its estimated attention mass relative to the low-rank branch. This gives a practical framework for constructing low-rank and sparse attention outputs without materializing the full quadratic score matrix, aiming to enable longer-context training while preserving both sharp token-level interactions and broad contextual mixing.",
+    "authors": [
+      "Mahdi Heidari",
+      "Mohammad Mahdi Rahimi",
+      "Jaekyun Moon"
+    ],
+    "published": "2026-07-22T14:34:49Z",
+    "updated": "2026-07-22T14:34:49Z",
+    "categories": [
+      "cs.LG",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.20214v1",
+    "abs_url": "http://arxiv.org/abs/2607.20214v1",
+    "source": "arXiv",
+    "venue": null,
+    "code_url": null,
+    "cited_by_count": null,
+    "topic_scores": {
+      "efficiency": 0.81
+    },
+    "semantic_score": null,
+    "personal_score": null,
+    "score_breakdown": {
+      "relevance": 81.0,
+      "quality": 34,
+      "novelty": 85.7,
+      "practical": 36,
+      "credibility": 35
+    },
+    "confidence": 35,
+    "risk_zh": null,
+    "llm_scores": {},
+    "score": 59.8,
+    "score_reasons": [
+      "命中主题：压缩与高效推理",
+      "优势：新颖 86、匹配 81"
+    ],
+    "summary_zh": null
+  },
+  "2607.19704v1": {
+    "paper_id": "2607.19704v1",
+    "title": "Efficient Clustering with Provable Guardrails for LLM Inference at Scale",
+    "abstract": "Scaling LLM-based applications to millions of users is bottlenecked by the inference cost and latency of modern foundation models. A natural fix is to cluster the inputs and call the LLM only on cluster representatives, letting other members inherit the output -- but this is only safe if each member is measurably close to its representative. Existing clustering methods do not offer such per-sample quality control at scale: none jointly guarantee a minimal within-cluster similarity, exact matching of categorical attributes, and scalability to tens of millions of samples. We propose a two-stage algorithm that generates initial clusters with Mini-batch K-Means, then greedily selects representatives within each initial cluster -- a step equivalent to the Johnson-Chvatal heuristic for Set Cover over alpha-balls in embedding space. The algorithm enforces the similarity and attribute guardrails exactly by construction, and runs in $O(nd + n^2 d/K)$ time and $O(nd + n^2/K^2)$ memory for $n$ samples, feature dimension $d$, and $K$ initial clusters -- linear in $n$ when $K$ grows proportionally with $n$. We provide benchmarks against common clustering methods on internal and public datasets: our method not only delivers per-sample guardrails but also runs 10-1000x faster and scales to data sizes where most standard methods become intractable. Deployed on 38 million customers for a persona-based recommender, the clustering method cut downstream cost and latency by 50-fold while preserving personalization and unblocked the production launch.",
+    "authors": [
+      "Longshaokan Wang",
+      "Wai Tsang Keung",
+      "Punit Ghodasara",
+      "Roman Wang",
+      "Ali Dashti",
+      "Francesc Moreno-Noguer"
+    ],
+    "published": "2026-07-22T03:06:57Z",
+    "updated": "2026-07-22T03:06:57Z",
+    "categories": [
+      "cs.LG",
+      "stat.ML"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.19704v1",
+    "abs_url": "http://arxiv.org/abs/2607.19704v1",
+    "source": "arXiv",
+    "venue": null,
+    "code_url": null,
+    "cited_by_count": null,
+    "topic_scores": {
+      "serving": 0.45
+    },
+    "semantic_score": null,
+    "personal_score": null,
+    "score_breakdown": {
+      "relevance": 45.0,
+      "quality": 60,
+      "novelty": 86.3,
+      "practical": 86,
+      "credibility": 35
+    },
+    "confidence": 51,
+    "risk_zh": null,
+    "llm_scores": {},
+    "score": 58.7,
+    "score_reasons": [
+      "命中主题：推理系统",
+      "优势：新颖 86、实用 86"
+    ],
+    "summary_zh": null
+  },
+  "2607.20327v1": {
+    "paper_id": "2607.20327v1",
+    "title": "PyroDash: Cost-Efficient Token-Level Small-Large Language Model Collaborative Inference",
+    "abstract": "Large language models (LLMs) provide strong reasoning capabilities but are expensive to serve at scale, whereas small language models (SLMs) are cheaper but less reliable on difficult problems. We introduce PyroDash, a cost-aware framework for token-level SLM-LLM collaborative inference. During generation, the SLM decides whether to request assistance by emitting a control token. A Collaborate Engine then sends the query and partial reasoning trace to a frozen LLM for completion through a single handoff. The policy is internalized in the SLM, requiring neither a separate router, LLM retraining, nor access to LLM logits. PyroDash trains the SLM in three stages: control-token embedding learning, offloading-oriented supervised fine-tuning, and cost-aware alignment with Group Relative Policy Optimization. Its reward balances answer accuracy against inference cost normalized by LLM-only inference. Across five mathematical reasoning benchmarks, PyroDash supports different accuracy-cost operating points. With $λ=0.05$, it achieves 64.04 percent average accuracy, 6.36 percentage points above the LLM-only baseline, while reducing cost by 20.4 percent. With $λ=0.6$, it achieves 54.55 percent accuracy with a 1.90 percent LLM token ratio and 0.012 LLM calls per example, reducing total cost from USD 49.36 to USD 1.78. These results show that learned token-level handoffs can reduce LLM use while preserving strong reasoning performance.",
+    "authors": [
+      "Niqi Lyu",
+      "Pengtao Shi",
+      "Wei Qiu",
+      "Jianlin Zhong",
+      "Sicong Xia",
+      "Jianyao Ma",
+      "Yicheng Ding"
+    ],
+    "published": "2026-07-22T16:14:26Z",
+    "updated": "2026-07-22T16:14:26Z",
+    "categories": [
+      "cs.CL"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.20327v1",
+    "abs_url": "http://arxiv.org/abs/2607.20327v1",
+    "source": "arXiv",
+    "venue": null,
+    "code_url": null,
+    "cited_by_count": null,
+    "topic_scores": {
+      "post-training": 0.36,
+      "reasoning": 0.18
+    },
+    "semantic_score": null,
+    "personal_score": null,
+    "score_breakdown": {
+      "relevance": 36.0,
+      "quality": 60,
+      "novelty": 83.1,
+      "practical": 45,
+      "credibility": 35
+    },
+    "confidence": 51,
+    "risk_zh": null,
+    "llm_scores": {},
+    "score": 50.6,
+    "score_reasons": [
+      "命中主题：微调与对齐、推理时扩展",
+      "优势：新颖 83、质量 60"
+    ],
+    "summary_zh": null
+  },
+  "2607.20205v1": {
+    "paper_id": "2607.20205v1",
+    "title": "Statistical Inference for Rank Allocation in Low-Rank Adaptation",
+    "abstract": "Low-rank adaptation (LoRA) has become a widely used parameter-efficient fine-tuning method for large language models. Since different modules and layers may contribute unequally to downstream adaptation, allocating rank resources under a fixed parameter budget is an important problem for balancing efficiency, expressiveness, and generalization. Existing adaptive rank methods address this problem mainly through carefully designed importance scores constructed from gradient-derived sensitivity and uncertainty measures, without an explicit statistical interpretation. In this paper, we formulate LoRA rank allocation as a statistical hypothesis testing problem and propose StatLoRA, a statistical inference-based rank allocation method. StatLoRA associates each LoRA component with a test statistic and uses estimated p-values to determine which components should be retained or pruned under a prescribed rank budget. The proposed testing procedure is supported by our central limit theory for stochastic optimizer trajectories. In particular, we establish asymptotic normality for a broad class of commonly used optimizers in deep learning, including AdamW, and derive the corresponding asymptotic distributions for the proposed component scores used in hypothesis testing. We evaluate StatLoRA on LoRA fine-tuning of DeBERTaV3-base, BART-Large, and Qwen2.5-7B across natural language understanding, natural language generation, and question answering tasks. Experiments show that StatLoRA achieves comparable or better performance than vanilla LoRA, AdaLoRA, and IGU-LoRA under matched rank budgets. Sensitivity analyses and empirical diagnostics further support the stability of the proposed hypothesis-testing-based allocation rule and provide empirical evidence for the asymptotic theory of component scores.",
+    "authors": [
+      "Yihang Gao",
+      "Vincent Y. F. Tan"
+    ],
+    "published": "2026-07-22T14:25:59Z",
+    "updated": "2026-07-22T14:25:59Z",
+    "categories": [
+      "stat.ML",
+      "cs.LG",
+      "math.ST"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.20205v1",
+    "abs_url": "http://arxiv.org/abs/2607.20205v1",
+    "source": "arXiv",
+    "venue": null,
+    "code_url": null,
+    "cited_by_count": null,
+    "topic_scores": {
+      "pretraining": 0.18,
+      "post-training": 0.18,
+      "efficiency": 0.63
+    },
+    "semantic_score": null,
+    "personal_score": null,
+    "score_breakdown": {
+      "relevance": 63.0,
+      "quality": 60,
+      "novelty": 86.4,
+      "practical": 27,
+      "credibility": 35
+    },
+    "confidence": 51,
+    "risk_zh": null,
+    "llm_scores": {},
+    "score": 59.2,
+    "score_reasons": [
+      "命中主题：预训练与优化、微调与对齐、压缩与高效推理",
+      "优势：新颖 86、匹配 63"
+    ],
+    "summary_zh": null
   }
 }
